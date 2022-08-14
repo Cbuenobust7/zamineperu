@@ -1,0 +1,55 @@
+2022-08-11 03:30:29 [info] Starting new account registration
+
+2022-08-11 03:30:29 [info] Sending registration to Let's Encrypt server
+
+2022-08-11 03:30:32 [info] Sending signed request to https://acme-v02.api.letsencrypt.org/acme/new-acct
+
+2022-08-11 03:30:33 [info] kid: https://acme-v02.api.letsencrypt.org/acme/acct/671731657
+
+2022-08-11 03:30:33 [info] Congrats! New account registered successfully.
+
+2022-08-11 03:30:33 [info] Generating SSL for ciem-demo5.com
+
+2022-08-11 03:30:33 [info] Domains array given below: 
+
+2022-08-11 03:30:33 [info] <pre>Array
+(
+    [0] =&gt; ciem-demo5.com
+    [1] =&gt; www.ciem-demo5.com
+)
+</pre>
+
+2022-08-11 03:30:33 [info] Starting SSL certificate generation process with ACME V2
+
+2022-08-11 03:30:33 [info] Requesting challenges for the array of domains
+
+2022-08-11 03:30:36 [info] Sending signed request to https://acme-v02.api.letsencrypt.org/acme/new-order
+
+2022-08-11 03:30:37 [info] Domain 1
+
+2022-08-11 03:30:39 [info] 'http-01' challenge found.
+
+2022-08-11 03:30:39 [info] Got challenge token for ciem-demo5.com
+
+2022-08-11 03:30:39 [info] Domain 2
+
+2022-08-11 03:30:40 [info] 'http-01' challenge found.
+
+2022-08-11 03:30:40 [info] Got challenge token for www.ciem-demo5.com
+
+2022-08-11 03:30:51 [info] Account already registered. Continuing...
+
+2022-08-11 03:30:52 [info] 1st Internal Validation: Payload content does not match with content of the challenge URI.
+
+2022-08-11 03:30:52 [info] Oops! There was an error creating htaccess rules in the '.well-known' directory.
+
+2022-08-11 03:30:52 [info] 2nd Internal Validation: Payload content does not match with content of the challenge URI.
+
+2022-08-11 03:30:53 [info] 1st Internal Validation: Payload content does not match with content of the challenge URI.
+
+2022-08-11 03:30:53 [info] Oops! There was an error creating htaccess rules in the '.well-known' directory.
+
+2022-08-11 03:30:53 [info] 2nd Internal Validation: Payload content does not match with content of the challenge URI.
+
+2022-08-11 03:30:53 [info] authorizations: 2  number_of_validated_domains: 0 Sorry, SSL certificate can't be issued to ciem-demo5.com. 2 domains was not validated.
+

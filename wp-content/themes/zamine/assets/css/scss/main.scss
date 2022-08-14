@@ -1,0 +1,25 @@
+/*  
+  node-sass --watch --output-style compressed scss/main.scss  ./main.css  
+*/
+@import './_variables';
+
+@import './style.scss';
+@import './fix-web.scss';
+@import './fix-mobile.scss';
+button, a {
+  cursor: pointer;
+  outline: none;
+  &:focus {
+    outline: none;
+  }
+}
+@import './components/header.scss';
+@import './components/form7.scss';
+@import './components/value.scss';
+@import './components/card-timeline.scss';
+@import './components/card-info.scss';
+@import './components/card-service.scss';
+@import './components/card-navigation.scss';
+@import './pages/home.scss';
+@import './pages/we.scss';
+@import './pages/404.scss';

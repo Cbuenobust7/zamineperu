@@ -1,0 +1,45 @@
+@import "../_variables";
+.wpcf7-form {
+  .fila {
+    display: flex;
+    width: 100%;
+    background: #f5f5f5;
+    padding: 15px;
+    margin-bottom: 15px;
+    br {
+      display: none;
+    }
+    .material-icons {
+      display: block;
+      margin-right: 10px;
+      color: $colorPrimary;
+    }
+    .wpcf7-form-control {
+      border: none;
+      background: transparent;
+      width: 100%;
+    }
+    .wpcf7-form-control-wrap {
+      width: 100%;
+    }
+    span.wpcf7-list-item {
+      margin: 0;
+    }
+    input[type=checkbox] {
+      transform: scale(2);
+      transform-origin: left center;
+      margin-right: 15px;
+    }
+    &--terms {
+      background: transparent;
+      padding: 15px 0;
+      display: block;
+      a {
+        color: $colorPrimary;
+      }
+    }
+  }
+  .wpcf7-response-output {
+    border-color: $colorPrimary;
+  }
+}

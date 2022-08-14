@@ -1,0 +1,25 @@
+.page-home {
+  .third-sections--item--text {
+    cursor: pointer;
+    p {
+      display: block;
+      transition: all 0.3s ease-in-out;
+      opacity: 0;
+      max-height: 0;
+    }
+  }
+  .news--others--details {
+    width: 100%;
+    opacity: 0;
+  }
+  .news--others--bg:hover .news--others--details {
+    opacity: 1;
+  }
+  .third-sections--item--text:hover {
+    p {
+      opacity: 1;
+      max-height: 100px;
+    }
+    
+  }
+}

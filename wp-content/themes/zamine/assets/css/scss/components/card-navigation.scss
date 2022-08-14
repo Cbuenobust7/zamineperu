@@ -1,0 +1,67 @@
+@import "../_variables";
+.card-navigation {
+  background-color: $colorPrimary;
+  .section-services {
+    display: none;
+  }
+  .card {
+    border: 0;
+    &-header {
+      background-color: $colorPrimary;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border: 0;
+      .btn {
+        color: white;
+        font-weight: 900;
+        text-transform: uppercase;
+        outline: none;
+        text-align: left;
+        outline: none;
+      }
+      &__icon {
+        outline: none;
+        color: white;
+        width: 24px;
+        cursor: pointer;
+        
+        .remove {
+          display: block;
+        }
+        .add {
+          display: none;
+        }
+        &.collapsed {
+          .remove {
+            display: none;
+          }
+          .add {
+            display: block;
+          }
+        }
+      }
+    }
+    &-body {
+      background-color: $colorPrimary;
+      ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        padding: 0;
+        margin-left: 5px;
+        a {
+          display: block;
+          padding: 15px;
+          text-decoration: none;
+          &:hover {
+            background: #6d2f00;
+          }
+        }
+      }
+    }
+    a {
+      color: white;
+    }
+  }
+}

@@ -1,0 +1,1536 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 1, ../sass/_layout.scss */
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+  }
+  F
+  .justify{
+    text-align: justify;
+  }
+  
+  /* line 6, ../sass/_layout.scss */
+  .wrapper {
+    max-width: 1920px;
+    margin: 0 auto;
+  }
+  
+  /* line 1, ../sass/_common.scss */
+  .btn-orange {
+    font-size: 22px;
+    background: #f47b20;
+    font-weight: 900;
+    color: #fff;
+    border: 2px solid #f47b20;
+  }
+  /* line 8, ../sass/_common.scss */
+  .btn-orange:hover {
+    background: transparent;
+    color: #f47b20;
+  }
+  /* line 12, ../sass/_common.scss */
+  .btn-orange:hover.nh {
+    color: #f47b20;
+  }
+  
+  /* line 18, ../sass/_common.scss */
+  .btn-white {
+    font-size: 22px;
+    background: #fff;
+    font-weight: 900;
+    color: #f47b20;
+    border: 2px solid #fff;
+  }
+  /* line 25, ../sass/_common.scss */
+  .btn-white:hover {
+    background: transparent;
+    color: #fff;
+  }
+  
+  /* line 31, ../sass/_common.scss */
+  .btn-outline-white {
+    font-size: 22px;
+    background: transparent;
+    font-weight: 900;
+    color: #fff;
+    border: 2px solid #fff;
+  }
+  /* line 38, ../sass/_common.scss */
+  .btn-outline-white:hover {
+    background: #fff;
+    color: #f47b20;
+  }
+  
+  /* line 44, ../sass/_common.scss */
+  .color-orange {
+    color: #f47b20;
+  }
+  
+  /* line 48, ../sass/_common.scss */
+  .title-orange h2 {
+    /*/*font-family: "Raleway", sans-serif;*/*/
+    font-family: 'Heebo', sans-serif;
+    font-family: 'Heebo', sans-serif;
+    color: #f47b20;
+    text-align: center;
+    text-align: center;
+    font-size: 54px;
+    font-weight: 900;
+    margin: auto auto -9px;
+    text-transform: uppercase;
+  }
+  @media all and (min-width: 768px) {
+    /* line 48, ../sass/_common.scss */
+    .title-orange h2 {
+      font-size: 150px;
+      margin-bottom: -21px;
+    }
+  }
+  
+  /* line 64, ../sass/_common.scss */
+  .info p {
+    font-size: 20px;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+  .no-p-b{
+    padding-bottom: 0px!important;
+  }
+  
+  /* line 72, ../sass/_common.scss */
+  .breadcrumb {
+    background: transparent;
+    margin-bottom: 0;
+    font-size: 18px;
+    /*font-family: "Raleway", sans-serif;*/
+    font-family: 'Heebo', sans-serif;
+    font-weight: 500;
+  }
+  /* line 81, ../sass/_common.scss */
+  .breadcrumb-item a {
+    color: #b9b9ba;
+  }
+  /* line 85, ../sass/_common.scss */
+  .breadcrumb-item.active {
+    color: #f47b20;
+  }
+  
+  /* line 91, ../sass/_common.scss */
+  .search {
+    position: relative;
+    display: none;
+  }
+  @media all and (min-width: 768px) {
+    /* line 91, ../sass/_common.scss */
+    .search {
+      display: block;
+    }
+  }
+  /* line 97, ../sass/_common.scss */
+  .search input[type="text"] {
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid;
+    color: #d7d8d9;
+    font-size: 18px;
+    max-width: 200px;
+    text-align: center;
+    margin-right: 30px;
+    padding-right: 30px;
+    outline: none;
+  }
+  /* line 109, ../sass/_common.scss */
+  .search input[type="text"]::placeholder {
+    color: #d7d8d9;
+  }
+  /* line 114, ../sass/_common.scss */
+  .search input[type="image"] {
+    position: absolute;
+    right: 38px;
+    top: 3px;
+    max-width: 20px;
+  }
+  
+  /* line 124, ../sass/_common.scss */
+  .products--list .bg-orange {
+    margin-bottom: 20px;
+  }
+  /* line 129, ../sass/_common.scss */
+  .products--list .accordion-menu {
+    background: #f47b20;
+  }
+  /* line 132, ../sass/_common.scss */
+  .products--list .accordion-menu .accordion--item {
+    padding: 0 40px;
+    margin-bottom: 24px;
+  }
+  @media all and (min-width: 768px) {
+    /* line 132, ../sass/_common.scss */
+    .products--list .accordion-menu .accordion--item {
+      max-width: 400px;
+      margin-left: auto;
+    }
+  }
+  /* line 141, ../sass/_common.scss */
+  .products--list .accordion-menu .accordion--item:last-child {
+    margin-bottom: 0;
+  }
+  /* line 146, ../sass/_common.scss */
+  .products--list .accordion-menu .accordion--item h5 a {
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  /* line 154, ../sass/_common.scss */
+  .products--list .accordion-menu .accordion--item h5 a span {
+    padding-right: 32px;
+  }
+  /* line 158, ../sass/_common.scss */
+  .products--list .accordion-menu .accordion--item h5 a .fa-plus {
+    display: none;
+  }
+  /* line 162, ../sass/_common.scss */
+  .products--list .accordion-menu .accordion--item h5 a .fa-minus {
+    display: inline-block;
+  }
+  /* line 168, ../sass/_common.scss */
+  .products--list .accordion-menu .accordion--item h5 a.collapsed .fa-minus {
+    display: none;
+  }
+  /* line 172, ../sass/_common.scss */
+  .products--list .accordion-menu .accordion--item h5 a.collapsed .fa-plus {
+    display: inline-block;
+  }
+  /* line 180, ../sass/_common.scss */
+  .products--list .accordion-menu .accordion--item ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 0;
+  }
+  /* line 185, ../sass/_common.scss */
+  .products--list .accordion-menu .accordion--item ul li {
+    margin-bottom: 8px;
+  }
+  /* line 187, ../sass/_common.scss */
+  .products--list .accordion-menu .accordion--item ul li:last-child {
+    margin-bottom: 0px;
+  }
+  /* line 191, ../sass/_common.scss */
+  .products--list .accordion-menu .accordion--item ul li a {
+    display: block;
+    padding: 8px 16px;
+    font-size: 17px;
+    color: #fff;
+    text-decoration: none;
+  }
+  /* line 198, ../sass/_common.scss */
+  .products--list .accordion-menu .accordion--item ul li a:hover {
+    background: #6d2f00;
+  }
+  /* line 210, ../sass/_common.scss */
+  .products--list--items .col-sm-6 {
+    margin: 0px 0px 20px;
+  }
+  /* line 214, ../sass/_common.scss */
+  .products--list--items--item {
+    width: 100%;
+    height: 100%;
+    border: 2px solid #e3e3e3;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  /* line 220, ../sass/_common.scss */
+  .products--list--items--item r
+  img {
+    display: block;
+    width: 100%;
+  }
+  /* line 229, ../sass/_common.scss */
+  .products--list--items--item--title {
+    background: #fff;
+    padding: 20px 10px;
+    flex-grow: 1;
+  }
+  /* line 233, ../sass/_common.scss */
+  .products--list--items--item--title h5 {
+    /*font-family: "Raleway", sans-serif;*/
+    font-family: 'Heebo', sans-serif;
+    font-weight: 900;
+    font-size: 18px;
+    color: #000;
+  }
+  /* line 237, ../sass/_common.scss */
+  .products--list--items--item--title h5 span {
+    display: inline-block;
+    max-width: calc(100% - 50px);
+    vertical-align: top;
+  }
+  /* line 242, ../sass/_common.scss */
+  .products--list--items--item--title h5 i {
+    display: none;
+    vertical-align: top;
+    text-align: center;
+    background: #f47b20;
+    display: none;
+    width: 30px;
+    height: 30px;
+    color: #fff;
+    line-height: 30px;
+  }
+  /* line 257, ../sass/_common.scss */
+  .products--list--items--item:hover .products--list--items--item--title {
+    background: #f5f5f5;
+    color: #f47b20;
+  }
+  /* line 262, ../sass/_common.scss */
+  .products--list--items--item:hover .products--list--items--item--title h5 i {
+    display: inline-block;
+    float: right;
+  }
+  
+  .items--item p{
+    text-align: justify;
+  }
+  
+  /* line 276, ../sass/_common.scss */
+  .swiper-brands .swiper-slide {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 24px;
+    justify-content: center;
+    align-items: center;
+  }
+  /* line 282, ../sass/_common.scss */
+  .swiper-brands .swiper-slide .swiper-img {
+    width: 180px;
+    margin: 48px 32px 48px;
+  }
+  @media all and (max-width: 767px) {
+    /* line 286, ../sass/_common.scss */
+    .swiper-brands .swiper-slide .swiper-img:last-child {
+      margin-bottom: 0px;
+    }
+  }
+  /* line 294, ../sass/_common.scss */
+  .swiper-brands .swiper-button-next,
+  .swiper-brands .swiper-button-prev {
+    color: #f47b20;
+  }
+  
+  /* line 304, ../sass/_common.scss */
+  .top-logo img {
+    width: 150px;
+  }
+  
+  /* line 308, ../sass/_common.scss */
+  .top-icon img {
+    width: 100px;
+  }
+  
+  /* line 1, ../sass/components/_header.scss */
+  .header {
+    background: #000;
+    padding: 10px 0px;
+  }
+  /* line 5, ../sass/components/_header.scss */
+  .header .menu-item {
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 1;
+    font-size: 10px;
+    /*font-family: "Raleway", sans-serif;*/
+    font-family: 'Heebo', sans-serif;
+    font-weight: 600;
+    color: #fff;
+    padding: 0 20px;
+  }
+  /* line 15, ../sass/components/_header.scss */
+  .header .menu-item img {
+    display: block;
+    max-width: 20px;
+    margin: 0 auto 8px;
+  }
+  /* line 21, ../sass/components/_header.scss */
+  .header .menu-item a {
+    color: #fff;
+  }
+  
+  /* line 28, ../sass/components/_header.scss */
+  .header-menu {
+    background: #000;
+    position: absolute;
+    width: 100%;
+    z-index: 200;
+    max-height: 0;
+    transition: all 0.5s;
+    overflow: hidden;
+  }
+  /* line 37, ../sass/components/_header.scss */
+  .header-menu.open {
+    max-height: 800px;
+  }
+  /* line 43, ../sass/components/_header.scss */
+  .header-menu .menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  /* line 48, ../sass/components/_header.scss */
+  .header-menu .menu ul li {
+    list-style: none;
+    margin-bottom: 16px;
+  }
+  /* line 51, ../sass/components/_header.scss */
+  .header-menu .menu ul li a {
+    /*font-family: "Raleway", sans-serif;*/
+    font-family: 'Heebo', sans-serif;
+    color: #fff;
+    font-size: 42px;
+    font-weight: 900;
+  }
+  /* line 61, ../sass/components/_header.scss */
+  .header-menu .menu-link {
+    margin-bottom: 40px;
+    padding: 0 24px;
+  }
+  /* line 64, ../sass/components/_header.scss */
+  .header-menu .menu-link a {
+    color: #fff;
+    /*font-family: "Raleway", sans-serif;*/
+    font-family: 'Heebo', sans-serif;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 30px;
+  }
+  /* line 72, ../sass/components/_header.scss */
+  .header-menu .menu-link img{
+    margin-bottom: 12px;
+    display: block;
+    width: 50px;
+  }
+  .header-menu .menu-link span {
+    margin-bottom: 12px;
+    display: block;
+  }
+  
+  /* line 1, ../sass/components/_footer.scss */
+  .footer {
+    background: #000;
+    color: #fff;
+  }
+  /* line 6, ../sass/components/_footer.scss */
+  .footer .footer-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  /* line 10, ../sass/components/_footer.scss */
+  .footer .footer-menu ul li {
+    list-style: none;
+    margin-bottom: 32px;
+  }
+  /* line 14, ../sass/components/_footer.scss */
+  .footer .footer-menu ul li a {
+    color: #fff;
+    text-transform: uppercase;
+    /*font-family: "Raleway", sans-serif;*/
+    font-family: 'Heebo', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+  /* line 22, ../sass/components/_footer.scss */
+  .footer .footer-menu ul li a:hover {
+    color: #f47b20;
+  }
+  /* line 26, ../sass/components/_footer.scss */
+  .footer .footer-menu ul li a img {
+    width: 35px;
+    max-height: 35px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px;
+  }
+  /* line 34, ../sass/components/_footer.scss */
+  .footer .footer-menu ul li a span {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1;
+  }
+  /* line 43, ../sass/components/_footer.scss */
+  .footer .footer-menu .follow-title {
+    margin: 24px 0 20px;
+    text-transform: uppercase;
+    /*font-family: "Raleway", sans-serif;*/
+    font-family: 'Heebo', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+  }
+  /* line 52, ../sass/components/_footer.scss */
+  .footer .footer-menu .follow-menu a {
+    margin-right: 24px;
+  }
+  /* line 58, ../sass/components/_footer.scss */
+  .footer .title {
+    /*font-family: "Raleway", sans-serif;*/
+    font-family: 'Heebo', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+  }
+  /* line 64, ../sass/components/_footer.scss */
+  .footer .bold {
+    font-weight: 500;
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+  /* line 70, ../sass/components/_footer.scss */
+  .footer .text {
+    font-size: 13px;
+  }
+  /* line 74, ../sass/components/_footer.scss */
+  .footer .copyright {
+    font-size: 19px;
+  }
+  /* line 76, ../sass/components/_footer.scss */
+  .footer .copyright a {
+    color: #fff;
+  }
+  /* line 79, ../sass/components/_footer.scss */
+  .footer .copyright .text-orange {
+    color: #f47b20;
+  }
+  
+  /* line 1, ../sass/components/_menu.scss */
+  .menu {
+    background: #000;
+  }
+  
+  /* line 1, ../sass/components/_bars.scss */
+  .bar {
+    width: 100px;
+    height: 6px;
+  }
+  /* line 5, ../sass/components/_bars.scss */
+  .bar--orange {
+    background: #f47b20;
+  }
+  /* line 9, ../sass/components/_bars.scss */
+  .bar--gray {
+    background: #706f72;
+  }
+  /* line 13, ../sass/components/_bars.scss */
+  .bar--white {
+    background: #fff;
+  }
+  
+  /* line 1, ../sass/components/_banner.scss */
+  .banner {
+    position: relative;
+    max-height: 820px;
+    overflow: hidden;
+  }
+  /* line 6, ../sass/components/_banner.scss */
+  .banner img {
+    width: 100%;
+  }
+  /* line 10, ../sass/components/_banner.scss */
+  .banner img.logo-banner {
+    width: auto;
+    position: absolute;
+    z-index: 3;
+    top: 20px;
+  }
+  @media all and (max-width: 768px) {
+    /* line 10, ../sass/components/_banner.scss */
+    .banner img.logo-banner {
+      max-width: 80px;
+    }
+  }
+  /* line 21, ../sass/components/_banner.scss */
+  .banner .overlay {
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    color: #fff;
+    /*font-family: "Raleway", sans-serif;*/
+    font-family: 'Heebo', sans-serif;
+  }
+  /* line 30, ../sass/components/_banner.scss */
+  .banner .overlay h1 {
+    text-align: center;
+    font-weight: 900;
+    font-size: 48px;
+    width: 100%;
+    margin: auto auto -9px;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+  @media all and (min-width: 768px) {
+    /* line 30, ../sass/components/_banner.scss */
+    .banner .overlay h1 {
+      font-size: 100px;
+      margin-bottom: -21px;
+    }
+  }
+  
+  /* line 47, ../sass/components/_banner.scss */
+  .banner-2 {
+    max-height: 350px !important;
+  }
+  
+  /* line 51, ../sass/components/_banner.scss */
+  .top-logo img {
+    width: 150px;
+  }
+  
+  /* line 55, ../sass/components/_banner.scss */
+  .top-icon img {
+    width: 80px;
+  }
+  
+  /* line 1, ../sass/components/_titles.scss */
+  .subtitle-orange {
+    color: #f47b20;
+    /*font-family: "Raleway", sans-serif;*/
+    font-family: 'Heebo', sans-serif;
+    font-size: 38px;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+  @media all and (min-width: 768px) {
+    /* line 1, ../sass/components/_titles.scss */
+    .subtitle-orange {
+      font-size: 38px;
+    }
+  }
+  
+  /* line 12, ../sass/components/_titles.scss */
+  .subtitle-gray {
+    color: #706f72;
+    /*font-family: "Raleway", sans-serif;*/
+    font-family: 'Heebo', sans-serif;
+    font-size: 48px;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+  @media all and (min-width: 768px) {
+    /* line 12, ../sass/components/_titles.scss */
+    .subtitle-gray {
+      font-size: 48px;
+    }
+  }
+  
+  /* line 23, ../sass/components/_titles.scss */
+  .subtitle-white {
+    color: #fff;
+    /*font-family: "Raleway", sans-serif;*/
+    font-family: 'Heebo', sans-serif;
+    font-size: 48px;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+  @media all and (min-width: 768px) {
+    /* line 23, ../sass/components/_titles.scss */
+    .subtitle-white {
+      font-size: 48px;
+    }
+  }
+  
+  /* line 5, ../sass/pages/_home.scss */
+  .page-home .swiper-button-next,
+  .page-home .swiper-button-prev {
+    color: #fff;
+    margin-left: 24px;
+    margin-right: 24px;
+    display: none;
+  }
+  /* line 10, ../sass/pages/_home.scss */
+  .page-home .swiper-button-next:hover,
+  .page-home .swiper-button-prev:hover {
+    color: #f47b20;
+  }
+  @media all and (min-width: 768px) {
+    /* line 5, ../sass/pages/_home.scss */
+    .page-home .swiper-button-next,
+    .page-home .swiper-button-prev {
+      display: initial;
+    }
+  }
+  /* line 19, ../sass/pages/_home.scss */
+  .page-home .swiper-pagination-bullet {
+    width: 14px;
+    height: 14px;
+    border: 2px solid #fff;
+    background: transparent;
+    opacity: 1;
+  }
+  /* line 26, ../sass/pages/_home.scss */
+  .page-home .swiper-pagination-bullet-active {
+    background: #fff;
+  }
+  /* line 31, ../sass/pages/_home.scss */
+  .page-home .logo-banner {
+    position: absolute;
+    top: 20px;
+    z-index: 200;
+    left: 120px;
+  }
+  /* line 38, ../sass/pages/_home.scss */
+  .page-home .banner-home {
+    min-height: 800px;
+  }
+  /* line 40, ../sass/pages/_home.scss */
+  .page-home .banner-home .overlay {
+    background: rgba(0, 0, 0, 0.4);
+  }
+  /* line 44, ../sass/pages/_home.scss */
+  .page-home .banner-home img {
+    width: auto;
+    height: 100%;
+  }
+  @media all and (min-width: 1200px) {
+    /* line 44, ../sass/pages/_home.scss */
+    .page-home .banner-home img {
+      width: 100%;
+    }
+  }
+  /* line 52, ../sass/pages/_home.scss */
+  .page-home .banner-home--slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 48px 24px;
+  }
+  @media all and (min-width: 768px) {
+    /* line 52, ../sass/pages/_home.scss */
+    .page-home .banner-home--slide {
+      padding: 48px 0;
+    }
+  }
+  /* line 62, ../sass/pages/_home.scss */
+  .page-home .banner-home--slide h2 {
+    font-size: 48px;
+    font-weight: 900;
+    /*font-family: "Raleway", sans-serif;*/
+    font-family: 'Heebo', sans-serif;
+  }
+  @media all and (min-width: 768px) {
+    /* line 62, ../sass/pages/_home.scss */
+    .page-home .banner-home--slide h2 {
+      font-size: 60px;
+    }
+  }
+  /* line 70, ../sass/pages/_home.scss */
+  .page-home .banner-home--slide h2 span {
+    display: block;
+    text-transform: uppercase;
+    line-height: 1;
+  }
+  /* line 74, ../sass/pages/_home.scss */
+  .page-home .banner-home--slide h2 span:nth-child(2) {
+    color: #f47b20;
+  }
+  /* line 81, ../sass/pages/_home.scss */
+  .page-home .banner-home-desc {
+    margin: 24px 0 48px;
+    font-weight: 100;
+  }
+  /* line 87, ../sass/pages/_home.scss */
+  .page-home .banner-home-buttons a {
+    text-transform: uppercase;
+    margin: 0 auto 12px;
+  }
+  @media all and (min-width: 768px) {
+    /* line 87, ../sass/pages/_home.scss */
+    .page-home .banner-home-buttons a {
+      margin-right: 16px;
+    }
+  }
+  /* line 99, ../sass/pages/_home.scss */
+  .page-home .third-sections--item {
+    background-size: cover;
+    background-position: center;
+  }
+  /* line 102, ../sass/pages/_home.scss */
+  .page-home .third-sections--item h3 {
+    /*font-family: "Raleway", sans-serif;*/
+    font-family: 'Heebo', sans-serif;
+    font-size: 24px;
+    font-weight: 900;
+  }
+  @media all and (min-width: 960px) {
+    /* line 102, ../sass/pages/_home.scss */
+    .page-home .third-sections--item h3 {
+      font-size: 35px;
+    }
+  }
+  /* line 112, ../sass/pages/_home.scss */
+  .page-home .third-sections--item--text {
+    text-align: center;
+    text-transform: uppercase;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 3rem 1rem;
+    color: #fff;
+    min-height: 700px;
+  }
+  @media all and (min-width: 960px) {
+    /* line 112, ../sass/pages/_home.scss */
+    .page-home .third-sections--item--text {
+      padding: 3rem;
+    }
+  }
+  /* line 124, ../sass/pages/_home.scss */
+  .page-home .third-sections--item--text p {
+    max-width: 420px;
+    margin: 0 auto;
+    font-size: 16px;
+    display: none;
+  }
+  /* line 131, ../sass/pages/_home.scss */
+  .page-home .third-sections--item--text:hover {
+    background: rgba(244, 123, 32, 0.7);
+    transition: all 0.3s ease-in-out;
+  }
+  /* line 134, ../sass/pages/_home.scss */
+  .page-home .third-sections--item--text:hover p {
+    display: block;
+  }
+  /* line 143, ../sass/pages/_home.scss */
+  .page-home .about-us h3 {
+    font-size: 40px;
+    /*font-family: "Raleway", sans-serif;*/
+    font-family: 'Heebo', sans-serif;
+    color: #f47b20;
+  }
+  /* line 147, ../sass/pages/_home.scss */
+  .page-home .about-us h3 span {
+    display: block;
+  }
+  /* line 153, ../sass/pages/_home.scss */
+  .page-home .news--others {
+    background-size: cover;
+    background-position: center;
+  }
+  /* line 157, ../sass/pages/_home.scss */
+  .page-home .news--others-more {
+    text-align: center;
+  }
+  /* line 159, ../sass/pages/_home.scss */
+  .page-home .news--others-more a {
+    text-transform: uppercase;
+  }
+  /* line 164, ../sass/pages/_home.scss */
+  .page-home .news--others--overlay {
+    background: rgba(244, 123, 32, 0.8);
+  }
+  /* line 168, ../sass/pages/_home.scss */
+  .page-home .news--others--bg {
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    min-height: 300px;
+    display: flex;
+    margin-bottom: 24px;
+  }
+  /* line 177, ../sass/pages/_home.scss */
+  .page-home .news--others--date {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #f47b20;
+    padding: 12px 16px;
+    z-index: 2;
+  }
+  /* line 186, ../sass/pages/_home.scss */
+  .page-home .news--others--day {
+    font-size: 48px;
+    font-weight: 900;
+    color: #fff;
+    line-height: 1;
+  }
+  /* line 193, ../sass/pages/_home.scss */
+  .page-home .news--others--month {
+    font-size: 20px;
+    font-weight: 900;
+    color: #fff;
+    line-height: 1;
+  }
+  /* line 200, ../sass/pages/_home.scss */
+  .page-home .news--others--details {
+    background: rgba(0, 0, 0, 0.4);
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease-in-out;
+  }
+  /* line 208, ../sass/pages/_home.scss */
+  .page-home .news--others--details-container {
+    display: none;
+  }
+  /* line 214, ../sass/pages/_home.scss */
+  .page-home .news--others--bg:hover .news--others--details {
+    z-index: 3;
+    background: rgba(0, 0, 0, 0.8);
+  }
+  /* line 219, ../sass/pages/_home.scss */
+  .page-home .news--others--bg:hover .news--others--details-container {
+    display: flex;
+    min-height: 100%;
+    color: #fff;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 40px;
+  }
+  /* line 229, ../sass/pages/_home.scss */
+  .page-home .news--others--bg:hover .news--others--details-container img {
+    margin-bottom: 24px;
+  }
+  /* line 233, ../sass/pages/_home.scss */
+  .page-home .news--others--bg:hover .news--others--details-container a {
+    margin-top: 16px;
+    color: #f47b20;
+    font-size: 32px;
+  }
+  
+  /* line 3, ../sass/pages/_about-us.scss */
+  .page-about-us .timeline {
+    background: #f5f5f5;
+  }
+  /* line 8, ../sass/pages/_about-us.scss */
+  .page-about-us .two-sections--item {
+    background-size: cover;
+    background-position: center;
+  }
+  /* line 11, ../sass/pages/_about-us.scss */
+  .page-about-us .two-sections--item h3 {
+    /*font-family: "Raleway", sans-serif;*/
+    font-family: 'Heebo', sans-serif;
+    font-size: 42px;
+    font-weight: 900;
+  }
+  /* line 17, ../sass/pages/_about-us.scss */
+  .page-about-us .two-sections--item img.icon {
+    max-width: 64px;
+    margin: 0 auto 24px;
+  }
+  /* line 22, ../sass/pages/_about-us.scss */
+  .page-about-us .two-sections--item--text {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 3rem 0;
+    color: #fff;
+    min-height: 600px;
+  }
+  /* line 28, ../sass/pages/_about-us.scss */
+  .page-about-us .two-sections--item--text p {
+    max-width: 420px;
+    margin: 0 auto;
+    font-size: 24px;
+    display: none;
+  }
+  /* line 35, ../sass/pages/_about-us.scss */
+  .page-about-us .two-sections--item--text:hover {
+    background: rgba(244, 123, 32, 0.7);
+  }
+  /* line 37, ../sass/pages/_about-us.scss */
+  .page-about-us .two-sections--item--text:hover p {
+    display: block;
+  }
+  /* line 45, ../sass/pages/_about-us.scss */
+  .page-about-us .values {
+    background: #f5f5f5;
+  }
+  /* line 48, ../sass/pages/_about-us.scss */
+  .page-about-us .values--item {
+    width: 100%;
+    flex-shrink: 0;
+    text-align: center;
+    margin-bottom: 48px;
+  }
+  @media all and (min-width: 768px) {
+    /* line 48, ../sass/pages/_about-us.scss */
+    .page-about-us .values--item {
+      width: 50%;
+    }
+  }
+  @media all and (min-width: 960px) {
+    /* line 48, ../sass/pages/_about-us.scss */
+    .page-about-us .values--item {
+      width: 33.3%;
+    }
+  }
+  @media all and (min-width: 1200px) {
+    /* line 48, ../sass/pages/_about-us.scss */
+    .page-about-us .values--item {
+      width: 25%;
+    }
+  }
+  /* line 66, ../sass/pages/_about-us.scss */
+  .page-about-us .values--item img {
+    max-width: 96px;
+  }
+  /* line 70, ../sass/pages/_about-us.scss */
+  .page-about-us .values--item h5 {
+    font-size: 24px;
+    margin: 24px 0px 10px;
+  }
+  /* line 75, ../sass/pages/_about-us.scss */
+  .page-about-us .values--item div {
+    font-size: 20px;
+    font-weight: 100;
+    max-width: 320px;
+    margin: 0 auto;
+    padding: 0 12px;
+  }
+  
+  /* line 5, ../sass/pages/_contact.scss */
+  .page-contact .contact-form .form-group {
+    background: #f5f5f5;
+    padding: 5px 24px;
+    display: flex;
+  }
+  
+  .page-contact .contact-form .form-group .form-icon {
+    padding-top: 7px;
+  }
+  /* line 11, ../sass/pages/_contact.scss */
+  .page-contact .contact-form .form-control {
+    font-size: 20px;
+    /*font-family: "Raleway", sans-serif;*/
+    font-family: 'Heebo', sans-serif;
+    font-weight: 100;
+    color: #939393;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    padding-left: 16px;
+  }
+  /* line 22, ../sass/pages/_contact.scss */
+  .page-contact .contact-form textarea.form-control {
+    min-height: 200px;
+  }
+  /* line 27, ../sass/pages/_contact.scss */
+  .page-contact .contact-form .form-checkbox input {
+    display: none;
+  }
+  /* line 31, ../sass/pages/_contact.scss */
+  .page-contact .contact-form .form-checkbox label {
+    /*font-family: "Raleway", sans-serif;*/
+    font-family: 'Heebo', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    position: relative;
+  }
+  /* line 37, ../sass/pages/_contact.scss */
+  .page-contact .contact-form .form-checkbox label:before {
+    content: "";
+    border: 1px solid;
+    width: 22px;
+    height: 22px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px;
+  }
+  /* line 47, ../sass/pages/_contact.scss */
+  .page-contact .contact-form .form-checkbox label:after {
+    position: absolute;
+    left: 6px;
+    font-size: 22px;
+    top: -3px;
+    color: #f47b20;
+  }
+  /* line 57, ../sass/pages/_contact.scss */
+  .page-contact .contact-form .form-checkbox input:checked + label:after {
+    content: "x";
+  }
+  /* line 65, ../sass/pages/_contact.scss */
+  .page-contact .locals {
+    background: #f5f5f5;
+  }
+  /* line 68, ../sass/pages/_contact.scss */
+  .page-contact .locals p {
+    /*font-family: "Raleway", sans-serif;*/
+    font-family: 'Heebo', sans-serif;
+    font-weight: 600;
+  }
+  /* line 73, ../sass/pages/_contact.scss */
+  .page-contact .locals h6 {
+    font-size: 22px;
+    /*font-family: "Raleway", sans-serif;*/
+    font-family: 'Heebo', sans-serif;
+    font-weight: 600;
+  }
+  /* line 79, ../sass/pages/_contact.scss */
+  .page-contact .locals .contact-details {
+    /*font-family: "Raleway", sans-serif;*/
+    font-family: 'Heebo', sans-serif;
+    font-weight: 500;
+    margin-bottom: 24px;
+  }
+  
+  /* line 2, ../sass/pages/_hardware.scss */
+  .page-hardware .products {
+    background: #f5f5f5;
+  }
+  /* line 6, ../sass/pages/_hardware.scss */
+  .page-hardware .brands {
+    background: #fff;
+  }
+  
+  /* line 6, ../sass/pages/_terms.scss */
+  .page-terms .accordion--item {
+    border-bottom: 1px solid #f47b20;
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+  }
+  /* line 10, ../sass/pages/_terms.scss */
+  .page-terms .accordion--item:last-child {
+    border-bottom: 0;
+  }
+  /* line 13, ../sass/pages/_terms.scss */
+  .page-terms .accordion--item h5 a {
+    cursor: pointer;
+    font-size: 30px;
+    color: #f47b20;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  /* line 20, ../sass/pages/_terms.scss */
+  .page-terms .accordion--item h5 a i {
+    font-size: 40px;
+  }
+  /* line 24, ../sass/pages/_terms.scss */
+  .page-terms .accordion--item h5 a.collapsed {
+    color: #000;
+  }
+  
+  /* line 6, ../sass/pages/_politics.scss */
+  .page-politics .items--item h3 {
+    font-size: 30px;
+    color: #f47b20;
+    font-weight: 600;
+  }
+  /* line 13, ../sass/pages/_politics.scss */
+  .page-politics .items--icon {
+    text-align: center;
+    margin: 32px 0;
+    font-weight: 900;
+    /*font-family: "Raleway", sans-serif;*/
+    font-family: 'Heebo', sans-serif;
+    font-size: 30px;
+  }
+  /* line 21, ../sass/pages/_politics.scss */
+  .page-politics .items--icon--image {
+    min-height: 120px;
+  }
+  /* line 24, ../sass/pages/_politics.scss */
+  .page-politics .items--icon--image img {
+    max-width: 60px;
+  }
+  /* line 29, ../sass/pages/_politics.scss */
+  .page-politics .items--icon a {
+    display: flex;
+    flex-direction: column;
+    color: #000;
+    height: 100%;
+  }
+  /* line 35, ../sass/pages/_politics.scss */
+  .page-politics .items--icon a:hover {
+    color: #f47b20;
+  }
+  /* line 40, ../sass/pages/_politics.scss */
+  .page-politics .items--icon img {
+    margin: 18px;
+  }
+  /* line 44, ../sass/pages/_politics.scss */
+  .page-politics .items--icon div {
+    max-width: 300px;
+    margin: 0 auto 0;
+    font-size: 25px;
+  }
+  
+  /* line 5, ../sass/pages/_news.scss */
+  .page-news .featured .swiper-button-next,
+  .page-news .featured .swiper-button-prev {
+    color: #f47b20;
+  }
+  /* line 10, ../sass/pages/_news.scss */
+  .page-news .featured .swiper-pagination-bullet {
+    width: 21px;
+    height: 21px;
+    border: 3px solid #f47b20;
+    background: transparent;
+    opacity: 1;
+  }
+  /* line 17, ../sass/pages/_news.scss */
+  .page-news .featured .swiper-pagination-bullet-active {
+    background: #f47b20;
+  }
+  .page-news .featured a.news--item {
+    text-decoration: none;
+    display: block;
+  }
+  /* line 24, ../sass/pages/_news.scss */
+  .page-news .featured .news--item--content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+  }
+  /* line 31, ../sass/pages/_news.scss */
+  .page-news .featured .news--item--day {
+    font-weight: 900;
+    font-size: 60px;
+    color: #f47b20;
+    line-height: 1;
+  }
+  /* line 38, ../sass/pages/_news.scss */
+  .page-news .featured .news--item--month {
+    font-weight: 900;
+    font-size: 35px;
+    color: #f47b20;
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+  /* line 46, ../sass/pages/_news.scss */
+  .page-news .featured .news--item--title {
+    font-weight: 600;
+    font-size: 32px;
+    color: #000;
+    margin-bottom: 24px;
+    line-height: 1;
+  }
+  /* line 54, ../sass/pages/_news.scss */
+  .page-news .featured .news--item--blurb {
+    font-weight: 100;
+    font-size: 28px;
+    color: #000;
+    line-height: 1.2;
+  }
+  /* line 64, ../sass/pages/_news.scss */
+  .page-news .categories a {
+    font-weight: 900;
+    font-size: 30px;
+    /*font-family: "Raleway", sans-serif;*/
+    font-family: 'Heebo', sans-serif;
+    color: #000;
+    text-decoration: none;
+    margin: 0 30px;
+  }
+  /* line 72, ../sass/pages/_news.scss */
+  .page-news .categories a.active, .page-news .categories a:hover {
+    color: #f47b20;
+  }
+  /* line 78, ../sass/pages/_news.scss */
+  .page-news .totals {
+    font-weight: 100;
+    font-size: 28px;
+    color: #939393;
+  }
+  /* line 89, ../sass/pages/_news.scss */
+  .page-news .news-list--item--image {
+    position: relative;
+    padding: 0;
+    background-size: cover;
+    background-position: center;
+  }
+  /* line 94, ../sass/pages/_news.scss */
+  .page-news .news-list--item--image div {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    width: 100%;
+  }
+  /* line 103, ../sass/pages/_news.scss */
+  .page-news .news-list--item--content {
+    padding: 80px 48px;
+  }
+  /* line 107, ../sass/pages/_news.scss */
+  .page-news .news-list--item--day {
+    font-weight: 900;
+    font-size: 60px;
+    color: #f47b20;
+    line-height: 1;
+  }
+  /* line 114, ../sass/pages/_news.scss */
+  .page-news .news-list--item--month {
+    font-weight: 900;
+    font-size: 35px;
+    color: #f47b20;
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+  /* line 122, ../sass/pages/_news.scss */
+  .page-news .news-list--item--title {
+    font-weight: 600;
+    font-size: 32px;
+    color: #f47b20;
+    margin-bottom: 24px;
+    line-height: 1;
+  }
+  /* line 130, ../sass/pages/_news.scss */
+  .page-news .news-list--item--blurb {
+    font-weight: 100;
+    font-size: 28px;
+    color: #000;
+    line-height: 1.2;
+  }
+  /* line 137, ../sass/pages/_news.scss */
+  .page-news .news-list--item--category {
+    text-align: right;
+    color: #f47b20;
+    line-height: 1;
+    font-weight: 900;
+    /*font-family: "Raleway", sans-serif;*/
+    font-family: 'Heebo', sans-serif;
+    font-size: 30px;
+    text-transform: uppercase;
+  }
+  /* line 146, ../sass/pages/_news.scss */
+  .page-news .news-list--item--category img {
+    margin-right: 12px;
+  }
+  /* line 154, ../sass/pages/_news.scss */
+  .page-news .news-list--item:nth-child(2n+1) .news-list--item--content {
+    background: #f47b20;
+  }
+  /* line 158, ../sass/pages/_news.scss */
+  .page-news .news-list--item:nth-child(2n+1) .news-list--item--day, .page-news .news-list--item:nth-child(2n+1) .news-list--item--month, .page-news .news-list--item:nth-child(2n+1) .news-list--item--title, .page-news .news-list--item:nth-child(2n+1) .news-list--item--blurb, .page-news .news-list--item:nth-child(2n+1) .news-list--item--category {
+    color: #fff;
+  }
+  /* line 171, ../sass/pages/_news.scss */
+  .page-news .pagination .page-link {
+    border: 0;
+    font-size: 18px;
+    color: #4a4a4a;
+    font-weight: 900;
+    background: transparent;
+  }
+  /* line 177, ../sass/pages/_news.scss */
+  .page-news .pagination .page-link:hover {
+    color: #f47b20;
+    background: transparent;
+  }
+  
+  /* line 7, ../sass/pages/_news-single.scss */
+  .page-news-single .news-single--category {
+    text-align: center;
+    margin-bottom: 24px;
+  }
+  /* line 10, ../sass/pages/_news-single.scss */
+  .page-news-single .news-single--category img {
+    display: inline-block;
+    margin-right: 16px;
+    width: 50;
+  }
+  /* line 15, ../sass/pages/_news-single.scss */
+  .page-news-single .news-single--category h5 {
+    display: inline-block;
+    /*font-family: "Raleway", sans-serif;*/
+    font-family: 'Heebo', sans-serif;
+    color: #f47b20;
+    font-size: 26px;
+    font-weight: 900;
+  }
+  /* line 24, ../sass/pages/_news-single.scss */
+  .page-news-single .news-single--title {
+    /*font-family: "Raleway", sans-serif;*/
+    font-family: 'Heebo', sans-serif;
+    color: #f47b20;
+    font-size: 35px;
+    font-weight: 900;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 800px;
+  }
+  /* line 34, ../sass/pages/_news-single.scss */
+  .page-news-single .news-single--date {
+    color: #f47b20;
+    font-weight: 900;
+    font-size: 60px;
+    text-align: center;
+  }
+  
+  .news-single--body .date{
+    color: #f47b20;
+    font-weight: 900;
+    font-size: 20px;
+    text-align: right;
+  }
+  
+  /* line 41, ../sass/pages/_news-single.scss */
+  .page-news-single .news-single--body {
+    font-weight: 100;
+    text-align: justify;
+  }
+  /* line 45, ../sass/pages/_news-single.scss */
+  .page-news-single .news-single--back {
+    margin-left: auto;
+    color: #000;
+    /*font-family: "Raleway", sans-serif;*/
+    font-family: 'Heebo', sans-serif;
+    font-weight: 900;
+  }
+  /* line 51, ../sass/pages/_news-single.scss */
+  .page-news-single .news-single--back i {
+    font-size: 26px;
+  }
+  /* line 57, ../sass/pages/_news-single.scss */
+  .page-news-single .news--others {
+    background: #d7d8d9;
+  }
+  /* line 60, ../sass/pages/_news-single.scss */
+  .page-news-single .news--others--bg {
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    min-height: 380px;
+    display: flex;
+    margin-bottom: 24px;
+  }
+  /* line 69, ../sass/pages/_news-single.scss */
+  .page-news-single .news--others--date {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #f47b20;
+    padding: 12px 16px;
+    z-index: 2;
+  }
+  /* line 78, ../sass/pages/_news-single.scss */
+  .page-news-single .news--others--day {
+    font-size: 48px;
+    font-weight: 900;
+    color: #fff;
+    line-height: 1;
+  }
+  /* line 85, ../sass/pages/_news-single.scss */
+  .page-news-single .news--others--month {
+    font-size: 20px;
+    font-weight: 900;
+    color: #fff;
+    line-height: 1;
+  }
+  /* line 92, ../sass/pages/_news-single.scss */
+  .page-news-single .news--others--details {
+    background: rgba(0, 0, 0, 0.4);
+    min-height: 100%;
+    min-width: 100%;
+    display: none;
+    flex-direction: column;
+  }
+  
+  /* line 105, ../sass/pages/_news-single.scss */
+  .page-news-single .news--others--bg:hover .news--others--details {
+    display: flex;
+    z-index: 3;
+    background: rgba(0, 0, 0, 0.8);
+  }
+  /* line 110, ../sass/pages/_news-single.scss */
+  .page-news-single .news--others--bg:hover .news--others--details-container {
+    display: flex;
+    min-height: 100%;
+    color: #fff;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 40px;
+  }
+  /* line 120, ../sass/pages/_news-single.scss */
+  .page-news-single .news--others--bg:hover .news--others--details-container img {
+    margin-bottom: 24px;
+  }
+  /* line 124, ../sass/pages/_news-single.scss */
+  .page-news-single .news--others--bg:hover .news--others--details-container a {
+    margin-top: 16px;
+    color: #f47b20;
+    font-size: 32px;
+  }
+  
+  /* line 3, ../sass/pages/_services.scss */
+  .page-services .banner .overlay h1 {
+    text-transform: uppercase;
+    font-size: 75px;
+  }
+  /* line 8, ../sass/pages/_services.scss */
+  .page-services .title-orange h2 {
+    font-size: 70px;
+  }
+  
+  /* line 4, ../sass/pages/_product.scss */
+  .page-product .swiper-button-next,
+  .page-product .swiper-button-prev {
+    color: #f47b20;
+  }
+  /* line 9, ../sass/pages/_product.scss */
+  .page-product .swiper-pagination-bullet {
+    width: 14px;
+    height: 14px;
+    margin: 0 8px;
+    border: 1px solid #f47b20;
+    background: transparent;
+    opacity: 1;
+  }
+  /* line 17, ../sass/pages/_product.scss */
+  .page-product .swiper-pagination-bullet-active {
+    background: #f47b20;
+  }
+  /* line 26, ../sass/pages/_product.scss */
+  .page-product .product--info--details h2 {
+    font-size: 48px;
+    color: #f47b20;
+    /*font-family: "Raleway", sans-serif;*/
+    font-family: 'Heebo', sans-serif;
+    font-weight: 700;
+    line-height: 1;
+  }
+  @media all and (min-width: 768px) {
+    /* line 26, ../sass/pages/_product.scss */
+    .page-product .product--info--details h2 {
+      font-size: 85px;
+    }
+  }
+  /* line 41, ../sass/pages/_product.scss */
+  .page-product .product--info--details .accordion-product .accordion--item h5 {
+    font-size: 33px;
+    /*font-family: "Raleway", sans-serif;*/
+    font-family: 'Heebo', sans-serif;
+    font-weight: 700;
+  }
+  /* line 45, ../sass/pages/_product.scss */
+  .page-product .product--info--details .accordion-product .accordion--item h5 i {
+    display: inline-block;
+  }
+  /* line 48, ../sass/pages/_product.scss */
+  .page-product .product--info--details .accordion-product .accordion--item h5 a {
+    color: #f47b20;
+    text-decoration: none;
+  }
+  /* line 51, ../sass/pages/_product.scss */
+  .page-product .product--info--details .accordion-product .accordion--item h5 a.collapsed {
+    color: #706f72;
+  }
+  /* line 53, ../sass/pages/_product.scss */
+  .page-product .product--info--details .accordion-product .accordion--item h5 a.collapsed i {
+    display: none;
+  }
+  /* line 61, ../sass/pages/_product.scss */
+  .page-product .product--info--details .accordion-product .accordion--item div a {
+    color: #000;
+    text-decoration: none;
+  }
