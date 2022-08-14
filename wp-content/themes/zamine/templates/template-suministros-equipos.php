@@ -1,42 +1,46 @@
 <?php
-/* Template Name: Suministros Equipos  */
+/* Template Name: Suministros Planta  */
 get_header(); ?>
 <div class="page-services">
 
-  <div class="banner banner-2">
+  <div class="banner banner-2 banner-3">
     <div class="container">
-      <!-- <a href="/">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" class="img-fluid logo-banner">
-      </a> -->
+
     </div>
     <img src="<?php echo get_the_post_thumbnail_url(get_the_ID())?>">
     <div class="overlay">
-      <h1>Suministros para Equipos</h1>
+      <?php
+        echo do_shortcode('[smartslider3 slider="7"]');
+      ?> 
+  </div>
     </div>
+    
   </div>
-  <div class="title-orange">
-    <h2>móviles pesados</h2>
-  </div>
-
-  <div class="info">
+  
+  <div class="info suministros">
     <div class="wrapper text-center py-5 top-icon no-p-b">
       <?php the_content(); ?>
     </div>
   </div>
 
   <div class="products py-5">
+    <div class="container-fluid products suministros-container">
     <div class="container-fluid">
+
+
           <div class="wrapper d-flex mb-5">
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Servicios Especializados y Repuestos</li>
-      </ol>
-      <div class="ml-auto search">
-        <input type="text" name="buscar" placeholder="Buscar" autocomplete="off">
-        <input type="image" name="search" src="<?php echo get_template_directory_uri(); ?>/icons/search2.png">
-      </div>
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="#">Inicio</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Servicios Especializados y Repuestos</li>
+            </ol>
+            <div class="ml-auto search">
+              <input type="text" name="buscar" placeholder="Buscar" autocomplete="off">
+              <input type="image" name="search" src="<?php echo get_template_directory_uri(); ?>/icons/search2.png">
+            </div>
+        </div>  
+      </div>  
     </div>
-    <div class="products--list container-fluid">
+    <div class="products--list container-fluid botones-fixed">
       <div class="row">
         <div class="col-md-4 pl-md-0 accordion-menu" style="background: transparent!important;">
             <?php

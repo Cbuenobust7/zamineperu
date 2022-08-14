@@ -1,9 +1,5 @@
 <?php get_header();
 $servicio = get_field("servicio");
-echo "<pre>";
-print_r($servicios);
-var_dump($servicio);
-echo "</pre>";
 $informacion = get_field("informacion");
 //echo json_encode($informacion);
 ?>
@@ -41,31 +37,25 @@ $informacion = get_field("informacion");
             <div class="row">
 
 
-              <!--CUASI MAQUETA -->
+<!--CUASI MAQUETA -->
 
-              <?php
-              $categories = get_terms(
-
-                array(
-                  'taxonomy'     => 'tipos_servicios',
-                  'hierarchical' => true,
-                  'title_li'     => '',
-                  'hide_empty'   => true
-                )
-              );
-              //var_dump($categories);
-
-              echo "<pre>";
-              print_r($categories);
-              echo "</pre>";
-              echo '
+                <?php 
+                $categories = get_terms( 
+                    
+            array(
+              'taxonomy'     => 'tipos_servicios',
+            )
+                );
+                //var_dump($categories);
+            
+           echo '
             <div class="col-md-4">
           <div id="accordionServices" class="card-navigation">
   <div class="card">
     <div class="card-header" id="page0">
       <h5 class="mb-0">
         <button class="btn" data-toggle="collapse" data-target="#section0" aria-expanded="true" aria-controls="section0">
-        ' . $categories[0]->name . '
+        ' . $categories[0]->name .'
         </button>
       </h5>
      
@@ -79,7 +69,7 @@ $informacion = get_field("informacion");
     <div class="card-header" id="page1">
       <h5 class="mb-0">
         <button class="btn" data-toggle="collapse" data-target="#section1" aria-expanded="true" aria-controls="section1">
-        ' . $categories[3]->name . '        </button>
+        ' . $categories[3]->name .'        </button>
       </h5>
      
     </div>
@@ -92,7 +82,7 @@ $informacion = get_field("informacion");
     <div class="card-header" id="page2">
       <h5 class="mb-0">
         <button class="btn" data-toggle="collapse" data-target="#section2" aria-expanded="true" aria-controls="section2">
-        ' . $categories[4]->name . '
+        ' . $categories[4]->name .'
         </button>
       </h5>
      
@@ -104,24 +94,24 @@ $informacion = get_field("informacion");
     </div>
   </div>
           </div>
-        </div>' ?>
+        </div>'?>
 
-              <!--TERMINA MAQUETA -->
+<!--TERMINA MAQUETA -->
 
-              <!--    <div class="col-md-6 mb-4">  -->
-              <div>
-                <?php
-                $images = get_field('galeria_servicios', $servicio->ID);
-
+          <!--    <div class="col-md-6 mb-4">  -->
+          <div>
+                <?php 
+                    $images = get_field('galeria_servicios', $servicio->ID);
+                   
                 ?>
                 <div id="slider" class="flexslider">
-                  <ul class="slides">
-                    <?php foreach ($images as $image) : ?>
-                      <li>
-                        <img src="<?php echo esc_url($image['serv_img']); ?>" alt="<?php echo esc_attr($image['serv_img']); ?>" />
-                      </li>
-                    <?php endforeach; ?>
-                  </ul>
+                    <ul class="slides">
+                        <?php foreach( $images as $image ): ?>
+                            <li>
+                                <img src="<?php echo esc_url($image['serv_img']); ?>" alt="<?php echo esc_attr($image['serv_img']); ?>" />
+                            </li>
+                        <?php endforeach; ?>
+                    </ul>
                 </div>
               </div>
               <div class="col-md-6">
@@ -129,34 +119,34 @@ $informacion = get_field("informacion");
                   <div class="mb-4">
                     <?php the_title('<h2>', '</h2>'); ?>
                   </div>
-
-                  <div class="accordion descripcionacc" id="acordeonDescripcion">
+                
+                <div class="accordion descripcionacc" id="acordeonDescripcion">
                     <div class="card">
-                      <div class="card-header" id="headingOne">
-                        <h2 class="mb-0">
-                          <button class="d-flex align-items-center justify-content-between btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            <span class="material-icons" style="font-size: 0.6em;">
-                              add
-                            </span>
-                            Descripción
-                          </button>
-                        </h2>
-                      </div>
-
-                      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#acordeonDescripcion">
-                        <div class="card-body">
-                          <?php the_content(); ?>
+                        <div class="card-header" id="headingOne">
+                            <h2 class="mb-0">
+                                <button class="d-flex align-items-center justify-content-between btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <span class="material-icons" style="font-size: 0.6em;">
+                                        add
+                                    </span>
+                                    Descripción
+                                </button>
+                            </h2>
                         </div>
-                      </div>
+
+                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#acordeonDescripcion">
+                        <div class="card-body">
+                            <?php the_content(); ?>
+                        </div>
+                        </div>
                     </div>
                     <div>
-                      <?php
-                      if ($informacion) {
-                        foreach ($informacion as $key => $info) {
-                          $titleInfo = $info["titulo"];
-                          $detailInfo = $info["detalle"];
-                          $idSection = "information$key";
-                          echo <<<EOT
+                      <?php 
+                        if($informacion) {
+                          foreach ($informacion as $key => $info) {
+                            $titleInfo = $info["titulo"];
+                            $detailInfo = $info["detalle"];
+                            $idSection = "information$key";
+                            echo <<<EOT
                             <div class="accordion--item mb-4">
                               <h5 class="mb-0">
                                 <a href="#" data-toggle="collapse" data-target="#$idSection" class="collapsed">
@@ -171,10 +161,10 @@ $informacion = get_field("informacion");
                               </div>
                             </div>
                             EOT;
+                          }
                         }
-                      }
 
-                      ?>
+                        ?>
                     </div>
                     <div class="accordion--item mb-4">
                       <h5 class="mb-0">
@@ -198,7 +188,7 @@ $informacion = get_field("informacion");
                   <a class="btn btn-orange" href="<?php echo home_url('contactanos') ?>">
                     SOLICITA TU COTIZACIÓN
                   </a>
-
+                  
 
                 </div>
               </div>
@@ -214,104 +204,99 @@ $informacion = get_field("informacion");
 
 
 
-<style>
-  .my-nav2 li a {
-    padding: 10px;
-    text-decoration: none;
-  }
-
-  .my-nav2 li a:hover {
-    background: #6d2f00;
-  }
-
-  .my-nav2 li a.active {
-    background: #6d2f00;
-  }
-
-  .my-nav2 li {
-    margin: 15px 0;
-  }
-
-  .toggler {
-    font-size: 14px;
-    margin-left: 8px;
-  }
-
-  .my-nav2 li a {
-    color: #fff;
-  }
+  <style>
+    .my-nav2 li a{
+        padding: 10px;
+        text-decoration: none;
+    }
+    .my-nav2 li a:hover{
+        background: #6d2f00;
+    }
+    .my-nav2 li a.active{
+        background: #6d2f00;
+    }
+    .my-nav2 li{
+        margin: 15px 0;
+    }
+    .toggler{
+        font-size: 14px;
+        margin-left: 8px;
+    }
+    .my-nav2 li a{
+        color: #fff;
+    }
 </style>
 <script>
-  jQuery(document).ready(function() {
-    jQuery('.my-nav2').mgaccordion({
-      theme: 'tree',
-      leaveOpen: false
-    });
-
-
-  });
-
-  function setActive(e, ev) {
-    var elms = document.querySelectorAll('.my-nav2 li a');
-    // reset all you menu items
-    for (var i = 0, len = elms.length; i < len; i++) {
-      elms[i].classList.remove('active');
-    }
-    //console.log(ev.target);
-    if (ev.target.localName == "a")
-      ev.target.className = "active";
-
-    var categoy_slug = ev.target.getAttribute('data-slug');
-    var category_id = ev.target.getAttribute('data-catid');
-
-    $.ajax({
-      type: 'POST',
-      url: '/wp-admin/admin-ajax.php',
-      dataType: 'html',
-      data: {
-        action: 'filter_projects',
-        category: categoy_slug,
-        category_id: category_id,
-        post_type: 'soluciones-perfo',
-        taxonomy: 'soluci_perf_categ',
-      },
-      success: function(res) {
-        $('#listaItems').html(res);
-      }
-    })
-  }
-
-  function loadData(e, ev) {
-    console.log(ev.target);
-    var categoy_slug = ev.target.getAttribute('data-slug');
-    var category_id = ev.target.getAttribute('data-catid');
-
-    $.ajax({
-      type: 'POST',
-      url: '/wp-admin/admin-ajax.php',
-      dataType: 'html',
-      data: {
-        action: 'filter_projects',
-        category: categoy_slug,
-        category_id: category_id,
-        post_type: 'soluciones-perfo',
-        taxonomy: 'soluci_perf_categ',
-      },
-      success: function(res) {
-        $('#listaItems').html(res);
-        jQuery('.flexslider').flexslider({
-          animation: "slide"
+    jQuery(document).ready(function () {
+        jQuery('.my-nav2').mgaccordion({
+            theme: 'tree',
+            leaveOpen: false
         });
-      }
-    })
-  }
+
+        
+    });
+    function setActive(e,ev) {
+        var elms = document.querySelectorAll('.my-nav2 li a');
+        // reset all you menu items
+        for (var i = 0, len = elms.length; i < len; i++) {
+            elms[i].classList.remove('active');
+        }
+        //console.log(ev.target);
+        if(ev.target.localName == "a")
+            ev.target.className = "active";
+
+        var categoy_slug = ev.target.getAttribute('data-slug');
+        var category_id = ev.target.getAttribute('data-catid');
+
+        $.ajax({
+            type: 'POST',
+            url: '/wp-admin/admin-ajax.php',
+            dataType: 'html',
+            data: {
+                action: 'filter_projects',
+                category: categoy_slug,
+                category_id: category_id,
+                post_type: 'soluciones-perfo',
+                taxonomy: 'soluci_perf_categ',
+            },
+            success: function(res) {
+                $('#listaItems').html(res);
+            }
+        })
+    }
+
+    function loadData(e,ev) {
+        console.log(ev.target);
+        var categoy_slug = ev.target.getAttribute('data-slug');
+        var category_id = ev.target.getAttribute('data-catid');
+
+        $.ajax({
+            type: 'POST',
+            url: '/wp-admin/admin-ajax.php',
+            dataType: 'html',
+            data: {
+                action: 'filter_projects',
+                category: categoy_slug,
+                category_id: category_id,
+                post_type: 'soluciones-perfo',
+                taxonomy: 'soluci_perf_categ',
+            },
+            success: function(res) {
+                $('#listaItems').html(res);
+                jQuery('.flexslider').flexslider({
+                    animation: "slide"
+                });
+            }
+        })
+    }
+
 </script>
 
 <?php get_footer(); ?>
 <script>
-  jQuery(window).load(function() {
-    jQuery('.flexslider').flexslider({
-      animation: "slide"
+    jQuery(window).load(function() {
+        jQuery('.flexslider').flexslider({
+            animation: "slide"
+        });
     });
-  });
 </script>

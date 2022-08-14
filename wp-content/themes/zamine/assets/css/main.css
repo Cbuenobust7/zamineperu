@@ -2,13 +2,26 @@
     background: #f47b20;
     top: 12%;
     bottom:0;
-    position:
-    fixed;
+    position:fixed;
     overflow-y: hidden;
     overflow-x:
     hidden;
     /* padding-top: 50px; */
     
+}
+.suministros{
+    margin-top: 16%;
+}
+.suministros-container{
+    position:fixed;
+    z-index:1 !important
+}
+.botones-fixed {
+    margin-top: 10%
+}
+.banner-3{
+    position: fixed !important;
+    z-index: 1;
 }
 .separator{
     background-color: #000;
@@ -18,12 +31,7 @@
     font-size:22px;
     font-weight:900
 }
-.menu-eng{
-    display:none
-}
-.menu-esp{
-    display:none
-}
+
 .header .open-menu,.products--list .accordion-menu .accordion--item h5 a .fa-plus,.products--list .accordion-menu .accordion--item h5 a.collapsed .fa-minus{
     display:none
 }

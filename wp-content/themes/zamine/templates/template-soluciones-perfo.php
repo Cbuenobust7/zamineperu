@@ -5,17 +5,15 @@ get_header(); ?>
 
   <div class="banner banner-2">
     <div class="container">
-     <!-- <a href="/">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" class="img-fluid logo-banner">
-      </a> -->
+
     </div>
     <img src="<?php echo get_the_post_thumbnail_url(get_the_ID())?>">
     <div class="overlay">
-      <h1>Soluciones de</h1>
+      <h1>Servicios y</h1>
     </div>
   </div>
   <div class="title-orange">
-    <h2>Perforación</h2>
+    <h2>Productos</h2>
   </div>
 
   <div class="info">

@@ -1,21 +1,20 @@
 <?php
 /* Template Name: Suministros Planta  */
 get_header(); ?>
+
 <div class="page-services">
 
   <div class="banner banner-2">
     <div class="container">
-     <!-- <a href="/">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" class="img-fluid logo-banner">
-      </a> -->
+
     </div>
     <img src="<?php echo get_the_post_thumbnail_url(get_the_ID())?>">
     <div class="overlay">
-      <h1>Suministros para plantas</h1>
+      <h1>Suministros para</h1>
     </div>
   </div>
   <div class="title-orange">
-    <h2>mineras e industriales</h2>
+    <h2>Plantas Mineras e Industriales</h2>
   </div>
 
   <div class="info">
@@ -24,12 +23,13 @@ get_header(); ?>
     </div>
   </div>
 
+
   <div class="products py-5">
     <div class="container-fluid">
           <div class="wrapper d-flex mb-5">
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Suministros para plantas mineras e industriales</li>
+        <li class="breadcrumb-item active" aria-current="page">Suministros para Plantas Mineras e Industriales</li>
       </ol>
       <div class="ml-auto search">
         <input type="text" name="buscar" placeholder="Buscar" autocomplete="off">
@@ -38,152 +38,65 @@ get_header(); ?>
     </div>
     <div class="products--list container-fluid">
       <div class="row">
-        <div class="col-md-4 pl-md-0 accordion-menu" style="background: transparent!important;">
-            <?php
-                /*$args = array(
-                'taxonomy'     => 'cat_sum_planta',
-                'hierarchical' => true,
-                'title_li'     => '',
-                'hide_empty'   => false
-                );*/
-              ?>
-
-                <!--<ul>
-                    <?php wp_list_categories( $args ); ?>
-                </ul>-->
-          <div id="accordion" class="accordion-menu py-5" style="background: #f47b20;">
-            <?php 
-              $categories = get_terms( 
-                  array(
-                      'taxonomy'   => "cat_sum_planta",
-                      'parent'     => 0, // <-- No Parent
-                      'orderby'    => 'term_id',
-                      'hide_empty' => false // <!-- change to false to also display empty ones
-                  )
-              );
-            ?>
-            <?php foreach ($categories as $category): ?>
-              <div class="accordion--item" style="padding: 0 20px!important; color: #fff;">
-                <h5 class="mb-0">
-                  <a href="<?php echo get_category_link( $category->term_id );?>" class="collapsed" ><?php echo $category->name?></a>
-                  <i class="ml-auto fa fa-plus" style="font-size: 0.6em; margin-left: 10px;" aria-hidden="true" data-toggle="collapse" data-target="#cat-<?php echo $category->term_id?>"></i>
-                  
-                </h5>
+        <div class="col-md-4 pl-md-0 accordion-menu" style="background: #f47b20!important;">
+            <ul class="my-nav2 pt-4 pb-4">
+                <?php 
+                $categories = get_terms( 
+                    array(
+                        'taxonomy'   => "soluci_perf_categ",
+                        'parent'     => 0, // <-- No Parent
+                        'orderby'    => 'term_id',
+                        'hide_empty' => false // <!-- change to false to also display empty ones
+                    )
+                );
+                //var_dump($categories);
+                $hitachiMining = $categories[3];
+                //print_r ($hitachiMining);
+                ?>
                 
-                  <?php 
-                    $categories2 = get_terms( 
-                        array(
-                            'taxonomy'   => "cat_sum_planta",
-                            'parent'     => $category->term_id, // <-- No Parent
-                            'orderby'    => 'term_id',
-                            'hide_empty' => false // <!-- change to false to also display empty ones
-                        )
-                    );
-                  ?>
-                    <?php foreach ($categories2 as $category2): ?>
-                        <div id="cat-<?php echo $category->term_id?>" class="collapse pt-3 ml-3" data-parent="#accordion">
-                            <h5 class="mb-0">
-                                <a href="<?php echo get_category_link( $category2->term_id );?>" class="collapsed" ><?php echo $category2->name?></a>
-                                <i class="ml-auto fa fa-plus" style="font-size: 0.6em; margin-left: 10px;" aria-hidden="true" data-toggle="collapse" data-target="#cat-<?php echo $category2->term_id?>"></i>
-                            </h5>
-                        </div>
+                <?php if(count($hitachiMining)>0): ?>
+                    <li><a onclick="setActive(this, event)" href="javascript:void(0)" title="" data-slug="<?= $hitachiMining->slug; ?>" data-catid="<?= $hitachiMining->term_id; ?>"><?php echo $hitachiMining->name?></a>
                         <?php 
-                            $categories3 = get_terms( 
+                            $categories2 = get_terms( 
                                 array(
-                                    'taxonomy'   => "cat_sum_planta",
-                                    'parent'     => $category2->term_id, // <-- No Parent
+                                    'taxonomy'   => "soluci_perf_categ",
+                                    'parent'     => $hitachiMining->term_id, // <-- No Parent
                                     'orderby'    => 'term_id',
                                     'hide_empty' => false // <!-- change to false to also display empty ones
                                 )
                             );
                         ?>
-                        <div id="cat-<?php echo $category2->term_id?>" class="collapse pt-3 ml-5" data-parent="#cat-<?php echo $category->term_id?>">
-                            <?php foreach ($categories3 as $category3): ?>
-                                <h5 class="mb-0">
-                                    <a href="<?php echo get_category_link( $category3->term_id );?>" class="collapsed" ><?php echo $category3->name?></a>
-                                </h5>
+                        <?php if(count($categories2)>0): ?>
+                            <ul>
+                            <?php foreach ($categories2 as $category2): ?>
+                                <li><a href="javascript:void(0)" title="" data-slug="<?= $category2->slug; ?>" data-catid="<?= $category2->term_id; ?>"><?php echo $category2->name?></a>
+                                    <?php 
+                                        $categories3 = get_terms( 
+                                            array(
+                                                'taxonomy'   => "soluci_perf_categ",
+                                                'parent'     => $category2->term_id, // <-- No Parent
+                                                'orderby'    => 'term_id',
+                                                'hide_empty' => false // <!-- change to false to also display empty ones
+                                            )
+                                        );
+                                    ?>
+                                    <?php if(count($categories3)>0): ?>
+                                        <ul>
+                                        <?php foreach ($categories3 as $category3): ?>
+                                            <li><a href="javascript:void(0)" title="" data-slug="<?= $category3->slug; ?>" data-catid="<?= $category3->term_id; ?>"><?php echo $category3->name?></a></li>
+                                        <?php endforeach; ?>
+                                        </ul>
+                                    <?php endif;?>
+                                </li>
                             <?php endforeach; ?>
-                        </div>
-                    <?php endforeach; ?>
-                
-              </div>
-            <?php endforeach; ?>
-          </div>
+                            </ul>
+                        <?php endif;?>
+                    </li>
+                <?php endif; ?>
+            </ul>
         </div>
-        <div class="col-md-8" style="background: #fff; border-bottom: 1px solid #fff;">
-            
-                <?php
-                    $publicaciones = query_posts( [
-                        'post_type'=> 'suministros-plantas',
-                        'posts_per_page' => -1,
-                        'orderby'   => 'date',
-                        'order'     => 'ASC',
-                    ]);
-                    //var_dump($publicaciones);
-                ?>
-                <?php foreach ($publicaciones as $post): ?>
-                  <div class="row mb-4">
-                    <div class="col-md-6">
-                      <?php 
-                          $images = get_field('galeria_servicios', $servicio->ID);
-                        
-                      ?>
-                      <div id="slider" class="flexslider">
-                          <ul class="slides">
-                              <?php foreach( $images as $image ): ?>
-                                  <li>
-                                      <img src="<?php echo esc_url($image['serv_img']); ?>" alt="<?php echo esc_attr($image['serv_img']); ?>" />
-                                  </li>
-                              <?php endforeach; ?>
-                          </ul>
-                      </div>
-                    </div>
-
-                    <div class="col-md-6">
-                      <div class="mb-4">
-                        <?php the_title('<h2>', '</h2>'); ?>
-                      </div>
-
-                      <div class="accordion descripcionacc" id="acordeonDescripcion">
-                        <div class="card">
-                            <div class="card-header" id="headingOne">
-                                <h2 class="mb-0">
-                                    <button class="d-flex align-items-center justify-content-between btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                        <span class="material-icons" style="font-size: 0.6em;">
-                                            add
-                                        </span>
-                                        Descripción
-                                    </button>
-                                </h2>
-                            </div>
-
-                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#acordeonDescripcion">
-                            <div class="card-body">
-                                <?php the_content(); ?>
-                            </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--<p><a href="<?php echo get_field('ficha_tecnica'); ?>" target="_blank" style="font-size: 1.2em; color: #3e4854; text-decoration: none;"><span class="material-icons">download</span> Ficha Técnica</a></p>-->
-
-                    <p>
-                        <?php 
-                            $marca = get_field('marca', $servicio->ID);
-                            if(isset($marca) && !empty($marca)){
-                                echo "<span>".$marca."</span>";
-                                echo '<a href="'.get_field('pdf_marca').'" target="_blank" class="btn btn-orange ml-4" style="font-size: 14px!important;">Descargar PDF</a>';
-                            }
-                        ?>
-                    </p>
-                
-                    <!--<a class="btn btn-orange" style="font-size: 0.9em!important;" href="<?php echo home_url('contactanos') ?>">
-                    SOLICITA TU COTIZACIÓN
-                    </a>-->
-                    </div>
-                    
-                  </div>
-                  <hr/>
-                <?php endforeach; ?>
+        <div class="col-md-8 pt-4" style="background: #fff; border-bottom: 1px solid #fff;">
+            <div id="listaItems" class="row"></div>
         </div>
       </div>
     </div>
@@ -208,35 +121,97 @@ get_header(); ?>
           <div class="col-md-3"><img src="<?php echo get_the_post_thumbnail_url($brand)?>" class="d-block img-fluid" style="max-width: 220px;"></div>
         <?php endforeach; ?>
         </div>
-        <!--<div class="swiper-container swiper-brands">
-          <div class="swiper-wrapper py-5">
-            <div class="swiper-slide">
-              <?php foreach ($brands as $k => $brand): ?>
-                <?php if ($k > 0 && $k%4 == 0 ): ?>
-                  </div>
-                  <div class="swiper-slide">
-                <?php endif;?>
-                <div class="swiper-img">
-                  <img src="<?php echo get_the_post_thumbnail_url($brand)?>" class="img-fluid">
-                </div>
-              <?php endforeach; ?>
-            </div>
-          </div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
-        </div>-->
 
       </div>
     </div>
   </div>
 
 </div>
-
+<style>
+    .my-nav2 li a{
+        padding: 10px;
+        text-decoration: none;
+    }
+    .my-nav2 li a:hover{
+        background: #6d2f00;
+    }
+    .my-nav2 li a.active{
+        background: #6d2f00;
+    }
+    .my-nav2 li{
+        margin: 15px 0;
+    }
+    .toggler{
+        font-size: 14px;
+        margin-left: 8px;
+    }
+    .my-nav2 li a{
+        color: #fff;
+    }
+</style>
 <script>
-    jQuery(window).load(function() {
-        jQuery('.flexslider').flexslider({
-            animation: "slide"
+    jQuery(document).ready(function () {
+        jQuery('.my-nav2').mgaccordion({
+            theme: 'tree',
+            leaveOpen: false
         });
+
+        
     });
+    function setActive(e,ev) {
+        var elms = document.querySelectorAll('.my-nav2 li a');
+        // reset all you menu items
+        for (var i = 0, len = elms.length; i < len; i++) {
+            elms[i].classList.remove('active');
+        }
+        //console.log(ev.target);
+        if(ev.target.localName == "a")
+            ev.target.className = "active";
+
+        var categoy_slug = ev.target.getAttribute('data-slug');
+        var category_id = ev.target.getAttribute('data-catid');
+
+        $.ajax({
+            type: 'POST',
+            url: '/wp-admin/admin-ajax.php',
+            dataType: 'html',
+            data: {
+                action: 'filter_projects',
+                category: categoy_slug,
+                category_id: category_id,
+                post_type: 'soluciones-perfo',
+                taxonomy: 'soluci_perf_categ',
+            },
+            success: function(res) {
+                $('#listaItems').html(res);
+            }
+        })
+    }
+
+    function loadData(e,ev) {
+        console.log(ev.target);
+        var categoy_slug = ev.target.getAttribute('data-slug');
+        var category_id = ev.target.getAttribute('data-catid');
+
+        $.ajax({
+            type: 'POST',
+            url: '/wp-admin/admin-ajax.php',
+            dataType: 'html',
+            data: {
+                action: 'filter_projects',
+                category: categoy_slug,
+                category_id: category_id,
+                post_type: 'soluciones-perfo',
+                taxonomy: 'soluci_perf_categ',
+            },
+            success: function(res) {
+                $('#listaItems').html(res);
+                jQuery('.flexslider').flexslider({
+                    animation: "slide"
+                });
+            }
+        })
+    }
+
 </script>
 <?php get_footer(); ?>
