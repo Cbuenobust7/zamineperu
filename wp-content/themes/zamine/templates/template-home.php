@@ -23,8 +23,18 @@ $banners = query_posts([
       <div class="">
         <div class="container">
           <div class="d-flex w100 flex-wrap justify-content-center">
-            <img  src="<?php echo get_template_directory_uri(); ?>/images/isos-bw.webp" alt="...">
-          </div>
+            <div class="row">
+              <div class="col-sm-4">
+              <img  src="<?php echo get_template_directory_uri(); ?>/images/iso-9001.webp" alt="iso-9001">
+              </div>
+                <div class="col-sm-4">
+                <img  src="<?php echo get_template_directory_uri(); ?>/images/iso-14001.webp" alt="iso-14001">
+                </div>
+                <div class="col-sm-4">
+                <img  src="<?php echo get_template_directory_uri(); ?>/images/iso-45001.webp" alt="iso-45001">
+                </div>
+            </div>
+        </div>
         </div>
       </div>
     </div>

@@ -138,7 +138,26 @@ function filter_projects() {
             $image = get_term_meta($cat->term_id, 'cat_img', true);
             $imglink = wp_get_attachment_image_src($image, 'medium');
             $imagen_fin = $imglink[0];
-            
+            $camiones = $cat->slug;
+
+        if($camiones == 'camiones-electricos-rigidos') {
+            $response .= '<div class="col-md-6 col-lg-4">
+            <a class="card-service" href="http://ciem-demo5.com/hitachi-mining" onclick="loadData(this, event)" data-slug="'.$cat->slug.'" data-catid="'.$cat->term_id.'">
+                <div class="card-service__image" style="background-image: url('.$imagen_fin.')" data-slug="'.$cat->slug.'" data-catid="'.$cat->term_id.'"></div>
+                <div class="card-service__info" data-slug="'.$cat->slug.'" data-catid="'.$cat->term_id.'">
+                    <div class="card-service__info__name" data-slug="'.$cat->slug.'" data-catid="'.$cat->term_id.'">
+                        '.$cat->name.'
+                    </div>
+                    <div class="card-service__info__icon" data-slug="'.$cat->slug.'" data-catid="'.$cat->term_id.'">
+                        <span data-slug="'.$cat->slug.'" data-catid="'.$cat->term_id.'">
+                        Ver más
+                        </span>
+                    </div>
+                </div>
+            </a>
+        </div>';
+        } else {
+       
             $response .= '<div class="col-md-6 col-lg-4">
                 <a class="card-service" href="javascript:void(0);" onclick="loadData(this, event)" data-slug="'.$cat->slug.'" data-catid="'.$cat->term_id.'">
                     <div class="card-service__image" style="background-image: url('.$imagen_fin.')" data-slug="'.$cat->slug.'" data-catid="'.$cat->term_id.'"></div>
@@ -147,13 +166,13 @@ function filter_projects() {
                             '.$cat->name.'
                         </div>
                         <div class="card-service__info__icon" data-slug="'.$cat->slug.'" data-catid="'.$cat->term_id.'">
-                            <span class="material-icons" data-slug="'.$cat->slug.'" data-catid="'.$cat->term_id.'">
-                            add
+                            <span data-slug="'.$cat->slug.'" data-catid="'.$cat->term_id.'">
+                            Ver más
                             </span>
                         </div>
                     </div>
                 </a>
-            </div>';
+            </div>';}
         }
     }
 

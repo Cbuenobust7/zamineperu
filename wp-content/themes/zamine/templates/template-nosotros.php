@@ -24,7 +24,7 @@ $cards = get_field("tarjetas-informativas");
           <!--img src="/wp-content/uploads/2022/05/logo-zamine1.png" class="img-fluid mb-4"-->
 			<h3 style="font-size: 40px;color: #f47b20;">
               <span class="font-weight-bold">ZAMINE</span><br>
-              <span class="font-weight-light">SERVICES PERÚ</span>
+              <span class="font-weight-bold">SERVICE PERU</span>
             </h3>
           <div class="bar bar--orange my-4"></div>
           <div class="pr-md-4 text-justify">
@@ -78,8 +78,10 @@ $cards = get_field("tarjetas-informativas");
                   $hasta
                 </div>
               </div>
-              <div class="card-timeline__detail">
-                <img class="card-timeline__detail__image" src="$imagen" alt="$title">
+              <!-- <div class="card-timeline__detail">  -->
+                <div style="padding-left:5px">
+                <!-- <img class="card-timeline__detail__image" src="$imagen" alt="$title">  -->
+                <img src="$imagen" alt="$title">
                 <div class="card-timeline__detail__title">
                   $desde - $hasta
                 </div>

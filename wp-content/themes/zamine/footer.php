@@ -51,21 +51,21 @@
           </div>
           <div class="col-md-6 col-lg-3">
             <div class="title mb-3">OFICINAS:</div>
-            <div class="bold text-uppercase pl-md-2">Administrativas y comercial</div>
+            <div class="bold text-uppercase pl-md-2">Administrativa y comercial</div>
             <div class="text pl-md-2">
               <strong>Dirección: </strong>Av. La Encalada Nro. 1420 – Edifico Polo Hunt II Oficina 801 (Surco, Lima – Perú)<br>
               <strong>Teléfono: </strong>+51 (01) 4365442<br>
-              <strong>E-mai: </strong>ventas@zamineperu.com<br>
-              cotizaciones@zamineperu.com<br>
+              <strong>E-mail: </strong>ventas@zamineperu.com<br>
+              mineria@zamineperu.com<br>
               <strong>Horario: </strong>Lun – Vie: 8:00 – 18:00
             </div>
           </div>
           <div class="col-md-6 col-lg-3">
             <div class="bold text-uppercase mt-5">Centro de operaciones</div>
             <div class="text">
-              <strong>Dirección: </strong>Ca. Martir Olaya Mz. G Lte. 11 Urb. Huertos de Santa Genoveva (Lurin, Lima – Perú)<br>
+              <strong>Dirección: </strong>Ca. Martir Olaya Mz. G Lte. 11 Urb. Huertos de Santa Genoveva (Lurín, Lima – Perú)<br>
               <strong>Teléfono: </strong>+51 (01) 4300414<br>
-              <strong>E-mai: </strong>servicios@zamineperu.com<br>
+              <strong>E-mail: </strong>operaciones@zamineperu.com<br>
               <strong>Horario: </strong>Lun – Jue: 7:00 – 17:00 / Vie: 7:00 – 15:00
             </div>
           </div>

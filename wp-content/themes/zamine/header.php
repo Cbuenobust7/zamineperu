@@ -95,7 +95,7 @@ $menuServicios = getMenuArray('Servicios');
         <div class="menu-item menu-lang">
           <ul class="header__list-languages"><?php pll_the_languages(); ?></ul>
         </div>
-        <div class="menu-item">
+        <div class="menu-item" style="display:none">
           <a href="#">
             <span class="material-icons">
               search
@@ -116,10 +116,6 @@ $menuServicios = getMenuArray('Servicios');
   <div class="header-menu ">
     <div class="wrapper">
       <div class="container">
-        <a href="<?php echo home_url(); ?>">
-          <img src="<?php echo get_template_directory_uri(); ?>/images/logo.png">
-        </a>
-
         <div class="row py-5">
           <div class="col-md-3 pr-md-0">
             <div class="menu py-0 py-sm-4">

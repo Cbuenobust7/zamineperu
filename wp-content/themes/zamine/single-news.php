@@ -11,9 +11,6 @@ if ($news_type == "news") {
 <div class="page-news-single">
   <div class="info py-5">
     <div class="wrapper px-5">
-      <a href="<?php echo home_url() ?>">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/small-logo.png" class="img-fluid mb-4">
-      </a>
     </div>
   </div>
   <div class="wrapper">
