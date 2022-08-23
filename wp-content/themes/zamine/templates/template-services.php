@@ -6,34 +6,34 @@ $servicios = get_field('servicios');
 $informacion = get_field("informacion");
 $fichasTecnicas = get_field("ficha_tecnica");
 
-if (!$servicios) {
-  $servicios = [];
+if (!$servicios)
+{
+    $servicios = [];
 }
 $servicios = getServicios();
 
 //echo json_encode($servicios);
 //exit();
 //wp_get_attachment_image
+
 ?>
 <div class="page-services">
 
 <div class="banner banner-2">
-    <div class="container">
 
-    </div>
     <img src="<?php echo get_the_post_thumbnail_url(get_the_ID()) ?>">
     <div class="overlay">
         <?php
-        echo do_shortcode('[smartslider3 slider="14"]');
-        ?> 
+echo do_shortcode('[smartslider3 slider="14"]');
+?> 
     </div>
   </div>
 
   <?php $categories = get_terms('tipos_servicios', ['hide_empty' => false, 'order' => 'DESC']); ?>
 
   <div class="products py-1">
-    <div class="container">
-      <div class="wrapper d-flex mb-5">
+    <div class="container-fluid">
+      <div id="productos" class="wrapper d-flex mb-1">
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="<?php echo home_url(); ?>">Inicio</a></li>
           <li class="breadcrumb-item active" aria-current="page">Camiones eléctricos rígidos</li>
@@ -43,12 +43,9 @@ $servicios = getServicios();
           <input type="image" name="search" src="<?php echo get_template_directory_uri(); ?>/icons/search2.png">
         </div>
       </div>
-      
-      </div>
-    </div>
-  </div>
 
-  <section class="bg-white">
+
+  <div class="bg-white">
                 <div class="container">
                     <div class="row gx-5 align-items-center justify-content-center">
                     <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center">
@@ -57,35 +54,37 @@ $servicios = getServicios();
                         <div class="col-lg-8 col-xl-7 col-xxl-6">
 
 
-  <?php 
-            foreach ($servicios as $key => $servicio) {
-              
-              $lisServices = $servicio['servicios'];
-  
-              $list  = [];
-              foreach ($lisServices as $k => $ser) {
-                $name = $ser->post_title;
-                $content = $ser->post_content;
-                $idSer = $ser->ID;
-                $link = get_the_permalink($idSer);
-                $list[] = "<li> <a href='$link'>$name</a> </li>";  
-                
-                echo ' 
+  <?php
+foreach ($servicios as $key => $servicio)
+{
+
+    $lisServices = $servicio['servicios'];
+
+    $list = [];
+    foreach ($lisServices as $k => $ser)
+    {
+        $name = $ser->post_title;
+        $content = $ser->post_content;
+        $idSer = $ser->ID;
+        $link = get_the_permalink($idSer);
+        $list[] = "<li> <a href='$link'>$name</a> </li>";
+
+        echo ' 
                           <div class=" text-center text-xl-start">
                             <div id="accordion">
-                              <div class="card btn-orange">
+                              <div class="card" style="border-color:#f47b20">
                         
-                <div class="card-header" id="headingTwo">
+                <div class="card-header btn-orange" id="headingTwo">
                 <h5 class="mb-0">
-                    <button class="btn-orange collapsed" data-toggle="collapse" data-target="#collapse'.$idSer.'" aria-expanded="false" aria-controls="collapseTwo">
-                    '. $name .'         
+                    <button class="btn-orange collapsed" data-toggle="collapse" data-target="#collapse' . $idSer . '" aria-expanded="false" aria-controls="collapseTwo">
+                    ' . $name . '         
                 </button>
                 </h5>
                 </div>
-                <div id="collapse'.$idSer.'" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                <div id="collapse' . $idSer . '" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
                 <div class="card-body" style="list-style:none">
-                <li><h5>'.$name.'</h5></li>
-                <li><p>'.$content.'</p></li>
+                <li><h5>' . $name . '</h5></li>
+                <li><p>' . $content . '</p></li>
                      <!-- Button trigger modal -->
                 <button type="button" class="btn btn-orange" data-toggle="modal" data-target="#exampleModalCenter">
                 Solicitar Cotización
@@ -173,33 +172,16 @@ $servicios = getServicios();
               </div>
             </div>';
 
+    }
 
-
-
-          }
-             
-            }   ?>
-
- 
-                                      
-                                       
-                                <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
+} ?>
+                               <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
                                     
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-</section>
-
-
-                    </div>
-  </div>
-  </div>
-                    </div>
-  </div>
-  </div>
- 
-
+                
+    </div>
 </div>
 <?php get_footer(); ?>

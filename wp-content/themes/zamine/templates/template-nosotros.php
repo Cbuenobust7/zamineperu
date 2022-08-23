@@ -175,5 +175,18 @@ $itemsGeneral = query_posts([
   </div>
 </div>
 
+<?php
+$cards = get_field("tarjetas");
+  include get_template_directory() . '/components/cards.php';
+  ?>
+  <?php
+  $news = query_posts([
+    'post_type' => 'news',
+    'posts_per_page' => 4,
+    'orderby'   => 'date',
+    'order'     => 'DESC',
+  ]);
+ ?>
+
 </div>
 <?php get_footer(); ?>

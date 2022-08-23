@@ -25,7 +25,7 @@ get_header(); ?>
 
   <div class="products py-5">
     <div class="container-fluid">
-          <div class="wrapper d-flex mb-1">
+      <div id="productos" class="wrapper d-flex mb-1">
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="#">Inicio</a></li>
         <li class="breadcrumb-item active" aria-current="page">Suministros para Plantas Mineras e Industriales</li>
@@ -36,9 +36,10 @@ get_header(); ?>
       </div>
     </div>
     <div class="products--list container-fluid">
-      <div class="row">
-        <div class="col-md-4 pl-md-0 accordion-menu" style="background: #f47b20!important;">
-            <h6 class="my-nav2 mb-0 font-weight-bold">
+      <div class="row" style="background: #fff;">
+        <div class="accordion-menu" style="overflow: hidden;">
+          <h6 class="my-nav2 mb-0 font-weight-bold" style="background: #f47b20;">
+            <div style="list-style:none">
                 <?php 
                 $categories = get_terms( 
                     array(
@@ -66,7 +67,7 @@ get_header(); ?>
                         <?php if(count($categories2)>0): ?>
                             <div style="list-style:none">
                             <?php foreach ($categories2 as $category2): ?>
-                                <li><a onclick="setActive(this, event)" href="javascript:void(0)" title="" data-slug="<?= $category2->slug; ?>" data-catid="<?= $category2->term_id; ?>"><?php echo $category2->name?></a>
+                                <li><a onclick="setActive(this, event)" href="#productos" title="" class="d-block" data-slug="<?= $category2->slug; ?>" data-catid="<?= $category2->term_id; ?>"><?php echo $category2->name?></a>
                                     <?php 
                                         $categories3 = get_terms( 
                                             array(
@@ -79,7 +80,6 @@ get_header(); ?>
                                     ?>
                                     <?php if(count($categories3)>0): ?>
                                         <?php foreach ($categories3 as $category3): ?>
-                                            <a href="javascript:void(0)" title="" data-slug="<?= $category3->slug; ?>" data-catid="<?= $category3->term_id; ?>"></a>
                                         <?php endforeach; ?>
                                     <?php endif;?>
                                 </li>
@@ -91,7 +91,7 @@ get_header(); ?>
             </h6>
         </div>
         <div class="col-md-8 pt-4" style="background: #fff; border-bottom: 1px solid #fff;">
-            <div id="listaItems" class="row"></div>
+            <div id="listaItems" class="row d-flex justify-content-center"></div>
         </div>
       </div>
     </div>

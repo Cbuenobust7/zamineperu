@@ -121,10 +121,14 @@ function filter_projects() {
             ]);
         $response = '';
 
-        if($ajaxposts->have_posts()) {
-            while($ajaxposts->have_posts()) : $ajaxposts->the_post();
-            $response .= get_template_part('templates/common/project-item');
-            endwhile;
+        if($ajaxposts->have_posts() && $post_type != "suministros-plantas") {
+                while($ajaxposts->have_posts()) : $ajaxposts->the_post();
+                $response .= get_template_part('templates/common/project-item');
+                endwhile;
+        } elseif($ajaxposts->have_posts() && $post_type == "suministros-plantas"){
+                while($ajaxposts->have_posts()) : $ajaxposts->the_post();
+                $response .= get_template_part('templates/common/serv');
+                endwhile;
         } else {
             $response = '<div class="col-md-12 p-4"><h4>No existen resultados para esta categoría.</h4></div>';
         }
@@ -138,9 +142,9 @@ function filter_projects() {
             $image = get_term_meta($cat->term_id, 'cat_img', true);
             $imglink = wp_get_attachment_image_src($image, 'medium');
             $imagen_fin = $imglink[0];
-            $camiones = $cat->slug;
+            $subCateg = $cat->slug;
 
-        if($camiones == 'camiones-electricos-rigidos') {
+        if($subCateg == 'camiones-electricos-rigidos') {
             $response .= '<div class="col-md-6 col-lg-4">
             <a class="card-service" href="http://ciem-demo5.com/hitachi-mining" onclick="loadData(this, event)" data-slug="'.$cat->slug.'" data-catid="'.$cat->term_id.'">
                 <div class="card-service__image" style="background-image: url('.$imagen_fin.')" data-slug="'.$cat->slug.'" data-catid="'.$cat->term_id.'"></div>

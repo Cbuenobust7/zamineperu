@@ -904,7 +904,7 @@ li#wp-admin-bar-menu-toggle {
 
 	#wpadminbar #wp-admin-bar-menu-toggle .ab-icon:before {
 		content: "\f228";
-		display: inline-block;
+		display: none;
 		float: left;
 		font: normal 40px/45px dashicons;
 		vertical-align: middle;

@@ -5,30 +5,18 @@ get_header(); ?>
 <?php
     $categories = get_terms(
                 array(
-                  'taxonomy'   => "cat_sum_equipos",
+                  'taxonomy'   => "soluci_perf_categ",
                   'parent'     => 0, // <-- No Parent
                   'orderby'    => 'term_id',
                   'hide_empty' => false // <!-- change to false to also display empty ones
                 )
               );
               //var_dump($categories);
-              $mainCategory = $categories;
+              $mainCategory = $categories[4];
               //print_r ($hitachiMining);
   ?>
 
-      
-<?php if (count($mainCategory) > 0) : ?>
-                <?php
-                $categories2 = get_terms(
-                  array(
-                    'taxonomy'   => "cat_sum_equipos",
-                    'parent'     => $mainCategory->term_id, // <-- No Parent
-                    'orderby'    => 'term_id',
-                    'hide_empty' => false // <!-- change to false to also display empty ones
-                  )
-                );
-
-                ?>
+  
 <div class="page-services">
 
   <div class="banner banner-2">
@@ -38,7 +26,7 @@ get_header(); ?>
     <img src="<?php echo get_the_post_thumbnail_url(get_the_ID()) ?>">
     <div class="overlay">
       <?php
-      echo do_shortcode('[smartslider3 slider="5"]');
+      echo do_shortcode('[smartslider3 slider="8"]');
       ?>
     </div>
   </div>
@@ -53,7 +41,7 @@ get_header(); ?>
       <div id="principal" class="wrapper d-flex mb-1">
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="www.ciem-demo5.com">Inicio</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Hitachi Mining</li>
+          <li class="breadcrumb-item active" aria-current="page">Suministros para equipos móviles pesados</li>
         </ol>
         <div class="ml-auto search">
           <input type="text" name="buscar" placeholder="Buscar" autocomplete="off">
@@ -65,20 +53,32 @@ get_header(); ?>
           <div class="accordion-menu" style="overflow: hidden;">
             <h6 class="my-nav2 mb-0 font-weight-bold" style="background: #f47b20;">
             <div style="list-style:none">
+    
+            <?php if (count($mainCategory) > 0) : ?>
+                <?php
+                $categories2 = get_terms(
+                  array(
+                    'taxonomy'   => "soluci_perf_categ",
+                    'parent'     => $mainCategory->term_id, // <-- No Parent
+                    'orderby'    => 'term_id',
+                    'hide_empty' => false // <!-- change to false to also display empty ones
+                  )
+                );
 
+                ?>
                 <?php if (count($categories2) > 0) : ?>
                     <?php foreach ($categories2 as $category2) : ?>
                       <li class="m-0"><a href="#principal" onclick="setActive(this, event)" class="d-block" title="" data-slug="<?= $category2->slug; ?>" data-catid="<?= $category2->term_id; ?>"><?php echo $category2->name ?></a>
                         <?php
                         $categories3 = get_terms(
                           array(
-                            'taxonomy'   => "cat_sum_equipos",
+                            'taxonomy'   => "soluci_perf_categ",
                             'parent'     => $category2->term_id, // <-- No Parent
                             'orderby'    => 'term_id',
                             'hide_empty' => false // <!-- change to false to also display empty ones
                           )
                         );
-                        print_r ($categories3);
+              print_r ($mainCategory);
 
                         ?>
                               <?php if(count($categories3)>0): ?>
@@ -101,13 +101,14 @@ get_header(); ?>
               <?php endif; ?>
             </h6>
           </div>
-          </div>
-        </div>
+          <div class="col-md-8 pt-4" style="background: #fff; border-bottom: 1px solid #fff;">
+            <div id="listaItems" class="row d-flex justify-content-center"></div>
       </div>
     </div>
   </div>
   
-
+  </div>
+  </div>
 </div>
 <style>
     .my-nav2 li a{
@@ -162,8 +163,8 @@ get_header(); ?>
         action: 'filter_projects',
         category: categoy_slug,
         category_id: category_id,
-        post_type: 'suministros-equipos',
-        taxonomy: 'cat_sum_equipos',
+        post_type: 'soluciones-perfo',
+        taxonomy: 'soluci_perf_categ',
       },
       success: function(res) {
         $('#listaItems').html(res);
@@ -184,8 +185,8 @@ get_header(); ?>
         action: 'filter_projects',
         category: categoy_slug,
         category_id: category_id,
-        post_type: 'suministros-equipos',
-        taxonomy: 'cat_sum_equipos',
+        post_type: 'soluciones-perfo',
+        taxonomy: 'soluci_perf_categ',
       },
       success: function(res) {
         $('#listaItems').html(res);

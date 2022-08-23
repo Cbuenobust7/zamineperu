@@ -3,31 +3,30 @@
 get_header(); ?>
 
 <?php
-    $categories = get_terms(
-                array(
-                  'taxonomy'   => "soluci_perf_categ",
-                  'parent'     => 0, // <-- No Parent
-                  'orderby'    => 'term_id',
-                  'hide_empty' => false // <!-- change to false to also display empty ones
-                )
-              );
-              //var_dump($categories);
-              $mainCategory = $categories[0];
-              //print_r ($hitachiMining);
-  ?>
+$categories = get_terms(array(
+    'taxonomy' => "soluci_perf_categ",
+    'parent' => 0, // <-- No Parent
+    'orderby' => 'term_id',
+    'hide_empty' => false
+    // <!-- change to false to also display empty ones
+    
+));
+//var_dump($categories);
+$mainCategory = $categories[0];
+//print_r ($hitachiMining);
 
-      
-<?php if (count($mainCategory) > 0) : ?>
+?>     
+<?php if (count($mainCategory) > 0): ?>
                 <?php
-                $categories2 = get_terms(
-                  array(
-                    'taxonomy'   => "soluci_perf_categ",
-                    'parent'     => $mainCategory->term_id, // <-- No Parent
-                    'orderby'    => 'term_id',
-                    'hide_empty' => false // <!-- change to false to also display empty ones
-                  )
-                );
-                ?>
+    $categories2 = get_terms(array(
+        'taxonomy' => "soluci_perf_categ",
+        'parent' => $mainCategory->term_id, // <-- No Parent
+        'orderby' => 'term_id',
+        'hide_empty' => false
+        // <!-- change to false to also display empty ones
+        
+    ));
+?>
 <div class="page-services">
 
   <div class="banner banner-2">
@@ -37,8 +36,8 @@ get_header(); ?>
     <img src="<?php echo get_the_post_thumbnail_url(get_the_ID()) ?>">
     <div class="overlay">
       <?php
-      echo do_shortcode('[smartslider3 slider="5"]');
-      ?>
+    echo do_shortcode('[smartslider3 slider="5"]');
+?>
     </div>
   </div>
 
@@ -49,7 +48,7 @@ get_header(); ?>
 
   <div class="products py-5">
     <div class="container-fluid">
-      <div id="principal" class="wrapper d-flex mb-1">
+      <div id="productos" class="wrapper d-flex mb-1">
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="www.ciem-demo5.com">Inicio</a></li>
           <li class="breadcrumb-item active" aria-current="page">Hitachi Mining</li>
@@ -65,37 +64,34 @@ get_header(); ?>
             <h6 class="my-nav2 mb-0 font-weight-bold" style="background: #f47b20;">
             <div style="list-style:none">
 
-                <?php if (count($categories2) > 0) : ?>
-                    <?php foreach ($categories2 as $category2) : ?>
-                      <li class="m-0"><a href="#principal" onclick="setActive(this, event)" class="d-block" title="" data-slug="<?= $category2->slug; ?>" data-catid="<?= $category2->term_id; ?>"><?php echo $category2->name ?></a>
+                <?php if (count($categories2) > 0): ?>
+                    <?php foreach ($categories2 as $category2): ?>
+                      <li class="m-0"><a href="#productos" onclick="setActive(this, event)" class="d-block" title="" data-slug="<?=$category2->slug; ?>" data-catid="<?=$category2->term_id; ?>"><?php echo $category2->name ?></a>
                         <?php
-                        $categories3 = get_terms(
-                          array(
-                            'taxonomy'   => "soluci_perf_categ",
-                            'parent'     => $category2->term_id, // <-- No Parent
-                            'orderby'    => 'term_id',
-                            'hide_empty' => false // <!-- change to false to also display empty ones
-                          )
-                        );
-                        ?>
-                              <?php if(count($categories3)>0): ?>
-                                       
-                                        <?php foreach ($categories3 as $category3):
-                                          $pepe = $category3->name?>
-                                            <?php if($pepe == 'Camiones eléctricos rígidos'): ?>
-                                            
+                          $categories3 = get_terms(array(
+                              'taxonomy' => "soluci_perf_categ",
+                              'parent' => $category2->term_id, // <-- No Parent
+                              'orderby' => 'term_id',
+                              'hide_empty' => false
+                              // <!-- change to false to also display empty ones
+                              
+                          ));
+              ?>
+                              <?php if (count($categories3) > 0):
+                                  foreach ($categories3 as $category3):
+                                  $pepe = $category3->name;
+                                  if ($pepe == 'Camiones eléctricos rígidos'):
+                                  endif;
+                                  endforeach;
 
-                                          <?php endif; ?> 
-                                        <?php endforeach; ?>
-                              <?php endif; ?>            
+                                    endif;
 
-                            
-                      </li>
-                    <?php endforeach; ?>
-                  </div>
-                <?php endif; ?>
-                </li>
-              <?php endif; ?>
+                                endforeach;
+
+                            endif;
+
+                        endif; ?>   
+ </div>
             </h6>
           </div>
           <div class="col-md-8 pt-4" style="background: #fff; border-bottom: 1px solid #fff;">

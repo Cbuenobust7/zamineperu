@@ -1,6 +1,32 @@
 <?php
 /* Template Name: Soluciones_Perforacion  */
 get_header(); ?>
+
+<?php
+$categories = get_terms(array(
+    'taxonomy' => "soluci_perf_categ",
+    'parent' => 0, // <-- No Parent
+    'orderby' => 'term_id',
+    'hide_empty' => false
+    // <!-- change to false to also display empty ones
+    
+));
+//var_dump($categories);
+
+$mainCategory = $categories[1];
+
+?>
+<?php if (count($mainCategory) > 0): ?>
+                <?php
+    $categories2 = get_terms(array(
+        'taxonomy' => "soluci_perf_categ",
+        'parent' => $mainCategory->term_id, // <-- No Parent
+        'orderby' => 'term_id',
+        'hide_empty' => false
+        // <!-- change to false to also display empty ones
+        
+    ));
+?>
 <div class="page-services">
 
   <div class="banner banner-2">
@@ -37,10 +63,44 @@ get_header(); ?>
       </div>
     </div>
     <div class="products--list container-fluid">
-      <div class="row">
+        <div class="row" style="background: #fff;">
+          <div class="accordion-menu" style="overflow: hidden;">
+            <h6 class="my-nav2 mb-0 font-weight-bold" style="background: #f47b20;">
+            <div style="list-style:none">
+
+                <?php if (count($categories2) > 0): ?>
+                    <?php foreach ($categories2 as $category2): ?>
+                      <li class="m-0"><a href="#productos" onclick="setActive(this, event)" class="d-block" title="" data-slug="<?=$category2->slug; ?>" data-catid="<?=$category2->term_id; ?>"><?php echo $category2->name ?></a>
+                        <?php
+                        $categories3 = get_terms(array(
+                            'taxonomy' => "soluci_perf_categ",
+                            'parent' => $category2->term_id, // <-- No Parent
+                            'orderby' => 'term_id',
+                            'hide_empty' => false
+                            // <!-- change to false to also display empty ones        
+                        ));?>
+                              <?php if (count($categories3) > 0):
+                                  foreach ($categories3 as $category3):
+                                  $pepe = $category3->name;
+                                  if ($pepe == 'Camiones eléctricos rígidos'):
+                                  endif;
+                                  endforeach;
+
+                                    endif;
+
+                                endforeach;
+
+                            endif;
+
+                        endif;
+                        ?>   
+                        
+ </div>
+            </h6>
+          </div>
         
         <div class="col-md-8 pt-4" style="background: #fff; border-bottom: 1px solid #fff;">
-            <div id="listaItems" class="row"></div>
+            <div id="listaItems" class="row d-flex justify-content-center"></div>
         </div>
       </div>
     </div>

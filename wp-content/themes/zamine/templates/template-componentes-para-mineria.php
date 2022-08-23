@@ -1,6 +1,21 @@
 <?php
 /* Template Name: Componentes para Gran minería  */
-get_header(); ?>
+get_header(); ?>    
+
+<?php 
+$categories = get_terms( 
+    array(
+        'taxonomy'   => "soluci_perf_categ",
+        'parent'     => 0, // <-- No Parent
+        'orderby'    => 'term_id',
+        'hide_empty' => false // <!-- change to false to also display empty ones
+    )
+);
+//var_dump($categories);
+$mainCategory = $categories[2];
+//print_r ($hitachiMining);
+?>
+
 <div class="page-services">
 
   <div class="banner banner-2">
@@ -22,41 +37,30 @@ get_header(); ?>
 
   <div class="products py-5">
     <div class="container-fluid">
-          <div class="wrapper d-flex mb-1">
+          <div id="productos" class="wrapper d-flex mb-1">
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="#">Inicio</a></li>
         <li class="breadcrumb-item active" aria-current="page">Componentes para gran minería</li>
-      </ol>
-      <div class="ml-auto search">
-        <input type="text" name="buscar" placeholder="Buscar" autocomplete="off">
-        <input type="image" name="search" src="<?php echo get_template_directory_uri(); ?>/icons/search2.png">
+        </ol>
+        <div class="ml-auto search">
+          <input type="text" name="buscar" placeholder="Buscar" autocomplete="off">
+          <input type="image" name="search" src="<?php echo get_template_directory_uri(); ?>/icons/search2.png">
+        </div>
       </div>
-    </div>
-    <div class="products--list container-fluid">
-      <div class="row">
-        <div class="col-md-4 pl-md-0 accordion-menu" style="background: #f47b20!important;">
-            <h6 class="my-nav2 mb-0 font-weight-bold">
-                <?php 
-                $categories = get_terms( 
-                    array(
-                        'taxonomy'   => "soluci_perf_categ",
-                        'parent'     => 0, // <-- No Parent
-                        'orderby'    => 'term_id',
-                        'hide_empty' => false // <!-- change to false to also display empty ones
-                    )
-                );
-                //var_dump($categories);
-                $hitachiMining = $categories[2];
-                //print_r ($hitachiMining);
-                ?>
+      <div class="products--list container-fluid">
+        <div class="row" style="background: #fff;">
+          <div class="accordion-menu" style="overflow: hidden;">
+            <h6 class="my-nav2 mb-0 font-weight-bold" style="background: #f47b20;">
+            <div style="list-style:none">
+            
                 
-                <?php if(count($hitachiMining)>0): ?>
-                    <li><a onclick="setActive(this, event)" href="javascript:void(0)" title="" data-slug="<?= $hitachiMining->slug; ?>" data-catid="<?= $hitachiMining->term_id; ?>"><?php echo $hitachiMining->name?></a>
+                <?php if(count($mainCategory)>0): ?>
+                    <li class="m-0"><a onclick="setActive(this, event)" href="#productos" title="" class="d-block" data-slug="<?= $mainCategory->slug; ?>" data-catid="<?= $mainCategory->term_id; ?>"><?php echo $mainCategory->name?></a>
                         <?php 
                             $categories2 = get_terms( 
                                 array(
                                     'taxonomy'   => "soluci_perf_categ",
-                                    'parent'     => $hitachiMining->term_id, // <-- No Parent
+                                    'parent'     => $mainCategory->term_id, // <-- No Parent
                                     'orderby'    => 'term_id',
                                     'hide_empty' => false // <!-- change to false to also display empty ones
                                 )
@@ -65,7 +69,7 @@ get_header(); ?>
                         <?php if(count($categories2)>0): ?>
                             <div style="list-style:none">
                             <?php foreach ($categories2 as $category2): ?>
-                                <li><a href="javascript:void(0)" title="" data-slug="<?= $category2->slug; ?>" data-catid="<?= $category2->term_id; ?>"><?php echo $category2->name?></a>
+                                <li class="m-0"><a href="#productos" onclick="setActive(this, event)" class="d-block" title="" data-slug="<?=$category2->slug; ?>" data-catid="<?=$category2->term_id; ?>"><?php echo $category2->name ?></a>
                                     <?php 
                                         $categories3 = get_terms( 
                                             array(
@@ -93,16 +97,16 @@ get_header(); ?>
         </div>
         <div class="col-md-8 pt-4" style="background: #fff; border-bottom: 1px solid #fff;">
             
-            <div id="listaItems" class = "row col-sm-8"></div>
+            <div id="listaItems" class = "row d-flex justify-content-center"></div>
                                     
         </div>
       </div>
     </div>
-    </div>
-  </div>
 
 
 </div>
+
+
 <style>
     .my-nav2 li a{
         padding: 10px;

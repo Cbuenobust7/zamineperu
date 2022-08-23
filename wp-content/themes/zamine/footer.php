@@ -39,9 +39,9 @@
                   <a href="https://www.facebook.com/zamineperu/" target="_blank">
                     <img src="<?php echo get_template_directory_uri(); ?>/icons/facebook.png">
                   </a>                  
-                  <a href="https://www.youtube.com/channel/UCFuEjZm1etO6T2JL_Eha4Fw" target="_blank">
-                    <img src="<?php echo get_template_directory_uri(); ?>/icons/youtube.png">
-                  </a>
+                  <!-- <a href="https://www.youtube.com/channel/UCFuEjZm1etO6T2JL_Eha4Fw" target="_blank">
+                    <img src="< ?php echo get_template_directory_uri(); ?>/icons/youtube.png">
+                  </a> -->
 				  <a href="https://linkedin.com/company/zamine-service-peru-sac" target="_blank">
                     <img src="/wp-content/uploads/2022/05/linkedin2.png">
                   </a>
