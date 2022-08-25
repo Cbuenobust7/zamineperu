@@ -19,9 +19,8 @@ $mainCategory = $categories[2];
 <div class="page-services">
 
   <div class="banner banner-2">
-    <div class="container">
+    <?php get_template_part('components/banner-logo');?>
 
-    </div>
     <img src="<?php echo get_the_post_thumbnail_url(get_the_ID())?>">
     <div class="overlay">
         <?php

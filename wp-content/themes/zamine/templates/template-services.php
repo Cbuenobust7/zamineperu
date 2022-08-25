@@ -53,7 +53,7 @@ echo do_shortcode('[smartslider3 slider="14"]');
 
                         <div class="col-lg-8 col-xl-7 col-xxl-6">
 
-
+                        
   <?php
 foreach ($servicios as $key => $servicio)
 {

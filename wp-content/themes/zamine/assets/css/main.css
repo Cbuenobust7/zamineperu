@@ -1,3 +1,199 @@
+
+.ciem-responsive__buscador{
+    position:relative;
+    margin:0
+}
+.ciem-responsive__buscador ::-webkit-input-placeholder{
+    opacity:1!important
+}
+@media screen and (max-width:44.9375em){
+     .ciem-responsive__buscador{
+        max-width:100%;
+        margin-right:0;
+        position:absolute;
+        right:0;
+        left:0;
+        pointer-events:none
+    }
+}
+ .ciem-responsive__buscador .ciem-responsive__buscador__form,.ciem-responsive__buscador .ciem-responsive__buscador__form__close-btn,.ciem-responsive__buscador .ciem-responsive__buscador__response{
+    display:inline-block;
+    float:left
+}
+.ciem-responsive__buscador .ciem-responsive__buscador__form,.ciem-responsive__buscador .ciem-responsive__buscador__form__close-btn{
+    display:none
+}
+.ciem-responsive__buscador .ciem-responsive__buscador__form{
+    display:inline-block;
+    float:right
+}
+@media screen and (max-width:44.9375em){
+     .ciem-responsive__buscador .ciem-responsive__buscador__form{
+        width:100%;
+        margin-right:0;
+        min-width:none;
+        max-width:none;
+        text-align:right
+    }
+}
+.ciem-responsive__buscador .ciem-responsive__buscador__form__input{
+    line-height:29px;
+    width:213px;
+    padding:.2em 1em .15em;
+    color:#000;
+    background-color:#fff;
+    font-family:Lato,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji" ;
+    text-transform:uppercase;
+    width:180px;
+    padding:0;
+    transition:all .3s ease-in-out;
+    pointer-events:auto
+}
+ .ciem-responsive__buscador .ciem-responsive__buscador__form__input:focus{
+    background-color:#fff;
+    background-image:none
+}
+@media screen and (max-width:44.9375em){
+     .ciem-responsive__buscador .ciem-responsive__buscador__form__input{
+        width:120px;
+        margin-right:38px;
+        height: 30px
+    }
+     .ciem-responsive__buscador .ciem-responsive__buscador__form__input:focus{
+        max-width:100%;
+        width:100%;
+        margin-right:0
+    }
+}
+ .ciem-responsive__buscador .ciem-responsive__buscador__form__submit{
+    
+    padding:0 .5em;
+    color:#fff;
+    background-color:#000;
+    margin-right:0;
+    pointer-events:auto;
+    border:0
+}
+@media screen and (max-width:44.9375em){
+     .ciem-responsive__buscador .ciem-responsive__buscador__form__submit{
+        position:absolute;
+        right:0
+    }
+}
+@media screen and (min-width:45em){
+     .ciem-responsive__buscador .ciem-responsive__buscador__form__submit{
+        margin-left:-10px;
+         margin-right:.6rem;
+         height:32.247px
+    }
+}
+ .ciem-responsive__buscador .ciem-responsive__buscador__form__close-btn{
+    height:29px;
+    color:#fff;
+    background-color:transparent;
+    padding:0 .5em
+}
+ .ciem-responsive__buscador .ciem-responsive__buscador__form__close-btn:before{
+    line-height:29px
+}
+ .ciem-responsive__buscador .ciem-responsive__buscador__form__close-btn:hover{
+    color:#fff;
+    background-color:#000;
+    cursor:pointer
+}
+ .ciem-responsive__buscador .ciem-responsive__buscador__response .fa-close{
+    color:#fff;
+    z-index:9999;
+    font-size:20px;
+    position:absolute;
+    right:10px;
+    line-height:30px;
+    pointer-events:auto;
+    top:0
+}
+ .ciem-responsive__buscador .ciem-responsive__buscador__response .o-msg{
+    line-height:29px;
+    margin:0;
+    border:0;
+    margin-right:.75rem;
+    padding:0 .5em
+}
+ .ciem-responsive__buscador .ciem-responsive__buscador__response .o-msg.is-invalid{
+    line-height:2.45rem;
+    position:absolute;
+    top:2.45rem;
+    left:0
+}
+@media screen and (max-width:44.9375em){
+     .ciem-responsive__buscador .ciem-responsive__buscador__response .o-msg{
+        width:100%;
+        margin-right:0
+    }
+}
+@media screen and (min-width:45em){
+     .ciem-responsive__buscador .ciem-responsive__buscador__response .o-msg{
+        padding-right:24px
+    }
+}
+ .ciem-responsive__buscador .ciem-responsive__buscador__response .o-msg--success{
+    background-color:#00a61f;
+    line-height:30px;
+    position:absolute;
+    top:2.5rem
+}
+@media screen and (max-width:44.9375em){
+     .ciem-responsive__buscador .ciem-responsive__buscador__response .o-msg--success{
+        position:absolute;
+        left:0;
+        right:0
+    }
+}
+ .ciem-responsive__buscador .ciem-responsive__buscador__response .o-msg--error{
+    position:absolute;
+    top:2.5rem
+}
+@media screen and (max-width:44.9375em){
+     .ciem-responsive__buscador .ciem-responsive__buscador__response .o-msg--error{
+        padding:12px
+    }
+}
+.ciem-responsive__language{
+    display:inline-block;
+    float:right;
+    margin-left:12px
+}
+@media screen and (min-width:45em){
+     .ciem-responsive__language{
+        display:none!important
+    }
+}
+.ciem-responsive__language .o-language__label{
+    display:none
+}
+.ciem-responsive__language .o-languages__language--short{
+    text-transform:uppercase
+}
+.buscador-container{
+    display: flex;
+}
+.logo-banner{
+    position:absolute;
+    z-index: 1;
+    margin-top: 5%
+}
+.isos{
+    width: 50%;
+}
+.b:after{
+    display:block;
+}
+.sticky{   
+    display:none;
+}
+.sticky:after,.sticky:before{
+    clear:both;
+}
+
 .menu-vertical{
     background: #f47b20;
     top: 12%;
@@ -45,7 +241,7 @@
     position:relative
 }
 body,body.admin-bar{
-    padding-top:50px
+    padding-top:80px
 }
 body{
     font-family:Roboto,sans-serif;
@@ -145,6 +341,12 @@ body{
 }
 .bar--orange,.page-news .featured .swiper-pagination-bullet-active,.products--list .accordion-menu{
     background:#f47b20;
+    border-radius: 5px;
+    width: 28%;
+
+}
+.bar--yellow{
+    background:#ffde22;
     border-radius: 5px;
     width: 28%;
 
@@ -521,8 +723,15 @@ body{
     }
 }
 @media all and (max-width:1200px){
+
+    .isos{
+        width: 100%;
+    }
     .header .open-menu{
         display:block
+    }
+    .buscador-container{
+        display: block;
     }
 }
 .page-home .third-sections--item--text{
@@ -1728,7 +1937,7 @@ div{
     padding-bottom: 34px;
     box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
-    margin-top: 0px
+    margin-top: 10px
 }
 .bbb_deals_title{
     position: absolute;
@@ -1809,3 +2018,6 @@ div{
         font-size: 20px
     }
 }
+.cambiar-logo img {
+    display: block;
+  }

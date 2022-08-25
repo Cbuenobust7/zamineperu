@@ -15,7 +15,7 @@
                 <ul class="list">
                   <li>
                     <a href="<?php echo home_url('bolsa'); ?>">
-                      <img src="<?php echo get_template_directory_uri(); ?>/icons/bolsa.png">
+                      <img src="<?php echo get_template_directory_uri(); ?>/icons/bolsa.webp">
                       <span style="font-size: 20px">Trabaja con nosotros</span>
                     </a>
                   </li>
@@ -34,17 +34,13 @@
                 </ul>
               </div>
               <div class="col-md-6 col-lg-12">
-                <div class="follow-title">Síguenos en:</div>
                 <div class="follow-menu">
-                  <a href="https://www.facebook.com/zamineperu/" target="_blank">
-                    <img src="<?php echo get_template_directory_uri(); ?>/icons/facebook.png">
-                  </a>                  
-                  <!-- <a href="https://www.youtube.com/channel/UCFuEjZm1etO6T2JL_Eha4Fw" target="_blank">
-                    <img src="< ?php echo get_template_directory_uri(); ?>/icons/youtube.png">
-                  </a> -->
-				  <a href="https://linkedin.com/company/zamine-service-peru-sac" target="_blank">
-                    <img src="/wp-content/uploads/2022/05/linkedin2.png">
-                  </a>
+                  <a><span class="title">SIGUENOS EN:</span></a>
+                <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/zamineperu/" target="_blank" role="button">
+                  <i class="fab fa-facebook-f"></i></a>
+                <!-- Linkedin -->
+                <a class="btn btn-outline-light btn-floating m-1" href="https://linkedin.com/company/zamine-service-peru-sac" target="_blank" role="button">
+                  <i class="fab fa-linkedin-in"></i></a>
                 </div>
               </div>
             </div>

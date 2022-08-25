@@ -4,12 +4,15 @@ get_header();
 global $cards;
 $cards = get_field("tarjetas-informativas");
 ?>
+
+<html>
+    <head>
+
 <div class="page-about-us">
 
-  <div class="banner banner-2">
-    <div class="container">
-   
-    </div>
+  <div class="banner banner-2">    
+  <?php get_template_part('components/banner-logo');?>
+    
     <img src="<?php echo get_template_directory_uri(); ?>/images/aboutus.png">
     <div class="overlay">
       <?php the_title('<h1>', '</h1>'); ?>
@@ -175,18 +178,19 @@ $itemsGeneral = query_posts([
   </div>
 </div>
 
-<?php
-$cards = get_field("tarjetas");
-  include get_template_directory() . '/components/cards.php';
-  ?>
-  <?php
-  $news = query_posts([
-    'post_type' => 'news',
-    'posts_per_page' => 4,
-    'orderby'   => 'date',
-    'order'     => 'DESC',
-  ]);
- ?>
-
+  <div id="isos">
+    <?php
+    $cards = get_field("tarjetas");
+      include get_template_directory() . '/components/cards.php';
+      ?>
+      <?php
+      $news = query_posts([
+        'post_type' => 'news',
+        'posts_per_page' => 4,
+        'orderby'   => 'date',
+        'order'     => 'DESC',
+      ]);
+    ?>
+  </div>
 </div>
 <?php get_footer(); ?>

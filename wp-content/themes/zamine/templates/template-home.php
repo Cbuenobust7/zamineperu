@@ -4,45 +4,35 @@ get_header();
 ?>
 
 <?php
+global $cards;
 $banners = query_posts([
   'post_type' => 'banner',
   'posts_per_page' => -1,
   'order' => 'ASC'
 ]); ?>
 
+<?php get_template_part('components/banner-logo');?>
 <div class="page-home">
   <?php the_content(); ?>
 
   <!--<nav class="navbar navbar-expand-lg navbar-dark separator">
     
   </nav>  -->
-
+ 
 
   <div class="news--others" style="background-image: url('<?php echo get_template_directory_uri(); ?>/images/about-us-bg.webp');">
-    <div class="about-us--overlay py-5">
+    <div class="about-us--overlay py-1">
       <div class="">
         <div class="container">
-          <div class="d-flex w100 flex-wrap justify-content-center">
-            <div class="row">
-              <div class="col-sm-4">
-              <img  src="<?php echo get_template_directory_uri(); ?>/images/iso-9001.webp" alt="iso-9001">
-              </div>
-                <div class="col-sm-4">
-                <img  src="<?php echo get_template_directory_uri(); ?>/images/iso-14001.webp" alt="iso-14001">
-                </div>
-                <div class="col-sm-4">
-                <img  src="<?php echo get_template_directory_uri(); ?>/images/iso-45001.webp" alt="iso-45001">
-                </div>
-            </div>
+            <?php $isos = get_field("imagen_isos");?>
+            <?php $urlIsos = get_field("url_isos_nosotros");?>
+            <a class="d-flex flex-wrap justify-content-center" href="<?php echo ($urlIsos)?>"><img id="img2" src="<?php echo ($isos[url])?>" class="img-fluid isos" onmouseover="Cambiar('img2')" onmouseout="this.src='<?php echo ($isos[url])?>';"></a>
+          </div>
         </div>
-        </div>
-      </div>
     </div>
 </div>
-
   <!--div class="wrapper px-lg-5 mb-5"-->
   <?php
-  global $cards;
   $cards = get_field("tarjetas-informativas");
   include get_template_directory() . '/components/cards.php';
   //include locate_template(get_template_directory().'/components/cards.php', false, false); 
@@ -58,7 +48,7 @@ $banners = query_posts([
   $nimg_url = wp_get_attachment_url($nimg_id);
 
   ?>
-  <div class="news--others" style="background-image: url('<?php echo get_template_directory_uri(); ?>/images/about-us-bg.webp');">
+  <div class="news--others" style="display:none" background-image: url('<?php echo get_template_directory_uri(); ?>/images/about-us-bg.webp');">
     <div class="about-us--overlay py-5">
       <div class="wrapper pt-5 about-us mb-5 pb-3">
         <div class="container">
@@ -140,5 +130,12 @@ $banners = query_posts([
     </div>
   </div>
 </div>
+
+<?php $isosWhite = get_field("imagen_secundaria_isos");?>
+<script>
+function Cambiar(imagen){
+	document.getElementById(imagen).src = '<?php echo ($isosWhite[url])?>';
+}
+</script>
 
 <?php get_footer(); ?>

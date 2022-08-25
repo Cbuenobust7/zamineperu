@@ -2,6 +2,8 @@
 /* Template Name: Contactanos  */
 get_header(); ?>
 <div class="page-contact">
+<?php get_template_part('components/banner-logo');?>
+
   <?php include get_template_directory() . '/components/header-page.php'; ?> 
 
   <div class="wrapper py-5">

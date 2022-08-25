@@ -12,6 +12,7 @@ header("Cache-Control: no-cache, must-revalidate"); // HTTP/1.1
  * @since Zamine 1.0
  */
 $menu = getMenuArray('main');
+$menuProductos = getMenuArray('Productos');
 $menuServicios = getMenuArray('Servicios');
 
 ?>
@@ -54,29 +55,51 @@ $menuServicios = getMenuArray('Servicios');
   <?php wp_body_open(); ?>
   <header class="header">
     <div class="wrapper">
-      <div class="container d-flex justify-content-end align-items-center">
+      <div class="d-flex">
    <!-- CIEM HEADER MENU-->
         <nav class="navbar navbar-expand-lg navbar-dark bg">
-        
-        <a class="navbar-brand" href="http://ciem-demo5.com/">
+        <div class="menu-item">
+          <a href="#" class="open-menu">
+            <span class="material-icons">
+              menu
+            </span>
+          </a>
+        </div>
+        <a class="navbar-brand sticky" href="http://ciem-demo5.com/">
             <img class="navbar-brand" src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="zamine" height="58">
           </a>
         
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                  <ul class="navbar-nav">
                  <?php
-                  foreach ($menu as $key => $value) {
+                  $value = $menu[0];
                   $title = $value->title;
                   $url = $value->url;
                   $current = $value->current;
                   echo "<li class='nav-item'>
                           <a class='nav-link' href='$url'>$title</a>
                         </li>";
-                }
+                
                 ?>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              Servicios y Productos
+                              PRODUCTOS
+                            </a>
+                            
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"> 
+                                  <?php
+                                    foreach ($menuProductos as $key => $value) {
+                                      $title = $value->title;
+                                      $url = $value->url;
+                                      $current = $value->current;
+                                      echo "<a class='dropdown-item' href='$url'>$title</a> ";
+                                    }
+                                    ?>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              SERVICIOS
                             </a>
                             
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"> 
@@ -90,24 +113,30 @@ $menuServicios = getMenuArray('Servicios');
                                     ?>
                             </div>
                         </li>
+                        <?php
+                          $value = $menu[1];
+                          $title = $value->title;
+                          $url = $value->url;
+                          $current = $value->current;
+                          echo "<li class='nav-item'>
+                                  <a class='nav-link' href='$url'>$title</a>
+                                </li>";
+                        ?>
                   </ul>
               </div>
         <div class="menu-item menu-lang">
           <ul class="header__list-languages"><?php pll_the_languages(); ?></ul>
         </div>
-        <div class="menu-item" style="display:none">
-          <a href="#">
-            <span class="material-icons">
-              search
-            </span>
-          </a>
-        </div>
-        <div class="menu-item">
-          <a href="#" class="open-menu">
-            <span class="material-icons">
-              menu
-            </span>
-          </a>
+        <div id="header-responsive" class="menu-item ciem-responsive__buscador float--right--palm">
+            <form class="ciem-responsive__buscador__form js-responsive__buscador-form js-buscador-form" role="search" method="get" id="searchform" class="searchform" action="http://ciem-demo5.com/">
+                <div class="buscador-container">
+                  <label class="screen-reader-text" for="s">Buscar por:</label>
+                  <input class="ciem-responsive__buscador__form__input buscador__input js-buscador-form" type="text" value="" name="s" id="s">
+                  <input class="ciem-responsive__buscador__form__submit buscador__submit material-icons" type="submit" id="searchsubmit" value="search">
+                </div>
+            </form>
+      
+            </div>
         </div>
         </nav>                                    
       </div>

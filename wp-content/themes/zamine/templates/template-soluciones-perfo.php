@@ -26,13 +26,15 @@ $mainCategory = $categories[1];
         // <!-- change to false to also display empty ones
         
     ));
+
+   // print_r($categories2);
 ?>
+
 <div class="page-services">
 
   <div class="banner banner-2">
-    <div class="container">
+    <?php get_template_part('components/banner-logo');?>
 
-    </div>
     <img src="<?php echo get_the_post_thumbnail_url(get_the_ID())?>">
     <div class="overlay">
         <?php
@@ -52,7 +54,7 @@ $mainCategory = $categories[1];
 
   <div class="products py-5">
     <div class="container-fluid">
-          <div class="wrapper d-flex mb-1">
+          <div id="productos" class="wrapper d-flex mb-1">
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="#">Inicio</a></li>
         <li class="breadcrumb-item active" aria-current="page">Soluciones de Perforación</li>
@@ -109,6 +111,7 @@ $mainCategory = $categories[1];
 
 
 </div>
+
 <style>
     .my-nav2 li a{
         padding: 10px;
