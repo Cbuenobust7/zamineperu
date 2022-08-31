@@ -26,10 +26,7 @@ get_header(); ?>
   <div class="products py-5">
     <div class="container-fluid">
           <div class="wrapper d-flex mb-5">
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Servicios Especializados y Repuestos</li>
-      </ol>
+      
       <div class="ml-auto search">
         <input type="text" name="buscar" placeholder="Buscar" autocomplete="off">
         <input type="image" name="search" src="<?php echo get_template_directory_uri(); ?>/icons/search2.png">

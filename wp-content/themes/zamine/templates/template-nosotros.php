@@ -15,7 +15,9 @@ $cards = get_field("tarjetas-informativas");
     
     <img src="<?php echo get_template_directory_uri(); ?>/images/aboutus.png">
     <div class="overlay">
-      <?php the_title('<h1>', '</h1>'); ?>
+      <?php
+          echo do_shortcode('[smartslider3 slider="16"]');
+      ?>    
     </div>
   </div>
 
@@ -26,8 +28,8 @@ $cards = get_field("tarjetas-informativas");
           <!--img src="<?php echo get_template_directory_uri(); ?>/images/logoo-black.png" class="img-fluid mb-4"-->
           <!--img src="/wp-content/uploads/2022/05/logo-zamine1.png" class="img-fluid mb-4"-->
 			<h3 style="font-size: 40px;color: #f47b20;">
-              <span class="font-weight-bold">ZAMINE</span><br>
-              <span class="font-weight-bold">SERVICE PERU</span>
+              <span class="font-weight-bold">ACERCA DE</span><br>
+              <span class="font-weight-bold">NOSOTROS</span>
             </h3>
           <div class="bar bar--orange my-4"></div>
           <div class="pr-md-4 text-justify">

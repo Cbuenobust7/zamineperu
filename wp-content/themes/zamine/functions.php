@@ -98,40 +98,55 @@ function filter_projects() {
     $post_type = $_POST['post_type'];
     $taxonomy = $_POST['taxonomy'];
     $cat_id = $_POST['category_id'];
-
+   
     //$children = get_term_children($cat_id, $taxonomy);
 
     $children = get_terms( $taxonomy, array(
         'parent'    => $cat_id,
         'hide_empty' => false
     ) );
-
+   
     //Si no tiene hijos significa que estamos en el nivel final
     if( empty( $children ) ) {
         $ajaxposts = new WP_Query([
             'post_type' => $post_type,
             'posts_per_page' => -1,
             'tax_query' => [
-                [
+                [                            
                     'taxonomy' => $taxonomy,
                     'field' => 'slug',
                     'terms' => $catSlug
                 ],
             ]
             ]);
+        $laforma = $ajaxposts->tax_query;
         $response = '';
+        //echo "<pre>";
+        //print_r($catSlug);
+        //echo "</pre>"; 
+        
 
-        if($ajaxposts->have_posts() && $post_type != "suministros-plantas") {
-                while($ajaxposts->have_posts()) : $ajaxposts->the_post();
-                $response .= get_template_part('templates/common/project-item');
-                endwhile;
-        } elseif($ajaxposts->have_posts() && $post_type == "suministros-plantas"){
-                while($ajaxposts->have_posts()) : $ajaxposts->the_post();
-                $response .= get_template_part('templates/common/serv');
-                endwhile;
-        } else {
-            $response = '<div class="col-md-12 p-4"><h4>No existen resultados para esta categoría.</h4></div>';
-        }
+            if($ajaxposts->have_posts() && $catSlug == "camiones") {
+                    while($ajaxposts->have_posts()) : $ajaxposts->the_post();
+                    $response .= get_template_part('templates/common/serv');
+                    endwhile;
+            } elseif($ajaxposts->have_posts() && $catSlug == "palas-y-excavadoras-hidraulicas"){
+                    while($ajaxposts->have_posts()) : $ajaxposts->the_post();
+                    $response .= get_template_part('templates/common/serv');
+                    endwhile;
+            } elseif($ajaxposts->have_posts() && $catSlug == "componentes-para-gran-mineria2"){
+                    while($ajaxposts->have_posts()) : $ajaxposts->the_post();
+                    $response .= get_template_part('templates/common/gran-mineria-item');
+                    endwhile;
+            } elseif($ajaxposts->have_posts()){
+                    while($ajaxposts->have_posts()) : $ajaxposts->the_post();
+                    $response .= get_template_part('templates/common/project-item');
+                    endwhile;
+            
+            } else {
+                $response = '<div class="col-md-12 p-4"><h4>No existen resultados para esta categoría.</h4></div>';
+            }
+       
 
     }else{
         //Si tiene hijos, mostramos subcategorias
@@ -144,9 +159,11 @@ function filter_projects() {
             $imagen_fin = $imglink[0];
             $subCateg = $cat->slug;
 
+            
+
         if($subCateg == 'camiones-electricos-rigidos') {
             $response .= '<div class="col-md-6 col-lg-4">
-            <a class="card-service" href="http://ciem-demo5.com/hitachi-mining" onclick="loadData(this, event)" data-slug="'.$cat->slug.'" data-catid="'.$cat->term_id.'">
+            <a class="card-service" href="javascript:void(0)" onclick="loadData(this, event)" data-slug="'.$cat->slug.'" data-catid="'.$cat->term_id.'">
                 <div class="card-service__image" style="background-image: url('.$imagen_fin.')" data-slug="'.$cat->slug.'" data-catid="'.$cat->term_id.'"></div>
                 <div class="card-service__info" data-slug="'.$cat->slug.'" data-catid="'.$cat->term_id.'">
                     <div class="card-service__info__name" data-slug="'.$cat->slug.'" data-catid="'.$cat->term_id.'">
@@ -162,7 +179,9 @@ function filter_projects() {
         </div>';
         } else {
        
-            $response .= '<div class="col-md-6 col-lg-4">
+            $response .= '
+                
+            <div class="col-md-6 col-lg-4">
                 <a class="card-service" href="javascript:void(0);" onclick="loadData(this, event)" data-slug="'.$cat->slug.'" data-catid="'.$cat->term_id.'">
                     <div class="card-service__image" style="background-image: url('.$imagen_fin.')" data-slug="'.$cat->slug.'" data-catid="'.$cat->term_id.'"></div>
                     <div class="card-service__info" data-slug="'.$cat->slug.'" data-catid="'.$cat->term_id.'">

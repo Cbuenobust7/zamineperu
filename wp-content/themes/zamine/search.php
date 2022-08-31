@@ -11,7 +11,7 @@
                         <div class="col-md-8 offset-md-2">
                             <div class="pt-3 pb-4"> 
                                 <div class="mt-4 text-center">
-                                    <h4>Este es el contenido encontrado</h4></div>
+								<h1>Resultados de búsqueda: <?php echo get_search_query(); ?></h1></div>
 							</div>
                         </div>
                     </div>
@@ -29,8 +29,9 @@
 											<!-- Post Loop -->
 
 											<?php if ( have_posts() ) : 
-												while ( have_posts() ) : the_post(); ?>
-													<p>Entrada:</p>
+												while ( have_posts() ) : the_post(); 
+
+												?>
 													<?php if ( is_singular() ) : ?>
 														<?php the_title( '<h1 class="mb-1 title default-max-width">', '</h1>' ); ?> 
 													<?php else : ?>
@@ -41,9 +42,18 @@
 														<p class="font-13">
 															<?php the_content(); ?>
 														</p>
-													
-														</div>
-												<?php endwhile; else : ?>
+		
+														<?php get_template_part('content'); 
+														
+														the_posts_pagination( array( 
+
+																	"next_text" => "Siguiente pagina",
+																	"prev_text" => "Anterior página"
+																	) ); ?>
+													</div>
+												<?php endwhile; 
+												
+													else : ?>
 													<p><?php esc_html_e( 'No se encontró contenido con esos criterios.' ); ?></p>
 											<?php endif; ?>
 											<div class="clearfix"></div>
@@ -56,6 +66,7 @@
 				</div>
 			</div>
 			<!-- end row -->
+	
 		</div>
 		<!-- container -->
 	</div>

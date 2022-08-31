@@ -22,7 +22,7 @@ $mainCategory = $categories[0];
         'taxonomy' => "soluci_perf_categ",
         'parent' => $mainCategory->term_id, // <-- No Parent
         'orderby' => 'term_id',
-        'hide_empty' => false
+        'hide_empty' => false,
         // <!-- change to false to also display empty ones
         
     ));
@@ -49,13 +49,11 @@ $mainCategory = $categories[0];
     <div class="container-fluid">
       <div id="productos" class="wrapper d-flex mb-1">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="www.ciem-demo5.com">Inicio</a></li>
+   
+          <li class="breadcrumb-item"><a href="/">Inicio</a></li>
           <li class="breadcrumb-item active" aria-current="page">Hitachi Mining</li>
         </ol>
-        <div class="ml-auto search">
-          <input type="text" name="buscar" placeholder="Buscar" autocomplete="off">
-          <input type="image" name="search" src="<?php echo get_template_directory_uri(); ?>/icons/search2.png">
-        </div>
+   
       </div>
       <div class="products--list container-fluid">
         <div class="row" style="background: #fff;">
@@ -79,8 +77,7 @@ $mainCategory = $categories[0];
                               <?php if (count($categories3) > 0):
                                   foreach ($categories3 as $category3):
                                   $pepe = $category3->name;
-                                  if ($pepe == 'Camiones eléctricos rígidos'):
-                                  endif;
+                          
                                   endforeach;
 
                                     endif;
@@ -118,7 +115,7 @@ $mainCategory = $categories[0];
   }
 
   .my-nav2 li {
-    margin: 15px 0;
+    margin: 0 0;
   }
 
   .toggler {
@@ -194,5 +191,24 @@ $mainCategory = $categories[0];
       }
     })
   }
+
+  $('.products--list li a').on('click', function() {
+    var $this = $(this),
+      $bc = $('<li class="breadcrumb-item active"></li>');
+    if ($('.breadcrumb li').length < 3) {
+      var title_page = $('.breadcrumb .active').text();
+      $('.breadcrumb .active').html(`<a href='#'>${title_page}</a>`);
+      $('.breadcrumb .active').removeClass("active");
+    }
+    $('.breadcrumb .active').remove();
+
+    $this.parents('li').each(function(n, li) {
+        var $a = $(li).children('a').clone();
+        $bc.prepend($a.text());
+    });
+    $('.breadcrumb').append( $bc );
+  })
+
+$(".products--list li a").first().click()
 </script>
 <?php get_footer(); ?>

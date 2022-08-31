@@ -6,9 +6,9 @@ get_header(); ?>
   <div class="banner banner-2">
     <img src="<?php echo get_the_post_thumbnail_url() ?>">
     <div class="overlay">
-      <h1>
-        <?php the_title(); ?>
-      </h1>
+      <?php
+        echo do_shortcode('[smartslider3 slider="13"]');
+      ?>
     </div>
   </div>
 
@@ -101,7 +101,7 @@ get_header(); ?>
     </div>
     <div class="totals text-center my-5"><?php echo $total ?> Entradas</div>
   </div>
-  <div class="container-fluid news-list">
+  <div class="container-fluid news-list" style="display:none">
     <?php foreach ($news as $k => $new) : ?>
       <div class="news-list--item wrapper">
         <div class="row">

@@ -16,6 +16,8 @@ $menuProductos = getMenuArray('Productos');
 $menuServicios = getMenuArray('Servicios');
 
 ?>
+
+
 <!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
 
@@ -34,7 +36,7 @@ $menuServicios = getMenuArray('Servicios');
 
   <title>Zamine<?php echo wp_title();?></title>
   <meta charset="<?php bloginfo('charset'); ?>">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
   <link rel="profile" href="http://gmpg.org/xfn/11">
   <?php if (is_singular() && pings_open(get_queried_object())) : ?>
     <link rel="pingback" href="<?php echo esc_url(get_bloginfo('pingback_url')); ?>">
@@ -58,6 +60,7 @@ $menuServicios = getMenuArray('Servicios');
       <div class="d-flex">
    <!-- CIEM HEADER MENU-->
         <nav class="navbar navbar-expand-lg navbar-dark bg">
+        <div class="container d-flex justify-content align-items-center">
         <div class="menu-item">
           <a href="#" class="open-menu">
             <span class="material-icons">
@@ -65,8 +68,9 @@ $menuServicios = getMenuArray('Servicios');
             </span>
           </a>
         </div>
-        <a class="navbar-brand sticky" href="http://ciem-demo5.com/">
-            <img class="navbar-brand" src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="zamine" height="58">
+    <!-- la clase sticky desaparecer al iniciar el logo y aparece al hacer scroll para abajo -->
+        <a class="navbar-brand" href="http://ciem-demo5.com/">
+            <img class="navbar-brand nuevo-logo" src="<?php echo get_template_directory_uri(); ?>/images/logo-nuevo-black.webp" alt="zamine" height="58">
           </a>
         
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -124,10 +128,10 @@ $menuServicios = getMenuArray('Servicios');
                         ?>
                   </ul>
               </div>
-        <div class="menu-item menu-lang">
+        <div class="menu-item menu-lang" style="display:none">
           <ul class="header__list-languages"><?php pll_the_languages(); ?></ul>
         </div>
-        <div id="header-responsive" class="menu-item ciem-responsive__buscador float--right--palm">
+        <div id="header-responsive" class="buscador-responsive menu-item ciem-responsive__buscador float--right--palm">
             <form class="ciem-responsive__buscador__form js-responsive__buscador-form js-buscador-form" role="search" method="get" id="searchform" class="searchform" action="http://ciem-demo5.com/">
                 <div class="buscador-container">
                   <label class="screen-reader-text" for="s">Buscar por:</label>

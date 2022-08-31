@@ -1,4 +1,19 @@
-
+.bar--orange,.page-news .featured .swiper-pagination-bullet-active,.products--list .accordion-menu{
+    background:#f47b20;
+    border-radius: 5px;
+    width: 28%;
+}
+.buscador-responsive{
+    display:block;
+}
+.nuevo-logo{
+    display:block;
+    position: absolute;
+    width: 33%;
+    height: 372%;
+    margin-left: -27%;
+    margin-top: -4%;
+}
 .ciem-responsive__buscador{
     position:relative;
     margin:0
@@ -41,16 +56,17 @@
     width:213px;
     padding:.2em 1em .15em;
     color:#000;
-    background-color:#fff;
+    background-color:#000;
     font-family:Lato,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji" ;
     text-transform:uppercase;
     width:180px;
     padding:0;
     transition:all .3s ease-in-out;
-    pointer-events:auto
+    pointer-events:auto;
+    border-color: black black #8f8787 black
 }
  .ciem-responsive__buscador .ciem-responsive__buscador__form__input:focus{
-    background-color:#fff;
+    background-color:#747479;
     background-image:none
 }
 @media screen and (max-width:44.9375em){
@@ -69,7 +85,7 @@
     
     padding:0 .5em;
     color:#fff;
-    background-color:#000;
+    background-color:rgba(0, 0, 0, 0);
     margin-right:0;
     pointer-events:auto;
     border:0
@@ -317,7 +333,7 @@ body{
 }
 .search input[type=text]{
     background:0 0;
-    border:0;
+    border:0 0 0 0;
     border-bottom:1px solid;
     color:#d7d8d9;
     font-size:18px;
@@ -325,7 +341,8 @@ body{
     text-align:center;
     margin-right:30px;
     padding-right:30px;
-    outline:0
+    outline:0;
+    border-color: black white white black
 }
 .search input[type=text]::placeholder{
     color:#d7d8d9
@@ -339,12 +356,7 @@ body{
 .products--list .bg-orange{
     margin-bottom:20px
 }
-.bar--orange,.page-news .featured .swiper-pagination-bullet-active,.products--list .accordion-menu{
-    background:#f47b20;
-    border-radius: 5px;
-    width: 28%;
 
-}
 .bar--yellow{
     background:#ffde22;
     border-radius: 5px;
@@ -723,7 +735,22 @@ body{
     }
 }
 @media all and (max-width:1200px){
-
+    .bar--orange,.page-news .featured .swiper-pagination-bullet-active,.products--list .accordion-menu{
+        background:#f47b20;
+        border-radius: 5px;
+        width: 100%;
+    }
+    .buscador-responsive{
+        display:none;
+    }
+    .nuevo-logo{
+        display:none;
+        position: absolute;
+        width: 26%;
+        height: 370%;
+        margin-left: -27%;
+        margin-top: -5%;
+    }
     .isos{
         width: 100%;
     }
@@ -1414,7 +1441,8 @@ a,button{
     border-right:none
 }
 .header .menu-item{
-    padding:0 0 0 15px
+    padding:0 6% 0 6%;
+    margin: 0 6% 0 6%;
 }
 .header-menu{
     overflow-y:auto
@@ -1796,7 +1824,7 @@ html {
     scroll-behavior: smooth;
 }
 div[id]{
-    scroll-margin-top: 84px;
+    scroll-margin-top: 170px;
 }
 /* cyrillic-ext */
 @font-face {
@@ -1931,6 +1959,17 @@ div{
 .bbb_deals{
     width: 35%;
     margin-right: 7%;
+    padding-top: 80px;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 34px;
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin-top: 10px
+}
+.bbb_deals-ancho{
+    width: 100%;
+    margin-right: -8%;
     padding-top: 80px;
     padding-left: 25px;
     padding-right: 25px;

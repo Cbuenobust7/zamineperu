@@ -23,13 +23,10 @@ get_header(); ?>
     <div class="container-fluid">
       <div id="productos" class="wrapper d-flex mb-1">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Filtración</li>
-        </ol>
-        <div class="ml-auto search">
-          <input type="text" name="buscar" placeholder="Buscar" autocomplete="off">
-          <input type="image" name="search" src="<?php echo get_template_directory_uri(); ?>/icons/search2.png">
-        </div>
+        <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Filtración</li>
+      </ol>
+
       </div>
       <div class="products--list container-fluid">
         <div class="row" style="background: #fff;">
@@ -109,7 +106,7 @@ get_header(); ?>
         background: #6d2f00;
     }
     .my-nav2 li{
-        margin: 15px 0;
+        margin: 0 0;
     }
     .toggler{
         font-size: 14px;
@@ -183,5 +180,23 @@ get_header(); ?>
       }
     })
   }
+$('.products--list li a').on('click', function() {
+    var $this = $(this),
+      $bc = $('<li class="breadcrumb-item active"></li>');
+    if ($('.breadcrumb li').length < 3) {
+      var title_page = $('.breadcrumb .active').text();
+      $('.breadcrumb .active').html(`<a href='#'>${title_page}</a>`);
+      $('.breadcrumb .active').removeClass("active");
+    }
+    $('.breadcrumb .active').remove();
+
+    $this.parents('li').each(function(n, li) {
+        var $a = $(li).children('a').clone();
+        $bc.prepend($a.text());
+    });
+    $('.breadcrumb').append( $bc );
+  })
+
+$(".products--list li a").first().click()
 </script>
 <?php get_footer(); ?>

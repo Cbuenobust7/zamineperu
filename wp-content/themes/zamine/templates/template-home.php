@@ -91,7 +91,7 @@ $banners = query_posts([
   ]);
   ?>
 
-  <div class="news--others" style="background-image: url('<?php echo get_template_directory_uri(); ?>/images/news-bg.png');">
+  <div class="news--others" style="background-image: url('<?php echo get_template_directory_uri(); ?>/images/news-bg.webp');">
     <div class="news--others--overlay py-5">
       <div class="wrapper">
         <div class="bar bar--white my-4 mx-auto"></div>
