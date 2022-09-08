@@ -35,7 +35,7 @@ if ($count == 1) {
             $mensaje
             </p>
             <div class='mt-4 $dbutton'>
-              <a  href='$enlace' class='btn btn-outline-white px-5'>$nombre_boton</a>
+              <a  href='$enlace' class='btn btn-orange px-5'>$nombre_boton</a>
             </div>
           </div>
          

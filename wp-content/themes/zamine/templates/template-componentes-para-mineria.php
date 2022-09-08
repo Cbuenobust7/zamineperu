@@ -47,12 +47,11 @@ $mainCategory = $categories[2];
       <div class="products--list container-fluid">
         <div class="row" style="background: #fff;">
           <div class="accordion-menu" style="overflow: hidden;">
-            <h6 class="my-nav2 mb-0 font-weight-bold" style="background: #f47b20;">
+            <h6 class="my-nav2 mb-0 font-weight-bold" style="background: #303030;">
             <div style="list-style:none">
             
                 
                 <?php if(count($mainCategory)>0): ?>
-                    <li class="m-0"><a onclick="setActive(this, event)" href="#productos" title="" class="d-block" data-slug="<?= $mainCategory->slug; ?>" data-catid="<?= $mainCategory->term_id; ?>"><?php echo $mainCategory->name?></a>
                         <?php 
                             $categories2 = get_terms( 
                                 array(
@@ -113,7 +112,7 @@ $mainCategory = $categories[2];
         background: #6d2f00;
     }
     .my-nav2 li a.active{
-        background: #6d2f00;
+        background: #f47b20;
     }
     .my-nav2 li{
         margin: 15px 0;

@@ -13,7 +13,7 @@ $categories = get_terms(array(
 ));
 //var_dump($categories);
 
-$mainCategory = $categories[1];
+$mainCategory = $categories[7];
 
 ?>
 <?php if (count($mainCategory) > 0): ?>
@@ -66,7 +66,7 @@ $mainCategory = $categories[1];
     <div class="products--list container-fluid">
         <div class="row" style="background: #fff;">
           <div class="accordion-menu" style="overflow: hidden;">
-            <h6 class="my-nav2 mb-0 font-weight-bold" style="background: #f47b20;">
+            <h6 class="my-nav2 mb-0 font-weight-bold" style="background: #303030;">
             <div style="list-style:none">
 
                 <?php if (count($categories2) > 0): ?>
@@ -120,7 +120,7 @@ $mainCategory = $categories[1];
         background: #6d2f00;
     }
     .my-nav2 li a.active{
-        background: #6d2f00;
+        background: #f47b20;
     }
     .my-nav2 li{
         margin: 15px 0;

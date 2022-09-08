@@ -126,27 +126,91 @@ function filter_projects() {
         //echo "</pre>"; 
         
 
-            if($ajaxposts->have_posts() && $catSlug == "camiones") {
-                    while($ajaxposts->have_posts()) : $ajaxposts->the_post();
-                    $response .= get_template_part('templates/common/serv');
-                    endwhile;
-            } elseif($ajaxposts->have_posts() && $catSlug == "palas-y-excavadoras-hidraulicas"){
-                    while($ajaxposts->have_posts()) : $ajaxposts->the_post();
-                    $response .= get_template_part('templates/common/serv');
-                    endwhile;
-            } elseif($ajaxposts->have_posts() && $catSlug == "componentes-para-gran-mineria2"){
-                    while($ajaxposts->have_posts()) : $ajaxposts->the_post();
-                    $response .= get_template_part('templates/common/gran-mineria-item');
-                    endwhile;
-            } elseif($ajaxposts->have_posts()){
-                    while($ajaxposts->have_posts()) : $ajaxposts->the_post();
-                    $response .= get_template_part('templates/common/project-item');
-                    endwhile;
-            
-            } else {
-                $response = '<div class="col-md-12 p-4"><h4>No existen resultados para esta categoría.</h4></div>';
-            }
-       
+        if($ajaxposts->have_posts() && $catSlug == "camiones") {
+            while($ajaxposts->have_posts()) : $ajaxposts->the_post();
+            $response .= get_template_part('templates/common/serv');
+            endwhile;
+        } elseif($ajaxposts->have_posts() && $catSlug == "palas-y-excavadoras-hidraulicas"){
+                while($ajaxposts->have_posts()) : $ajaxposts->the_post();
+                $response .= get_template_part('templates/common/palas-y-camiones');
+                endwhile;
+        } elseif($ajaxposts->have_posts() && $catSlug == "componentes-para-gran-mineria2"){
+                while($ajaxposts->have_posts()) : $ajaxposts->the_post();
+                $response .= get_template_part('templates/common/gran-mineria-item');
+                endwhile;
+        } elseif($ajaxposts->have_posts() && $catSlug == "entrenamiento"){
+                while($ajaxposts->have_posts()) : $ajaxposts->the_post();
+                $response .= get_template_part('templates/common/gran-mineria-item');
+                endwhile;
+        } elseif($ajaxposts->have_posts() && $catSlug == "ensayo-no-destructivo"){
+                while($ajaxposts->have_posts()) : $ajaxposts->the_post();
+                $response .= get_template_part('templates/common/gran-mineria-item');
+                endwhile;
+        } elseif($ajaxposts->have_posts() && $catSlug == "repuestos-y-componentes"){
+                while($ajaxposts->have_posts()) : $ajaxposts->the_post();
+                $response .= get_template_part('templates/common/gran-mineria-item');
+                endwhile;
+        } elseif($ajaxposts->have_posts() && $catSlug == "soldadura-2"){
+                while($ajaxposts->have_posts()) : $ajaxposts->the_post();
+                $response .= get_template_part('templates/common/gran-mineria-item');
+                endwhile;
+        } elseif($ajaxposts->have_posts() && $catSlug == "ensayo-no-destructivo-ndt"){
+                while($ajaxposts->have_posts()) : $ajaxposts->the_post();
+                $response .= get_template_part('templates/common/gran-mineria-item');
+                endwhile;
+        } elseif($ajaxposts->have_posts() && $catSlug == "soporte-al-producto"){
+                while($ajaxposts->have_posts()) : $ajaxposts->the_post();
+                $response .= get_template_part('templates/common/gran-mineria-item');
+                endwhile;
+        } elseif($ajaxposts->have_posts() && $catSlug == "soldadura"){
+                while($ajaxposts->have_posts()) : $ajaxposts->the_post();
+                $response .= get_template_part('templates/common/gran-mineria-item');
+                endwhile;
+        } elseif($ajaxposts->have_posts() && $catSlug == "servicios-de-mantenimiento"){
+                while($ajaxposts->have_posts()) : $ajaxposts->the_post();
+                $response .= get_template_part('templates/common/gran-mineria-item');
+                endwhile;
+        } elseif($ajaxposts->have_posts() && $catSlug == "reparacion-de-componentes"){
+                while($ajaxposts->have_posts()) : $ajaxposts->the_post();
+                $response .= get_template_part('templates/common/gran-mineria-item');
+                endwhile;
+        } elseif($ajaxposts->have_posts() && $catSlug == "sistema-trolley-camiones"){
+                while($ajaxposts->have_posts()) : $ajaxposts->the_post();
+                $response .= get_template_part('templates/common/gran-mineria-item');
+                endwhile;
+        } elseif($ajaxposts->have_posts() && $catSlug == "servicios-especializados-y-repuestos"){
+                while($ajaxposts->have_posts()) : $ajaxposts->the_post();
+                $response .= get_template_part('templates/common/gran-mineria-item');
+                endwhile;
+        } elseif($ajaxposts->have_posts() && $catSlug == "camiones-a-bateria"){
+                while($ajaxposts->have_posts()) : $ajaxposts->the_post();
+                $response .= get_template_part('templates/common/gran-mineria-item');
+                endwhile;
+        } elseif($ajaxposts->have_posts() && $catSlug == "componentes-para-gran-mineria2"){
+                while($ajaxposts->have_posts()) : $ajaxposts->the_post();
+                $response .= get_template_part('templates/common/gran-mineria-item');
+                endwhile;
+        } elseif($ajaxposts->have_posts() && $catSlug == "jaws"){
+                while($ajaxposts->have_posts()) : $ajaxposts->the_post();
+                $response .= get_template_part('templates/common/gran-mineria-item');
+                endwhile;
+        } elseif($ajaxposts->have_posts() && $catSlug == "solintal"){
+                while($ajaxposts->have_posts()) : $ajaxposts->the_post();
+                $response .= get_template_part('templates/common/gran-mineria-item');
+                endwhile;
+        } elseif($ajaxposts->have_posts() && $catSlug == "camiones-a-propulsion-electrica"){
+                while($ajaxposts->have_posts()) : $ajaxposts->the_post();
+                $response .= get_template_part('templates/common/palas-y-camiones');
+                endwhile;
+        } elseif($ajaxposts->have_posts()){
+                while($ajaxposts->have_posts()) : $ajaxposts->the_post();
+                $response .= get_template_part('templates/common/project-item');
+                endwhile;
+        
+        } else {
+            $response = '<div class="col-md-12 p-4"><h4>No existen resultados para esta categoría.</h4></div>';
+        }
+
 
     }else{
         //Si tiene hijos, mostramos subcategorias

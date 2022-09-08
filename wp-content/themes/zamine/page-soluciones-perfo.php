@@ -60,7 +60,7 @@ $servicio = get_field("servicio");
                 
                 <div class="accordion descripcionacc" id="acordeonDescripcion">
                     <div class="card">
-                        <div class="card-header" id="headingOne">
+                        <div class="card-header" style="background-color:#f47b20;" id="headingOne">
                             <h2 class="mb-0">
                                 <button class="d-flex align-items-center justify-content-between btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                     <span class="material-icons" style="font-size: 0.6em;">

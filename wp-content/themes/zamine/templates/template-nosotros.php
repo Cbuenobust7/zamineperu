@@ -88,7 +88,7 @@ $cards = get_field("tarjetas-informativas");
                 <!-- <img class="card-timeline__detail__image" src="$imagen" alt="$title">  -->
                 <img src="$imagen" alt="$title">
                 <div class="card-timeline__detail__title">
-                  $desde - $hasta
+                  $desde  $hasta
                 </div>
                 <div>
                   $detalle
@@ -183,7 +183,7 @@ $itemsGeneral = query_posts([
   <div id="isos">
     <?php
     $cards = get_field("tarjetas");
-      include get_template_directory() . '/components/cards.php';
+      include get_template_directory() . '/components/cards-isos.php';
       ?>
       <?php
       $news = query_posts([

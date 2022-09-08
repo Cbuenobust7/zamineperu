@@ -43,13 +43,7 @@
 															<?php the_content(); ?>
 														</p>
 		
-														<?php get_template_part('content'); 
-														
-														the_posts_pagination( array( 
-
-																	"next_text" => "Siguiente pagina",
-																	"prev_text" => "Anterior página"
-																	) ); ?>
+														<?php get_template_part('content');?>
 													</div>
 												<?php endwhile; 
 												
@@ -70,7 +64,6 @@
 		</div>
 		<!-- container -->
 	</div>
-
 <?php get_footer(); ?>
 
 

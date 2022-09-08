@@ -30,14 +30,15 @@
                                     echo '
 						<a href="'.get_field('pdf_marca').'" target="_blank" class="btn btn-orange" style="font-size: 14px!important;">Descargar PDF</a>';
                                 }
-
+                                $textoCotizar=get_field('texto_del_boton_cotizar', get_the_ID());
                                 echo '
-						<a href="#exampleModalCenter" data-toggle="modal" class="btn btn-orange ml-4" style="font-size: 14px!important;">Consulta Aquí</a>';
+						<a href="#exampleModalCenter" data-toggle="modal" class="btn btn-orange ml-4" style="font-size: 14px!important;">'.$textoCotizar.'</a>';
                             ?> </div>
       </div>
     </div>
   </div>
 </div>
+
 
  <!-- Modal -->
  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">

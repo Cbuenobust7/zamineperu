@@ -1,18 +1,120 @@
-.bar--orange,.page-news .featured .swiper-pagination-bullet-active,.products--list .accordion-menu{
-    background:#f47b20;
-    border-radius: 5px;
-    width: 28%;
+html {
+    scroll-behavior: smooth;
 }
-.buscador-responsive{
-    display:block;
+div[id]{
+    scroll-margin-top: 170px;
+}
+.bbb_deals-tres{
+    width: 35%;
+    margin-right: -2%;
+    padding-top: 80px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 34px;
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin-top: 10px
+}
+@font-face {
+    font-family: 'open sans';
+    font-style: normal;
+    font-weight: 200;
+    font-display: swap;
+    src: url(http://ciem-demo5.com/open-sans-v27-latin-300.woff2) format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  }
+
+.h1, h2, h3, h4, h5 {
+    font-family: 'open sans' !important;
+}
+
+.h6{
+    font-family: 'open sans' !important;
+}
+
+.p{
+    font-family: 'open sans' !important;
+}
+
+@media (min-width:1800px) and (max-width:2000px){
+    .header .menu-item{
+            padding:0 6% 0 6%;
+            margin: 0 6% 0 6%;
+        }
+    .navbar-ciem{
+        padding-left: 25%;
+        }
+    
+    .nuevo-logo{
+            display:block;
+            position: absolute;
+            width: 26%;
+            height: 319%;
+            margin-left: -48%;
+            margin-top: -3%;
+        }
+    }
+@media (min-width:1600px) and (max-width:1799px){
+        .header .menu-item{
+                padding:0 6% 0 6%;
+                margin: 0 6% 0 6%;
+            }
+        .navbar-ciem{
+            padding-left: 25%;
+            }
+        
+        .nuevo-logo{
+                display:block;
+                position: absolute;
+                width: 26%;
+                height: 319%;
+                margin-left: -43%;
+                margin-top: -3%;
+            }
+        }
+@media (min-width:1201px) and (max-width:1599px){
+.header .menu-item{
+        padding:0 6% 0 6%;
+        margin: 0 6% 0 6%;
+    }
+.navbar-ciem{
+    padding-left: 10%;
+    }
+
+.nuevo-logo{
+        display:block;
+        position: absolute;
+        width: 26%;
+        height: 319%;
+        margin-left: -18%;
+        margin-top: -3%;
+    }
 }
 .nuevo-logo{
     display:block;
     position: absolute;
-    width: 33%;
-    height: 372%;
-    margin-left: -27%;
-    margin-top: -4%;
+    width: 26%;
+    height: 319%;
+    margin-top: -3%;
+}
+.nuevo-logo-movil{
+    display:none;
+}
+.row-products {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.bar--orange,.page-news .featured .swiper-pagination-bullet-active,.products--list .accordion-menu{
+    background: #303030;
+    border-radius: 5px;
+    width: 23%;
+}
+.buscador-responsive{
+    display:block;
 }
 .ciem-responsive__buscador{
     position:relative;
@@ -244,6 +346,7 @@
 }
 .btn-orange,.btn-outline-white,.btn-white{
     font-size:22px;
+    font-family: 'Open Sans';
     font-weight:900
 }
 
@@ -251,7 +354,7 @@
     display:none
 }
 .breadcrumb,.header .menu-item,.header-menu .menu ul li a,.title-orange h2{
-    font-family:Raleway,sans-serif
+    font-family:'open sans';
 }
 .banner,.search{
     position:relative
@@ -260,7 +363,7 @@ body,body.admin-bar{
     padding-top:80px
 }
 body{
-    font-family:Roboto,sans-serif;
+    font-family:'open sans' !important;
     font-size:18px
 }
 .items--item p,.justify{
@@ -284,6 +387,18 @@ body{
 }
 .btn-orange:hover.nh{
     color:#f47b20
+}
+.btn-orange-alt{
+    background:#f47b20;
+    color:#fff;
+    border:2px solid #f47b20
+}
+.btn-orange-alt:hover{
+    background:0 0;
+    color:#f3d2b8
+}
+.btn-orange-alt:hover.nh{
+    color:#f3d2b8
 }
 .btn-white{
     background:#fff;
@@ -479,6 +594,15 @@ body{
     font-size:10px;
     font-weight:600;
     color:#fff
+
+}
+.menu-item-movil{
+    text-align:center;
+    text-transform:uppercase;
+    line-height:1;
+    font-size:10px;
+    font-weight:600;
+    color:#fff
 }
 .footer .bold,.footer .title{
     font-size:20px
@@ -489,6 +613,9 @@ body{
     margin:0 auto 8px
 }
 .footer .copyright a,.header .menu-item a{
+    color:#fff
+}
+.menu-item-movil a{
     color:#fff
 }
 .header-menu{
@@ -735,6 +862,36 @@ body{
     }
 }
 @media all and (max-width:1200px){
+    div[id]{
+        scroll-margin-top: 30px;
+    }
+    .breadcrumb{
+        background:0 0;
+        font-size:14px;
+        font-weight:500
+    }
+    .bbb_deals-ancho{
+        width: 100%;
+        margin-right: -8%;
+        padding-top: 80px;
+        padding-left: 1px;
+        padding-right: 25px;
+        padding-bottom: 34px;
+        box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        margin-top: 10px
+    }
+    .bbb_deals-tres{
+        width: 100%;
+        margin-right: -2%;
+        padding-top: 80px;
+        padding-left: 80px;
+        padding-right: 43px;
+        padding-bottom: 34px;
+        box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        margin-top: 10px
+    }
     .bar--orange,.page-news .featured .swiper-pagination-bullet-active,.products--list .accordion-menu{
         background:#f47b20;
         border-radius: 5px;
@@ -750,6 +907,9 @@ body{
         height: 370%;
         margin-left: -27%;
         margin-top: -5%;
+    }
+    .nuevo-logo-movil{
+        display:block;
     }
     .isos{
         width: 100%;
@@ -805,7 +965,7 @@ body{
     text-transform:uppercase
 }
 .page-home .news--others--overlay{
-    background:rgba(244,123,32,.8)
+    background:#212529d9
 }
 .page-home .news--others--bg{
     position:relative;
@@ -1442,7 +1602,11 @@ a,button{
 }
 .header .menu-item{
     padding:0 6% 0 6%;
-    margin: 0 6% 0 6%;
+    margin: 0 0% 0 0%;
+}
+.menu-item-movil{
+    padding:0 6% 0 6%;
+    margin: 30% 6% 0 6%;
 }
 .header-menu{
     overflow-y:auto
@@ -1564,12 +1728,12 @@ body.admin-bar .header-menu{
 }
 .app-value__message{
     font-weight:300;
-    font-size:14px
+    font-size:18px
 }
 .card-timeline{
     display:flex;
     padding:15px 0;
-    font-family:Rubik
+    font-family:'open sans'
 }
 .card-timeline__detail{
     width:400px
@@ -1820,12 +1984,7 @@ body.admin-bar .header-menu{
     font-size:100px
 }
 
-html {
-    scroll-behavior: smooth;
-}
-div[id]{
-    scroll-margin-top: 170px;
-}
+
 /* cyrillic-ext */
 @font-face {
     font-family: 'Manrope';
@@ -1967,6 +2126,7 @@ div{
     border-radius: 5px;
     margin-top: 10px
 }
+
 .bbb_deals-ancho{
     width: 100%;
     margin-right: -8%;
@@ -1981,7 +2141,7 @@ div{
 .bbb_deals_title{
     position: absolute;
     top: 10px;
-    left: 22px;
+    left: 65px;
     font-size: 18px;
     font-weight: 500;
     color: #000000
@@ -2060,3 +2220,5 @@ div{
 .cambiar-logo img {
     display: block;
   }
+
+

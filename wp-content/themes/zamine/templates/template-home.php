@@ -63,7 +63,7 @@ $banners = query_posts([
                 <div class="pr-md-4 text-justify">
                   <p><?php echo $ntext ?></p>
                   <div class="text-right">
-                    <a href="/nosotros" class="btn btn-white px-5 mt-5 nh text-uppercase">
+                    <a href="/nosotros" class="btn btn-orange px-5 mt-5 nh text-uppercase">
                     <?php echo __('mas información'); ?>
                     </a>
                   </div>
@@ -123,7 +123,7 @@ $banners = query_posts([
             <?php endforeach; ?>
           </div>
           <div class="news--others-more my-4">
-            <a href="<?php echo home_url('/novedades'); ?>" class="btn btn-white px-4">ver más novedades</a>
+            <a href="<?php echo home_url('/novedades'); ?>" class="btn btn-orange px-4">ver más novedades</a>
           </div>
         </div>
       </div>

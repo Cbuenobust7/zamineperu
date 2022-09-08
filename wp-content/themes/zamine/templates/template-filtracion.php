@@ -31,7 +31,7 @@ get_header(); ?>
       <div class="products--list container-fluid">
         <div class="row" style="background: #fff;">
           <div class="accordion-menu" style="overflow: hidden;">
-            <h6 class="my-nav2 mb-0 font-weight-bold" style="background: #f47b20;">
+            <h6 class="my-nav2 mb-0 font-weight-bold" style="background: #303030;">
               <div style="list-style:none">
 
                 <?php 
@@ -103,7 +103,7 @@ get_header(); ?>
         background: #6d2f00;
     }
     .my-nav2 li a.active{
-        background: #6d2f00;
+        background: #f47b20;
     }
     .my-nav2 li{
         margin: 0 0;
@@ -175,7 +175,7 @@ get_header(); ?>
       success: function(res) {
         $('#listaItems').html(res);
         jQuery('.flexslider').flexslider({
-          animation: "slide"
+          animati#f47b20on: "slide"
         });
       }
     })

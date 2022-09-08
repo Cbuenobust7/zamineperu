@@ -58,7 +58,7 @@ $mainCategory = $categories[0];
       <div class="products--list container-fluid">
         <div class="row" style="background: #fff;">
           <div class="accordion-menu" style="overflow: hidden;">
-            <h6 class="my-nav2 mb-0 font-weight-bold" style="background: #f47b20;">
+            <h6 class="my-nav2 mb-0 font-weight-bold" style="background: #303030;">
             <div style="list-style:none">
 
                 <?php if (count($categories2) > 0): ?>
@@ -74,25 +74,44 @@ $mainCategory = $categories[0];
                               
                           ));
               ?>
-                              <?php if (count($categories3) > 0):
-                                  foreach ($categories3 as $category3):
+                <?php
+                      $news = query_posts([
+                        'post_type' => 'news',
+          
+                      ]); ?>
+                      
+
+                     
+                              <?php if (count($categories3) > 0){
+                                  foreach ($categories3 as $category3){
                                   $pepe = $category3->name;
-                          
-                                  endforeach;
+                                  echo $subCateg;
+                                      if ($pepe == "CAMIONES A PROPULSIÓN ELÉCTRICA"){
+                                          $pinkman='hola';
+                                      }else{
+                                         $pinkman='<div class="col-md-8 pt-4" style="background: #fff; border-bottom: 1px solid #fff;">
+                                         <div id="listaItems" class="row-products d-flex justify-content-center"></div>
+                                     </div>';
+                                      }
 
-                                    endif;
+                                    }
+                                 }
+                                
+                            endforeach;
 
-                                endforeach;
+                        endif;
 
-                            endif;
+                    endif; ?>   
 
-                        endif; ?>   
- </div>
+                     
+      </div>
+     
             </h6>
           </div>
           <div class="col-md-8 pt-4" style="background: #fff; border-bottom: 1px solid #fff;">
-            <div id="listaItems" class="row d-flex justify-content-center"></div>
-          </div>
+                                         <div id="listaItems" class="row-products d-flex justify-content-center"></div>
+                                     </div>
+        
         </div>
       </div>
     </div>
@@ -111,7 +130,7 @@ $mainCategory = $categories[0];
   }
 
   .my-nav2 li a.active {
-    background: #6d2f00;
+    background: #f47b20;
   }
 
   .my-nav2 li {

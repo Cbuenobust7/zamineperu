@@ -98,38 +98,111 @@ function filter_projects() {
     $post_type = $_POST['post_type'];
     $taxonomy = $_POST['taxonomy'];
     $cat_id = $_POST['category_id'];
-
+   
     //$children = get_term_children($cat_id, $taxonomy);
 
     $children = get_terms( $taxonomy, array(
         'parent'    => $cat_id,
         'hide_empty' => false
     ) );
-
+   
     //Si no tiene hijos significa que estamos en el nivel final
     if( empty( $children ) ) {
         $ajaxposts = new WP_Query([
             'post_type' => $post_type,
             'posts_per_page' => -1,
             'tax_query' => [
-                [
+                [                            
                     'taxonomy' => $taxonomy,
                     'field' => 'slug',
                     'terms' => $catSlug
                 ],
             ]
             ]);
-        foreach ($ajaxposts as $ap){
-            $a = $ap->slug;}
-            $b = "5";
-            if($ajaxposts->have_posts() && $b =="5"){
+        $laforma = $ajaxposts->tax_query;
+        $response = '';
+        //echo "<pre>";
+        //print_r($catSlug);
+        //echo "</pre>"; 
+        
+
+            if($ajaxposts->have_posts() && $catSlug == "camiones") {
                     while($ajaxposts->have_posts()) : $ajaxposts->the_post();
-                    $response .= get_template_part('templates/common/project-item');
+                    $response .= get_template_part('templates/common/serv');
                     endwhile;
+            } elseif($ajaxposts->have_posts() && $catSlug == "palas-y-excavadoras-hidraulicas"){
+                    while($ajaxposts->have_posts()) : $ajaxposts->the_post();
+                    $response .= get_template_part('templates/common/palas-y-camiones');
+                    endwhile;
+            } elseif($ajaxposts->have_posts() && $catSlug == "componentes-para-gran-mineria2"){
+                    while($ajaxposts->have_posts()) : $ajaxposts->the_post();
+                    $response .= get_template_part('templates/common/gran-mineria-item');
+                    endwhile;
+            } elseif($ajaxposts->have_posts() && $catSlug == "entrenamiento"){
+                    while($ajaxposts->have_posts()) : $ajaxposts->the_post();
+                    $response .= get_template_part('templates/common/gran-mineria-item');
+                    endwhile;
+            } elseif($ajaxposts->have_posts() && $catSlug == "ensayo-no-destructivo"){
+                    while($ajaxposts->have_posts()) : $ajaxposts->the_post();
+                    $response .= get_template_part('templates/common/gran-mineria-item');
+                    endwhile;
+            } elseif($ajaxposts->have_posts() && $catSlug == "repuestos-y-componentes"){
+                    while($ajaxposts->have_posts()) : $ajaxposts->the_post();
+                    $response .= get_template_part('templates/common/gran-mineria-item');
+                    endwhile;
+            } elseif($ajaxposts->have_posts() && $catSlug == "soldadura-2"){
+                    while($ajaxposts->have_posts()) : $ajaxposts->the_post();
+                    $response .= get_template_part('templates/common/gran-mineria-item');
+                    endwhile;
+            } elseif($ajaxposts->have_posts() && $catSlug == "ensayo-no-destructivo-ndt"){
+                    while($ajaxposts->have_posts()) : $ajaxposts->the_post();
+                    $response .= get_template_part('templates/common/gran-mineria-item');
+                    endwhile;
+            } elseif($ajaxposts->have_posts() && $catSlug == "soporte-al-producto"){
+                    while($ajaxposts->have_posts()) : $ajaxposts->the_post();
+                    $response .= get_template_part('templates/common/gran-mineria-item');
+                    endwhile;
+            } elseif($ajaxposts->have_posts() && $catSlug == "soldadura"){
+                    while($ajaxposts->have_posts()) : $ajaxposts->the_post();
+                    $response .= get_template_part('templates/common/gran-mineria-item');
+                    endwhile;
+            } elseif($ajaxposts->have_posts() && $catSlug == "servicios-de-mantenimiento"){
+                    while($ajaxposts->have_posts()) : $ajaxposts->the_post();
+                    $response .= get_template_part('templates/common/gran-mineria-item');
+                    endwhile;
+            } elseif($ajaxposts->have_posts() && $catSlug == "reparacion-de-componentes"){
+                    while($ajaxposts->have_posts()) : $ajaxposts->the_post();
+                    $response .= get_template_part('templates/common/gran-mineria-item');
+                    endwhile;
+            } elseif($ajaxposts->have_posts() && $catSlug == "sistema-trolley-camiones"){
+                    while($ajaxposts->have_posts()) : $ajaxposts->the_post();
+                    $response .= get_template_part('templates/common/gran-mineria-item');
+                    endwhile;
+            } elseif($ajaxposts->have_posts() && $catSlug == "servicios-especializados-y-repuestos"){
+                    while($ajaxposts->have_posts()) : $ajaxposts->the_post();
+                    $response .= get_template_part('templates/common/gran-mineria-item');
+                    endwhile;
+            } elseif($ajaxposts->have_posts() && $catSlug == "camiones-a-bateria"){
+                    while($ajaxposts->have_posts()) : $ajaxposts->the_post();
+                    $response .= get_template_part('templates/common/gran-mineria-item');
+                    endwhile;
+            } elseif($ajaxposts->have_posts() && $catSlug == "componentes-para-gran-mineria2"){
+                    while($ajaxposts->have_posts()) : $ajaxposts->the_post();
+                    $response .= get_template_part('templates/common/gran-mineria-item');
+                    endwhile;
+            } elseif($ajaxposts->have_posts() && $catSlug == "camiones-a-propulsion-electrica"){
+                    while($ajaxposts->have_posts()) : $ajaxposts->the_post();
+                    $response .= get_template_part('templates/common/palas-y-camiones');
+                    endwhile;
+            } elseif($ajaxposts->have_posts()){
+                    while($ajaxposts->have_posts()) : $ajaxposts->the_post();
+                    $response .= get_template_part('templates/common/gran-mineria-item');
+                    endwhile;
+            
             } else {
                 $response = '<div class="col-md-12 p-4"><h4>No existen resultados para esta categoría.</h4></div>';
             }
-        
+       
 
     }else{
         //Si tiene hijos, mostramos subcategorias
@@ -142,9 +215,11 @@ function filter_projects() {
             $imagen_fin = $imglink[0];
             $subCateg = $cat->slug;
 
+            
+
         if($subCateg == 'camiones-electricos-rigidos') {
             $response .= '<div class="col-md-6 col-lg-4">
-            <a class="card-service" href="http://ciem-demo5.com/hitachi-mining" onclick="loadData(this, event)" data-slug="'.$cat->slug.'" data-catid="'.$cat->term_id.'">
+            <a class="card-service" href="javascript:void(0)" onclick="loadData(this, event)" data-slug="'.$cat->slug.'" data-catid="'.$cat->term_id.'">
                 <div class="card-service__image" style="background-image: url('.$imagen_fin.')" data-slug="'.$cat->slug.'" data-catid="'.$cat->term_id.'"></div>
                 <div class="card-service__info" data-slug="'.$cat->slug.'" data-catid="'.$cat->term_id.'">
                     <div class="card-service__info__name" data-slug="'.$cat->slug.'" data-catid="'.$cat->term_id.'">
@@ -160,7 +235,9 @@ function filter_projects() {
         </div>';
         } else {
        
-            $response .= '<div class="col-md-6 col-lg-4">
+            $response .= '
+                
+            <div class="col-md-6 col-lg-4">
                 <a class="card-service" href="javascript:void(0);" onclick="loadData(this, event)" data-slug="'.$cat->slug.'" data-catid="'.$cat->term_id.'">
                     <div class="card-service__image" style="background-image: url('.$imagen_fin.')" data-slug="'.$cat->slug.'" data-catid="'.$cat->term_id.'"></div>
                     <div class="card-service__info" data-slug="'.$cat->slug.'" data-catid="'.$cat->term_id.'">
