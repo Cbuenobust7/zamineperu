@@ -437,3 +437,16 @@
         });
     });
 </script>
+
+
+<?php
+                            $formulario = get_field('formulario', get_the_ID());
+                            if(isset($formulario) && !empty($formulario) && $formulario=="1"){
+                              echo do_shortcode('[wpforms id="1329"]');
+                            } 
+                            elseif(isset($formulario) && !empty($formulario) && $formulario=="2"){
+                              echo do_shortcode('[wpforms id="1329"]');
+                            } 
+                            else{
+                              echo do_shortcode('[wpforms id="1329"]');
+                            }?> 

@@ -18,6 +18,7 @@ get_header(); ?>
     
   </div>
 
+  <h1> EN CONSTRUCCIÓN </h1>
 
   <div class="products py-5">
     <div class="container-fluid">
@@ -33,7 +34,6 @@ get_header(); ?>
           <div class="accordion-menu" style="overflow: hidden;">
             <h6 class="my-nav2 mb-0 font-weight-bold" style="background: #303030;">
               <div style="list-style:none">
-
                 <?php 
                 $categories = get_terms( 
                     array(
@@ -67,15 +67,21 @@ get_header(); ?>
                                             array(
                                                 'taxonomy'   => "soluci_perf_categ",
                                                 'parent'     => $category2->term_id, // <-- No Parent
-                                                'orderby'    => 'term_id',
+                                                'orderby'    => 'description',
                                                 'hide_empty' => false // <!-- change to false to also display empty ones
                                             )
                                         );
+                                       
                                     ?>
                                     <?php if(count($categories3)>0): ?>
                                         <?php foreach ($categories3 as $category3): ?>
+                                          <li><a onclick="setActive(this, event)" href="#productos" title="" class="d-block" data-slug="<?= $category3->slug; ?>" data-catid="<?= $category3->term_id; ?>"><?php echo $category3->name?></a>
+
                                         <?php endforeach; ?>
-                                    <?php endif;?>
+                                    <?php endif;
+                                    
+                                    print_r ($categories2);
+                                    print_r ($categories3);?>
                                 </li>
                             <?php endforeach; ?>
                         </div>
@@ -94,28 +100,7 @@ get_header(); ?>
 
 
 </div>
-<style>
-    .my-nav2 li a{
-        padding: 10px;
-        text-decoration: none;
-    }
-    .my-nav2 li a:hover{
-        background: #6d2f00;
-    }
-    .my-nav2 li a.active{
-        background: #f47b20;
-    }
-    .my-nav2 li{
-        margin: 0 0;
-    }
-    .toggler{
-        font-size: 14px;
-        margin-left: 8px;
-    }
-    .my-nav2 li a{
-        color: #fff;
-    }
-</style>
+
 <script>
   jQuery(document).ready(function() {
     jQuery('.my-nav2').mgaccordion({

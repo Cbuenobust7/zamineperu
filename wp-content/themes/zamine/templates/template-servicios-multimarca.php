@@ -76,7 +76,7 @@ $mainCategory = $categories[7];
                         $categories3 = get_terms(array(
                             'taxonomy' => "soluci_perf_categ",
                             'parent' => $category2->term_id, // <-- No Parent
-                            'orderby' => 'term_id',
+                            'orderby' => 'description',
                             'hide_empty' => false
                             // <!-- change to false to also display empty ones        
                         ));?>
@@ -110,29 +110,6 @@ $mainCategory = $categories[7];
 
 
 </div>
-
-<style>
-    .my-nav2 li a{
-        padding: 10px;
-        text-decoration: none;
-    }
-    .my-nav2 li a:hover{
-        background: #6d2f00;
-    }
-    .my-nav2 li a.active{
-        background: #f47b20;
-    }
-    .my-nav2 li{
-        margin: 15px 0;
-    }
-    .toggler{
-        font-size: 14px;
-        margin-left: 8px;
-    }
-    .my-nav2 li a{
-        color: #fff;
-    }
-</style>
 <script>
   jQuery(document).ready(function() {
     jQuery('.my-nav2').mgaccordion({

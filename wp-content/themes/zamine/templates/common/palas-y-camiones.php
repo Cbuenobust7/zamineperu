@@ -22,20 +22,31 @@
 							<span style='font-size: 22px;'>".$marca."</span>
 						</p>";
                                 }
-                            ?> </div>
+                            ?>
+                            <?php 
+                                $marcaImagen = get_field('marca_logo', get_the_ID());
+                                if(isset($marcaImagen) && !empty($marcaImagen)){
+                                    echo '<img src="'.$marcaImagen.'">';
+                                }
+                            ?>                
+                          </div>
         <div class="bbb_deals_info_line d-flex flex-row justify-content-start">
-          <div class="text-center text-xl-start">
+          <div class="text-xl-start">
           <?php the_content(); ?> 
 
-          <?php $textoCotizar=get_field('texto_del_boton_cotizar', get_the_ID());?>
-                            <button type="button" class="btn btn-orange" data-toggle="modal" data-target="#exampleModalCenter" style="margin-top:5px; font-size: 15px">
-                                                <?php echo $textoCotizar ?>
-                                                </button>
+          <?php $textoCotizar=get_field('texto_del_boton_cotizar', get_the_ID());
+          if(isset($textoCotizar) && !empty($textoCotizar)){
+
+                           echo '<button type="button" class="btn btn-orange" data-toggle="modal" data-target="#exampleModalCenter" style="margin-top:5px; font-size: 15px">
+                                                '.$textoCotizar.'
+                                                </button';}
+
+          ?>
     </div>
   </div>
   
 </div>
-
+</div>
 
 <div class="row" style="padding-top:10px">
   <div class="col-6 col-md-4">
@@ -367,6 +378,7 @@
                              </div>
       </div>
 
+ 
  <!-- Modal -->
  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
               <div class="modal-dialog modal-dialog-centered" role="document">
@@ -378,68 +390,38 @@
                     </button>
                   </div>
                   <div class="modal-body">
-                  <div class="wrapper py-5">
-                <div class="container-fluid">
-                  <div class="row col-md-10 mx-auto">
-                    <div>
-                      <div class="bar bar--orange my-4"></div>
-                      <h2 class="subtitle-orange">Escríbenos</h2>
-                      <p>Déjenos sus consultas y nos pondrémos en<br>contacto contigo</p>
-                      <form class="pr-md-5 contact-form" autocomplete="off">
-                        <div class="form-group">
-                          <div class="form-icon">
-                            <img src="<?php echo get_template_directory_uri(); ?>/icons/user.png">
+                 <?php echo do_shortcode('[wpforms id="1329"]'); ?>
+
+                            <div class="bar bar--orange my-4"></div>
+                            <h2 class="subtitle-orange">Escríbenos</h2>
+                            <p>Déjenos sus consultas y nos pondrémos en<br>contacto contigo</p>
+                            <div>
+                         
+
+                    </div>
                           </div>
-                          <input type="text" name="name" placeholder="Nombres y Apellidos" class="form-control">
+                          <img src="<?php echo get_template_directory_uri(); ?>/images/img2.png" class="img-fluid">
+
+                          <div class="col-lg-7 pt-5 pr-lg-0">
+                            <img src="<?php echo get_field('imagen'); ?>" class="img-fluid">
+                          </div>
                         </div>
-                        <div class="form-group">
-                          <div class="form-icon">
-                            <img src="<?php echo get_template_directory_uri(); ?>/icons/email.png">
-                          </div>
-                          <input type="email" name="email" placeholder="E-mail" class="form-control">
-                        </div>
-                        <div class="form-group">
-                          <div class="form-icon">
-                            <img src="<?php echo get_template_directory_uri(); ?>/icons/phone-2.png">
-                          </div>
-                          <input type="text" name="phone" placeholder="Teléfono" class="form-control">
-                        </div>
-                        <div class="form-group">
-                          <div class="form-icon">
-                            <img src="<?php echo get_template_directory_uri(); ?>/icons/quill.png" alt="">
-                          </div>
-                          <input type="text" name="title" placeholder="Asunto" class="form-control">
-                        </div> 
-                        <div class="form-group">
-                          <div class="form-icon">
-                            <img src="<?php echo get_template_directory_uri(); ?>/icons/paper-plane.png">
-                          </div>
-                          <textarea class="form-control" name="mensaje" placeholder="Mensaje"></textarea>
-                        </div> 
-                        <div class="form-checkbox">
-                          
-                          <input type="checkbox" name="terms" id="terms">
-                          <label for="terms">
-                            Acepto los <a href="terminos">términos y condiciones</a>
-                          </label>
-                        </div>
+                      </div>
+                    </div>
+         
                       </form>
                     </div>
                     <div class="col-lg-7 pt-5 pr-lg-0">
-                      <img src="<?php echo get_template_directory_uri(); ?>/images/img2.png" class="img-fluid">
                     </div>
                   </div>
                 </div>
               </div>
-                  </div>
-                  <div class="modal-footer">
-                    <button class="btn btn-orange px-5 py-2 mt-4">Enviar</button>
-            
-                  </div>
+  </div>
                 </div>
               </div>
-            </div>
-        
+            </div>       
+
+
 
 <script>
     jQuery(document).ready(function () {

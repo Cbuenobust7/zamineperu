@@ -24,6 +24,26 @@ get_header(); ?>
     </div>
   </div>
 
+
+  <div class="wrapper py-5">
+    <div class="container-fluid">
+      <div class="row col-md-10 mx-auto">
+        <div class="col-lg-5">
+          <div class="bar bar--orange my-4"></div>
+          <h2 class="subtitle-orange">Escríbenos</h2>
+          <p>Déjenos sus consultas y nos pondrémos en<br>contacto contigo</p>
+          <div>
+          <?php
+    echo do_shortcode('[wpforms id="1329"]');
+?>          </div>
+        </div>
+        <div class="col-lg-7 pt-5 pr-lg-0">
+          <img src="<?php echo get_field('imagen'); ?>" class="img-fluid">
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="locals d-none">
     <div class="wrapper py-5">
       <div class="container-fluid">
@@ -52,4 +72,7 @@ get_header(); ?>
     </div>
   </div>
 </div>
+
+
+
 <?php get_footer(); ?>

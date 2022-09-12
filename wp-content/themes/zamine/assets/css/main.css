@@ -1,3 +1,41 @@
+
+.bar--orange,.page-news .featured .swiper-pagination-bullet-active,.products--list .accordion-menu{
+    background: #303030;
+    border-radius: 5px;
+    width: 21.7%;
+}
+.col-md-4 {
+    position: relative;
+    width: 100%;
+    padding-right: 2px;
+    padding-left: 2px;
+}
+.card-body {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 0.1rem;
+}
+.my-nav2 li a{
+    padding: 10px;
+    text-decoration: none;
+}
+.my-nav2 li a:hover{
+    background: #000;
+}
+.my-nav2 li a.active{
+    background: #f47b20;
+}
+.my-nav2 li{
+    margin: 15px 0;
+}
+.toggler{
+    font-size: 14px;
+    margin-left: 8px;
+}
+.my-nav2 li a{
+    color: #fff;
+}
 html {
     scroll-behavior: smooth;
 }
@@ -6,7 +44,7 @@ div[id]{
 }
 .bbb_deals-tres{
     width: 35%;
-    margin-right: -2%;
+    margin-right: 1%;
     padding-top: 80px;
     padding-left: 30px;
     padding-right: 30px;
@@ -37,6 +75,11 @@ div[id]{
 }
 
 @media (min-width:1800px) and (max-width:2000px){
+    .bar--orange,.page-news .featured .swiper-pagination-bullet-active,.products--list .accordion-menu{
+        background: #303030;
+        border-radius: 5px;
+        width: 23%;
+    }
     .header .menu-item{
             padding:0 6% 0 6%;
             margin: 0 6% 0 6%;
@@ -48,13 +91,18 @@ div[id]{
     .nuevo-logo{
             display:block;
             position: absolute;
-            width: 26%;
+            width: 44%;
             height: 319%;
             margin-left: -48%;
             margin-top: -3%;
         }
     }
 @media (min-width:1600px) and (max-width:1799px){
+        .bar--orange,.page-news .featured .swiper-pagination-bullet-active,.products--list .accordion-menu{
+        background: #303030;
+        border-radius: 5px;
+        width: 24%;
+             }
         .header .menu-item{
                 padding:0 6% 0 6%;
                 margin: 0 6% 0 6%;
@@ -66,13 +114,32 @@ div[id]{
         .nuevo-logo{
                 display:block;
                 position: absolute;
-                width: 26%;
+                width: 43%;
                 height: 319%;
-                margin-left: -43%;
-                margin-top: -3%;
+                margin-left: -45.1%;
+                margin-top: -4%;
             }
         }
 @media (min-width:1201px) and (max-width:1599px){
+
+.navbar-brand {
+        display: inline-block;
+        padding-top: 0.3125rem;
+        padding-bottom: 0.3125rem;
+        margin-right: 7.5rem;
+        font-size: 1.25rem;
+        line-height: inherit;
+        white-space: nowrap;
+}
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+.bar--orange,.page-news .featured .swiper-pagination-bullet-active,.products--list .accordion-menu{
+        background: #303030;
+        border-radius: 5px;
+        width: 23%;
+    }
 .header .menu-item{
         padding:0 6% 0 6%;
         margin: 0 6% 0 6%;
@@ -84,19 +151,13 @@ div[id]{
 .nuevo-logo{
         display:block;
         position: absolute;
-        width: 26%;
+        width: 50%;
         height: 319%;
-        margin-left: -18%;
-        margin-top: -3%;
+        margin-left: -42.3%;
+        margin-top: -4%;
     }
 }
-.nuevo-logo{
-    display:block;
-    position: absolute;
-    width: 26%;
-    height: 319%;
-    margin-top: -3%;
-}
+
 .nuevo-logo-movil{
     display:none;
 }
@@ -108,11 +169,7 @@ div[id]{
     margin-right: -15px;
     margin-left: -15px;
 }
-.bar--orange,.page-news .featured .swiper-pagination-bullet-active,.products--list .accordion-menu{
-    background: #303030;
-    border-radius: 5px;
-    width: 23%;
-}
+
 .buscador-responsive{
     display:block;
 }
@@ -344,12 +401,11 @@ div[id]{
     background-color: #000;
     padding: 10px;
 }
-.btn-orange,.btn-outline-white,.btn-white{
+.btn-orange,.btn-outline-white,.btn-white,.btn-plomo{
     font-size:22px;
     font-family: 'Open Sans';
     font-weight:900
 }
-
 .header .open-menu,.products--list .accordion-menu .accordion--item h5 a .fa-plus,.products--list .accordion-menu .accordion--item h5 a.collapsed .fa-minus{
     display:none
 }
@@ -380,6 +436,11 @@ body{
     background:#f47b20;
     color:#fff;
     border:2px solid #f47b20
+}
+.btn-plomo{
+    background:#303030;
+    color:#fff;
+    border:2px solid #303030
 }
 .btn-orange:hover{
     background:0 0;
@@ -1859,7 +1920,7 @@ body.admin-bar .header-menu{
     min-height:700px;
     transition:.3s ease-in-out;
     padding:3rem;
-    font-family:"Heebo, sans-serif"
+    font-family: 'open sans'
 }
 .card-info:hover .card-info__message{
     opacity:1;
@@ -2128,8 +2189,8 @@ div{
 }
 
 .bbb_deals-ancho{
-    width: 100%;
-    margin-right: -8%;
+    width: 110%;
+    margin-right: -15%;
     padding-top: 80px;
     padding-left: 25px;
     padding-right: 25px;

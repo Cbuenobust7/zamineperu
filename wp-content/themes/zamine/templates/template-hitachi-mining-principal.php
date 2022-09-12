@@ -13,7 +13,7 @@ $categories = get_terms(array(
 ));
 //var_dump($categories);
 $mainCategory = $categories[0];
-//print_r ($hitachiMining);
+//print_r ($mainCategory);
 
 ?>     
 <?php if (count($mainCategory) > 0): ?>
@@ -21,11 +21,12 @@ $mainCategory = $categories[0];
     $categories2 = get_terms(array(
         'taxonomy' => "soluci_perf_categ",
         'parent' => $mainCategory->term_id, // <-- No Parent
-        'orderby' => 'term_id',
+        'orderby' => 'description',
         'hide_empty' => false,
         // <!-- change to false to also display empty ones
         
     ));
+
 ?>
 <div class="page-services">
 
@@ -68,11 +69,12 @@ $mainCategory = $categories[0];
                           $categories3 = get_terms(array(
                               'taxonomy' => "soluci_perf_categ",
                               'parent' => $category2->term_id, // <-- No Parent
-                              'orderby' => 'term_id',
+                              'orderby' => 'description',
                               'hide_empty' => false
                               // <!-- change to false to also display empty ones
                               
                           ));
+
               ?>
                 <?php
                       $news = query_posts([
@@ -119,33 +121,6 @@ $mainCategory = $categories[0];
   
 
 </div>
-<style>
-  .my-nav2 li a {
-    padding: 10px;
-    text-decoration: none;
-  }
-
-  .my-nav2 li a:hover {
-    background: #6d2f00;
-  }
-
-  .my-nav2 li a.active {
-    background: #f47b20;
-  }
-
-  .my-nav2 li {
-    margin: 0 0;
-  }
-
-  .toggler {
-    font-size: 14px;
-    margin-left: 8px;
-  }
-
-  .my-nav2 li a {
-    color: #fff;
-  }
-</style>
 <script>
   jQuery(document).ready(function() {
     jQuery('.my-nav2').mgaccordion({

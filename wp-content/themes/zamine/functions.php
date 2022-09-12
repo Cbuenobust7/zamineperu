@@ -99,6 +99,7 @@ function filter_projects() {
     $taxonomy = $_POST['taxonomy'];
     $cat_id = $_POST['category_id'];
    
+   
     //$children = get_term_children($cat_id, $taxonomy);
 
     $children = get_terms( $taxonomy, array(
@@ -111,24 +112,27 @@ function filter_projects() {
         $ajaxposts = new WP_Query([
             'post_type' => $post_type,
             'posts_per_page' => -1,
+            'meta_key' => 'orden',
+            'orderby' => 'meta_value_num',
+            'order' => 'asc',
             'tax_query' => [
                 [                            
                     'taxonomy' => $taxonomy,
                     'field' => 'slug',
-                    'terms' => $catSlug
+                    'terms' => $catSlug,
                 ],
             ]
             ]);
         $laforma = $ajaxposts->tax_query;
         $response = '';
-        //echo "<pre>";
-        //print_r($catSlug);
-        //echo "</pre>"; 
+        echo "<pre>";
+        print_r($test_id);
+        echo "</pre>"; 
         
 
-        if($ajaxposts->have_posts() && $catSlug == "camiones") {
+        if($ajaxposts->have_posts() && $catSlug == "neumatico") {
             while($ajaxposts->have_posts()) : $ajaxposts->the_post();
-            $response .= get_template_part('templates/common/serv');
+            $response .= get_template_part('templates/common/gran-mineria-item');
             endwhile;
         } elseif($ajaxposts->have_posts() && $catSlug == "palas-y-excavadoras-hidraulicas"){
                 while($ajaxposts->have_posts()) : $ajaxposts->the_post();
