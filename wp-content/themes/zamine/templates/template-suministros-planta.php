@@ -1,7 +1,6 @@
 <?php
 /* Template Name: Suministros Planta  */
 get_header(); ?>
-
 <div class="page-services">
 
   <div class="banner banner-2">
@@ -60,9 +59,8 @@ get_header(); ?>
                             );
                         ?>
                         <?php if(count($categories2)>0): ?>
-                            <div style="list-style:none">
                             <?php foreach ($categories2 as $category2): ?>
-                                <li><a onclick="setActive(this, event)" href="#productos" title="" class="d-block" data-slug="<?= $category2->slug; ?>" data-catid="<?= $category2->term_id; ?>"><?php echo $category2->name?></a>
+                                <li class="m-0"><a onclick="setActive(this, event)" href="#productos" title="" class="d-block" data-slug="<?= $category2->slug; ?>" data-catid="<?= $category2->term_id; ?>"><?php echo $category2->name?></a>
                                     <?php 
                                         $categories3 = get_terms( 
                                             array(

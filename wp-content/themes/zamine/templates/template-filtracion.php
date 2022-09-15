@@ -18,7 +18,6 @@ get_header(); ?>
     
   </div>
 
-  <h1> EN CONSTRUCCIÓN </h1>
 
   <div class="products py-5">
     <div class="container-fluid">
@@ -59,9 +58,8 @@ get_header(); ?>
                             );
                         ?>
                         <?php if(count($categories2)>0): ?>
-                            <div style="list-style:none">
                             <?php foreach ($categories2 as $category2): ?>
-                                <li><a onclick="setActive(this, event)" href="#productos" title="" class="d-block" data-slug="<?= $category2->slug; ?>" data-catid="<?= $category2->term_id; ?>"><?php echo $category2->name?></a>
+                                <li class="m-0"><a onclick="setActive(this, event)" href="#productos" title="" class="d-block" data-slug="<?= $category2->slug; ?>" data-catid="<?= $category2->term_id; ?>"><?php echo $category2->name?></a>
                                     <?php 
                                         $categories3 = get_terms( 
                                             array(
@@ -70,18 +68,13 @@ get_header(); ?>
                                                 'orderby'    => 'description',
                                                 'hide_empty' => false // <!-- change to false to also display empty ones
                                             )
-                                        );
-                                       
+                                        ); 
                                     ?>
                                     <?php if(count($categories3)>0): ?>
                                         <?php foreach ($categories3 as $category3): ?>
-                                          <li><a onclick="setActive(this, event)" href="#productos" title="" class="d-block" data-slug="<?= $category3->slug; ?>" data-catid="<?= $category3->term_id; ?>"><?php echo $category3->name?></a>
 
                                         <?php endforeach; ?>
-                                    <?php endif;
-                                    
-                                    print_r ($categories2);
-                                    print_r ($categories3);?>
+                                    <?php endif;?>
                                 </li>
                             <?php endforeach; ?>
                         </div>
@@ -160,7 +153,7 @@ get_header(); ?>
       success: function(res) {
         $('#listaItems').html(res);
         jQuery('.flexslider').flexslider({
-          animati#f47b20on: "slide"
+          animation: "slide"
         });
       }
     })

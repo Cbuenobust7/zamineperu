@@ -56,10 +56,12 @@ $menuServicios = getMenuArray('Servicios');
 <body <?php body_class(); ?>>
   <?php wp_body_open(); ?>
   <header class="header">
-    <div class="wrapper">
+    <div class="wrapper wrapper-header">
       <div class="d-flex">
    <!-- CIEM HEADER MENU-->
+   <div>
         <nav class="navbar navbar-expand-lg navbar-dark bg navbar-ciem">
+      
         <div class="container d-flex justify-content align-items-center">
           <div class="row">
             <div class="col">
@@ -153,12 +155,14 @@ $menuServicios = getMenuArray('Servicios');
             </div>
           
         </div>
-        </nav>                                    
-      </div>
+<div>
+        </nav> 
+   
+       </div>
     </div>
   </header>
   <div class="header-menu ">
-    <div class="wrapper">
+    <div class="wrapper" style="background: black";>
       <div class="container">
         <div class="row py-5">
           <div class="col-md-3 pr-md-0">
@@ -185,8 +189,9 @@ $menuServicios = getMenuArray('Servicios');
                                       $title = $value->title;
                                       $url = $value->url;
                                       $current = $value->current;
-                                      echo "                           
-                                      <a class='btn-link' href='$url'> - $title</a> <br>";
+                                      echo "<a type='button' href='$url' class='btn btn-orange btn-lg btn-block'>
+                                      $title</a><br> "
+                                      ;
                                     }
                                     ?>
                             </div>
@@ -204,8 +209,9 @@ $menuServicios = getMenuArray('Servicios');
                          $title = $value->title;
                          $url = $value->url;
                          $current = $value->current;
-                         echo "
-                         <a class='btn-link' href='$url'> - $title</a> <br>";
+                         echo "<a type='button' href='$url' class='btn btn-orange btn-lg btn-block'>
+                         $title</a><br>"
+                         ;
                         }
                        ?>
                </div>

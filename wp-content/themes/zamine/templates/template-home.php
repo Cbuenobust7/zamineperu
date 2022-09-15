@@ -33,8 +33,9 @@ $banners = query_posts([
 </div>
   <!--div class="wrapper px-lg-5 mb-5"-->
   <?php
+  
   $cards = get_field("tarjetas-informativas");
-  include get_template_directory() . '/components/cards.php';
+  include get_template_directory() . '/components/cards-home.php';
   //include locate_template(get_template_directory().'/components/cards.php', false, false); 
   ?>
 
@@ -48,39 +49,9 @@ $banners = query_posts([
   $nimg_url = wp_get_attachment_url($nimg_id);
 
   ?>
-  <div class="news--others" style="display:none" background-image: url('<?php echo get_template_directory_uri(); ?>/images/about-us-bg.webp');">
-    <div class="about-us--overlay py-5">
-      <div class="wrapper pt-5 about-us mb-5 pb-3">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-6 px-lg-5">
-              <div class="px-md-4">
-                <h3 class="text-uppercase">
-                  <span class="font-weight-light"><?php echo $ntitle ?></span>
-                  <span class="font-weight-bold"><?php echo $nsubtitle ?></span>
-                </h3>
-                <div class="bar bar--white my-4"></div>
-                <div class="pr-md-4 text-justify">
-                  <p><?php echo $ntext ?></p>
-                  <div class="text-right">
-                    <a href="/nosotros" class="btn btn-plomo px-5 mt-5 nh text-uppercase">
-                    <?php echo __('mas información'); ?>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-6 pt-5 pr-lg-0">
-              <img src="<?php echo $nimg_url ?>" class="img-fluid">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
   <?php
   $cards = get_field("tarjetas");
-  include get_template_directory() . '/components/cards.php';
+  include get_template_directory() . '/components/cards-home.php';
   ?>
   <?php
   $news = query_posts([

@@ -1,6 +1,6 @@
 === Font Awesome ===
 Contributors: fontawesome, mlwilkerson, robmadole, frrrances, deathnfudge
-Stable tag: 4.3.0
+Stable tag: 4.3.1
 Tags: font, awesome, fontawesome, font-awesome, icon, svg, webfont
 Requires at least: 4.7
 Tested up to: 6.0.2
@@ -161,6 +161,13 @@ You can get more information about all the available settings and troubleshootin
 
 
 == Changelog ==
+
+= 4.3.1 =
+* Increase network request timeout to accommodate some slow-running Icon Chooser searches.
+  We've recently added some new functionality to the Font Awesome API server. We're in
+  the process of optimizing it for performance. In the meantime, some icon searches that
+  return lots of search results are running slowly. Increasing the timeout
+  allows those searches to run longer before considering it an error.
 
 = 4.3.0 =
 * Introduce support for Sharp Solid.

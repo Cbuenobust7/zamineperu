@@ -63,7 +63,6 @@ $mainCategory = $categories[2];
                             );
                         ?>
                         <?php if(count($categories2)>0): ?>
-                            <div style="list-style:none">
                             <?php foreach ($categories2 as $category2): ?>
                                 <li class="m-0"><a href="#productos" onclick="setActive(this, event)" class="d-block" title="" data-slug="<?=$category2->slug; ?>" data-catid="<?=$category2->term_id; ?>"><?php echo $category2->name ?></a>
                                     <?php 

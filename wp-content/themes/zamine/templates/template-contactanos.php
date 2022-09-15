@@ -4,33 +4,26 @@ get_header(); ?>
 <div class="page-contact">
 <?php get_template_part('components/banner-logo');?>
 
-  <?php include get_template_directory() . '/components/header-page.php'; ?> 
 
-  <div class="wrapper py-5">
-    <div class="container-fluid">
-      <div class="row col-md-10 mx-auto">
-        <div class="col-lg-5">
-          <div class="bar bar--orange my-4"></div>
-          <h2 class="subtitle-orange">Escríbenos</h2>
-          <p>Déjenos sus consultas y nos pondrémos en<br>contacto contigo</p>
-          <div>
-            <?php the_content(); ?>
-          </div>
-        </div>
-        <div class="col-lg-7 pt-5 pr-lg-0">
-          <img src="<?php echo get_field('imagen'); ?>" class="img-fluid">
-        </div>
-      </div>
+<div class="banner banner-2">
+   <!-- <div class="container">
+    <a href="< ?php echo home_url(); ?>">
+      <img src="< ?php echo get_template_directory_uri(); ?>/images/logo.png" class="img-fluid logo-banner">
+    </a> 
+  </div> -->
+  <img src="<?php echo get_the_post_thumbnail_url() ?>">
+  <div class="overlay">
+      <?php
+          echo do_shortcode('[smartslider3 slider="18"]');
+      ?>    
     </div>
-  </div>
-
-
-  <div class="wrapper py-5">
+</div>
+ 
+   <div class="wrapper py-5">
     <div class="container-fluid">
       <div class="row col-md-10 mx-auto">
         <div class="col-lg-5">
           <div class="bar bar--orange my-4"></div>
-          <h2 class="subtitle-orange">Escríbenos</h2>
           <p>Déjenos sus consultas y nos pondrémos en<br>contacto contigo</p>
           <div>
           <?php
