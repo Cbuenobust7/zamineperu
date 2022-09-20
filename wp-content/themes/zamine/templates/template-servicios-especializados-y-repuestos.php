@@ -45,7 +45,7 @@ $mainCategory = $categories[5];
   </div>
 
 
-  <div class="products py-5">
+  <div class="products py-2">
     <div class="container-fluid">
       <div id="productos" class="wrapper d-flex mb-1">
         <ol class="breadcrumb">

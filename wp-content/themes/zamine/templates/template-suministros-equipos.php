@@ -35,7 +35,7 @@ get_header(); ?>
   </div>
 
 
-  <div class="products py-5">
+  <div class="products py-2">
     <div class="container-fluid">
       <div id="principal" class="wrapper d-flex mb-1">
       <ol class="breadcrumb">

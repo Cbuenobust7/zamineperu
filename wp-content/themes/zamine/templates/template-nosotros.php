@@ -4,6 +4,16 @@ get_header();
 global $cards;
 $cards = get_field("tarjetas-informativas");
 ?>
+<?php
+$titulos = get_field('titulos_secciones_nosotros');
+if( $titulos ): ?>
+  <style type="text/css">
+        .titulo1 {
+           color: <?php echo esc_attr( $titulos['color_titulo_1'] ); ?>;
+        }
+    </style>
+
+    
 
 <html>
     <head>
@@ -13,7 +23,7 @@ $cards = get_field("tarjetas-informativas");
   <div class="banner banner-2">    
   <?php get_template_part('components/banner-logo');?>
     
-    <img src="<?php echo get_template_directory_uri(); ?>/images/aboutus.png">
+  <img src="<?php echo get_the_post_thumbnail_url(get_the_ID())?>">
     <div class="overlay">
       <?php
           echo do_shortcode('[smartslider3 slider="16"]');
@@ -27,9 +37,8 @@ $cards = get_field("tarjetas-informativas");
         <div class="offset-lg-1 col-lg-6 top-logo">
           <!--img src="<?php echo get_template_directory_uri(); ?>/images/logoo-black.png" class="img-fluid mb-4"-->
           <!--img src="/wp-content/uploads/2022/05/logo-zamine1.png" class="img-fluid mb-4"-->
-			<h3 style="font-size: 40px;color: #f47b20;">
-              <span class="font-weight-bold">ACERCA DE</span><br>
-              <span class="font-weight-bold">NOSOTROS</span>
+			<h3 class="titulo1" style="font-size: 40px">
+              <span class="font-weight-bold"><?php esc_html( $titulos['titulo_seccion_1'] ); ?></span><br>
             </h3>
           <div class="bar bar--orange my-4"></div>
           <div class="pr-md-4 text-justify">
@@ -73,29 +82,28 @@ $cards = get_field("tarjetas-informativas");
             $hasta = $value['hasta'];
             $imagen = $value['imagen'];
             $detalle = $value['detalle'];
-            echo <<<EOT
+            echo '
             <div class="card-timeline">
               <div class="card-timeline__dates">
                 <div class="card-timeline__dates__data">
-                  $desde
+                  '.$desde.'
                 </div>
                 <div class="card-timeline__dates__data">
-                  $hasta
+                  '.$hasta.'
                 </div>
               </div>
               <!-- <div class="card-timeline__detail">  -->
                 <div style="padding-left:5px">
-                <!-- <img class="card-timeline__detail__image" src="$imagen" alt="$title">  -->
-                <img src="$imagen" alt="$title">
+                <!-- <img class="card-timeline__detail__image" src="'.$imagen.'" alt="'.$title.'">  -->
+                <img src="'.$imagen.'" alt="'.$title.'">
                 <div class="card-timeline__detail__title">
-                  $desde  $hasta
+                  ',$desde . $hasta.'
                 </div>
                 <div>
-                  $detalle
+                  '.$detalle.'
                 </div>
               </div>
-            </div>
-            EOT;
+            </div>';
           }
           ?>
         </div>
@@ -195,4 +203,6 @@ $itemsGeneral = query_posts([
     ?>
   </div>
 </div>
+<?php endif; ?>
+
 <?php get_footer(); ?>

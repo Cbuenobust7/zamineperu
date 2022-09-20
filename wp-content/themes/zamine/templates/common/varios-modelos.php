@@ -117,7 +117,7 @@
                   <img src="'.$ficha2.'"> </div>
 
               </div>                         
-              <a href="'.$brochure2.'" target="_blank" class="btn btn-orange" style="font-size: 14px!important;">Descargar PDF</a>
+              <a href="'.$brochure2.'" target="_blank" class="btn btn-orange" style="font-size: 14px!important;">Descargar</a>
 
                                                           </div>
                   </div>';
@@ -152,7 +152,7 @@
                                                <img src="'.$ficha3.'"> </div>  
                                         
                                         </div>
-                                        <a href="'.$brochure3.'" target="_blank" class="btn btn-orange" style="font-size: 14px!important;">Descargar PDF</a>
+                                        <a href="'.$brochure3.'" target="_blank" class="btn btn-orange" style="font-size: 14px!important;">Descargar</a>
                                         </div>
                                             </div>';
                                          
@@ -190,7 +190,7 @@
                                           
                                         
                                         </div>
-                                        <a href="'.$brochure4.'" target="_blank" class="btn btn-orange" style="font-size: 14px!important;">Descargar PDF</a>
+                                        <a href="'.$brochure4.'" target="_blank" class="btn btn-orange" style="font-size: 14px!important;">Descargar</a>
                                         </div>
                                             </div>';
                                          
@@ -221,7 +221,7 @@
                                               <div class="bbb_deals_image">
                                                 <img src="'.$ficha5.'"> </div>
                                         </div>                                        
-                                        <a href="'.$brochure5.'" target="_blank" class="btn btn-orange" style="font-size: 14px!important;">Descargar PDF</a>
+                                        <a href="'.$brochure5.'" target="_blank" class="btn btn-orange" style="font-size: 14px!important;">Descargar</a>
 
                                                                                     </div>
                                             </div>';
@@ -254,7 +254,7 @@
                                                <img src="'.$ficha6.'"> </div>
   
                                         </div>
-                                        <a href="'.$brochure6.'" target="_blank" class="btn btn-orange" style="font-size: 14px!important;">Descargar PDF</a>
+                                        <a href="'.$brochure6.'" target="_blank" class="btn btn-orange" style="font-size: 14px!important;">Descargar</a>
 
                                                                                     </div>
                                             </div>';
@@ -290,7 +290,7 @@
   
                                             
                                         </div>
-                                        <a href="'.$brochure7.'" target="_blank" class="btn btn-orange" style="font-size: 14px!important;">Descargar PDF</a>
+                                        <a href="'.$brochure7.'" target="_blank" class="btn btn-orange" style="font-size: 14px!important;">Descargar</a>
 
                                                                                     </div>
                                             </div>';
@@ -326,7 +326,7 @@
 
             
             </div> 
-             <a href="'.$brochure8.'" target="_blank" class="btn btn-orange" style="font-size: 14px!important;">Descargar PDF</a>
+             <a href="'.$brochure8.'" target="_blank" class="btn btn-orange" style="font-size: 14px!important;">Descargar</a>
 
 
                                                         </div>
@@ -363,7 +363,7 @@
 
            
            </div>
-           <a href="'.$brochure9.'" target="_blank" class="btn btn-orange" style="font-size: 14px!important;">Descargar PDF</a>
+           <a href="'.$brochure9.'" target="_blank" class="btn btn-orange" style="font-size: 14px!important;">Descargar</a>
 
                                                        </div>
                </div>';

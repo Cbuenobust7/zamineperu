@@ -1,9 +1,10 @@
+
 <?php 
 /* Template Name: Contactanos  */
 get_header(); ?>
+
 <div class="page-contact">
 <?php get_template_part('components/banner-logo');?>
-
 
 <div class="banner banner-2">
    <!-- <div class="container">
@@ -26,8 +27,12 @@ get_header(); ?>
           <div class="bar bar--orange my-4"></div>
           <p>Déjenos sus consultas y nos pondrémos en<br>contacto contigo</p>
           <div>
+          <--!get_template_part('templates/common/test');
+
           <?php
-    echo do_shortcode('[wpforms id="1329"]');
+     echo do_shortcode('[wpforms id="1607"]' ); 
+          
+
 ?>          </div>
         </div>
         <div class="col-lg-7 pt-5 pr-lg-0">
@@ -66,6 +71,6 @@ get_header(); ?>
   </div>
 </div>
 
-
-
 <?php get_footer(); ?>
+
+

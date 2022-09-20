@@ -1,4 +1,9 @@
 <?php
+define( 'WP_CACHE', false ); // Added by WP Rocket
+
+
+ // WP-Optimize Cache
+ // WP-Optimize Cache
 /**
  * The base configuration for WordPress
  *
@@ -17,11 +22,9 @@
  *
  * @package WordPress
  */
-
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-
-define( 'DB_NAME', 'ciem_zamine3' );
+define( 'DB_NAME', 'ciem_zamine' );
 /** MySQL database username */
 define( 'DB_USER', 'root' );
 /** MySQL database password */
@@ -51,9 +54,7 @@ define( 'AUTH_SALT',        '~Zt p^A{?5r!d79~*Lr#oI7xh5TylNxY5V9wBY/rGS0V-Hkz(l-
 define( 'SECURE_AUTH_SALT', 'w)6uCm=^2WE1(A1fdYyf%BECvBdghgdsZo<j(fU<yUuHEBS>cav~N`nX27c~[;rX' );
 define( 'LOGGED_IN_SALT',   'tk@w%:w/TFnr6rj<;MgK 7]EFYFY?}yXB0J4rhkydfqg[_P:_@*[*#_J7.ixbHFl' );
 define( 'NONCE_SALT',       'GrpEF9^hlc}@&%i-j,v`C!czA~ ]r)#>ep 4iN2jB|}@OvOUQ|<Sf/&}}b4<[1+-' );
-
 /**#@-*/
-
 /**
  * WordPress database table prefix.
  *
@@ -61,7 +62,6 @@ define( 'NONCE_SALT',       'GrpEF9^hlc}@&%i-j,v`C!czA~ ]r)#>ep 4iN2jB|}@OvOUQ|<
  * a unique prefix. Only numbers, letters, and underscores please!
  */
 $table_prefix = 'wp_';
-
 /**
  * For developers: WordPress debugging mode.
  *
@@ -75,17 +75,11 @@ $table_prefix = 'wp_';
  * @link https://wordpress.org/support/article/debugging-in-wordpress/
  */
 define( 'WP_DEBUG', false );
-
 /* Add any custom values between this line and the "stop editing" line. */
-
-
-
 /* That's all, stop editing! Happy publishing. */
-
 /** Absolute path to the WordPress directory. */
 if ( ! defined( 'ABSPATH' ) ) {
 	define( 'ABSPATH', __DIR__ . '/' );
 }
-
 /** Sets up WordPress vars and included files. */
 require_once ABSPATH . 'wp-settings.php';

@@ -10,7 +10,7 @@
                     <div class="row">
                         <div class="col-md-8 offset-md-2">
                             <div class="pt-3 pb-4"> 
-                                <div class="mt-4 text-center">
+                                <div class="subtitle-orange text-center pb-5 mt-4">
 								<h1>Resultados de búsqueda: <?php echo get_search_query(); ?></h1></div>
 							</div>
                         </div>
@@ -33,9 +33,9 @@
 
 												?>
 													<?php if ( is_singular() ) : ?>
-														<?php the_title( '<h1 class="mb-1 title default-max-width">', '</h1>' ); ?> 
+														<?php the_title( '<h5 class="mb-1 title default-max-width">', '</h5>' ); ?> 
 													<?php else : ?>
-														<?php the_title( sprintf( '<h2 class="mb-1 title default-max-width"><a href="%s">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+														<?php the_title( sprintf( '<h5 class="mb-1 title default-max-width"><a href="%s">', esc_url( get_permalink() ) ), '</a></h5>' ); ?>
 													<?php endif; ?>
 
 														<div class="media-body">
@@ -50,6 +50,27 @@
 													else : ?>
 													<p><?php esc_html_e( 'No se encontró contenido con esos criterios.' ); ?></p>
 											<?php endif; ?>
+
+
+
+											<?php
+              $featured = query_posts([
+                'post_type' => 'news',
+                'posts_per_page' => 4,
+                'meta_key' => 'featured',
+                'meta_value' => 1,
+                'orderby'   => 'date',
+                'order'     => 'DESC',
+              ]);
+              ?>
+              <?php foreach ($featured as $f) : ?>
+                  <a class="news--item px-" href="<?php echo get_the_permalink($f) ?>">
+                   
+                          <div class="mb-2 title default-max-width"><?php echo $f->post_title ?></div>
+                          <div class="news--item--blurb"><?php echo $f->post_excerpt ?></div>
+                        
+                  </a>
+              <?php endforeach; ?>
 											<div class="clearfix"></div>
 										</section>
 									</div>

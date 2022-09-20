@@ -80,10 +80,10 @@
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <!--<script src="<?php echo get_template_directory_uri(); ?>/libs/js/jquery-3.5.1.min.js" ></script>-->
-    <script  src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" ></script>
-    <script src="<?php echo get_template_directory_uri(); ?>/libs/js/bootstrap.min.js" ></script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script  src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" defer></script>
+    <script src="<?php echo get_template_directory_uri(); ?>/libs/js/bootstrap.min.js" defer></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.js" defer></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer></script>
     <?php wp_footer(); ?>
   </body>
 </html>

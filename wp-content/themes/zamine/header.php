@@ -1,7 +1,5 @@
 <?php
 
-header("Cache-Control: no-cache, must-revalidate"); // HTTP/1.1
-  header("Expires: Sat, 1 Jul 2000 05:00:00 GMT"); // Fecha en el pasado
 /**
  * The template for displaying the header
  *
@@ -23,32 +21,24 @@ $menuServicios = getMenuArray('Servicios');
 
 <head>
 
-
-<meta http-equiv="Expires" content="0">
- 
-<meta http-equiv="Last-Modified" content="0">
- 
-<meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
- 
-<meta http-equiv="Pragma" content="no-cache">
-
-
-
   <title>Zamine<?php echo wp_title();?></title>
   <meta charset="<?php bloginfo('charset'); ?>">
+  <meta name="Author" content="Carlos Eduardo Bueno Bustíos, CIEM PRODUCTOS Y SERVICIOS DIGITALES E.I.R.L.">
+  <meta name="Subject" content="WEBSITE ZAMINE PERÚ">
+  <meta name="Description" content="ZAMINE PERÚ distribuidor oficial de Equipos HITACHI para la Gran Minería.">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
-  <link rel="profile" href="http://gmpg.org/xfn/11">
   <?php if (is_singular() && pings_open(get_queried_object())) : ?>
-    <link rel="pingback" href="<?php echo esc_url(get_bloginfo('pingback_url')); ?>">
+    <link rel="pingback" href="<?php echo esc_url(get_bloginfo('pingback_url')); ?>" async>
   <?php endif; ?>
   <!-- Bootstrap CSS -->
-   <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/libs/css/bootstrap.min.css"> 
-  <!--<link rel="stylesheet" href="https://www.ciem-demo5.com/wp-content/themes/zamine/libs/css/bootstrap.min.css"> -->
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&family=Rubik:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp&display=swap" rel="stylesheet">
+  <link rel="profile" href="http://gmpg.org/xfn/11">
 
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+   <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/libs/css/bootstrap.min.css" media="screen"> 
+  <!--<link rel="stylesheet" href="https://www.ciem-demo5.com/wp-content/themes/zamine/libs/css/bootstrap.min.css"> -->
+   <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp&display=swap" rel="stylesheet" media="screen">
+
+  <!--<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" media="screen">-->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" media="screen">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
   <?php wp_head(); ?>
 </head>
@@ -74,14 +64,14 @@ $menuServicios = getMenuArray('Servicios');
               </div>
             </div>
             <div class="col">
-                <a class="navbar-brand" href="http://ciem-demo5.com/">
+                <a class="navbar-brand" href="https://ciem-demo5.com/">
                 <img class="navbar-brand nuevo-logo-movil" src="<?php echo get_template_directory_uri(); ?>/images/logo.webp" alt="zamine" height="58">
               </a>
             </div>
           </div>
 
     <!-- la clase sticky desaparecer al iniciar el logo y aparece al hacer scroll para abajo -->
-        <a class="navbar-brand" href="http://ciem-demo5.com/">
+        <a class="navbar-brand" href="https://ciem-demo5.com/">
             <img class="navbar-brand nuevo-logo" src="<?php echo get_template_directory_uri(); ?>/images/logo-nuevo-black.webp" alt="zamine" height="58">
           </a>
         
@@ -144,7 +134,7 @@ $menuServicios = getMenuArray('Servicios');
           <ul class="header__list-languages"><?php pll_the_languages(); ?></ul>
         </div>
         <div id="header-responsive" class="buscador-responsive menu-item ciem-responsive__buscador float--right--palm">
-            <form class="ciem-responsive__buscador__form js-responsive__buscador-form js-buscador-form" role="search" method="get" id="searchform" class="searchform" action="http://ciem-demo5.com/">
+            <form class="ciem-responsive__buscador__form js-responsive__buscador-form js-buscador-form" role="search" method="get" id="searchform" class="searchform" action="https://ciem-demo5.com/">
                 <div class="buscador-container">
                   <label class="screen-reader-text" for="s">Buscar por:</label>
                   <input class="ciem-responsive__buscador__form__input buscador__input js-buscador-form" type="text" value="" name="s" id="s">
@@ -218,7 +208,7 @@ $menuServicios = getMenuArray('Servicios');
            </li>
            </ul>
            <div id="header-responsive" class="menu-item ciem-responsive__buscador float--right--palm">
-            <form class="ciem-responsive__buscador__form js-responsive__buscador-form js-buscador-form" role="search" method="get" id="searchform" class="searchform" action="http://ciem-demo5.com/">
+            <form class="ciem-responsive__buscador__form js-responsive__buscador-form js-buscador-form" role="search" method="get" id="searchform" class="searchform" action="https://ciem-demo5.com/">
                 <div class="buscador-container">
                   <label class="screen-reader-text" for="s">Buscar por:</label>
                   <input class="ciem-responsive__buscador__form__input buscador__input js-buscador-form" type="text" value="" name="s" id="s">
