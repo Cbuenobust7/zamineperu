@@ -3,6 +3,24 @@
 /* Template Name: Contactanos  */
 get_header(); ?>
 
+<style>
+#wpforms-1607-field_2-container{
+    width: 60%;
+}
+#wpforms-1607-field_5-container{
+    width: 239%;
+}
+#wpforms-submit-1607{
+    
+    background-color: #f47b20;
+    border: 1px solid #ddd;
+    color: #fff;
+    font-size: 1em;
+    padding: 10px 15px;
+    border: 2px solid #f47b20;
+}
+    
+</style>
 <div class="page-contact">
 <?php get_template_part('components/banner-logo');?>
 
@@ -27,12 +45,9 @@ get_header(); ?>
           <div class="bar bar--orange my-4"></div>
           <p>Déjenos sus consultas y nos pondrémos en<br>contacto contigo</p>
           <div>
-          <--!get_template_part('templates/common/test');
 
           <?php
      echo do_shortcode('[wpforms id="1607"]' ); 
-          
-
 ?>          </div>
         </div>
         <div class="col-lg-7 pt-5 pr-lg-0">

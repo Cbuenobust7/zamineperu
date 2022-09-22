@@ -7,11 +7,6 @@ $cards = get_field("tarjetas-informativas");
 <?php
 $titulos = get_field('titulos_secciones_nosotros');
 if( $titulos ): ?>
-  <style type="text/css">
-        .titulo1 {
-           color: <?php echo esc_attr( $titulos['color_titulo_1'] ); ?>;
-        }
-    </style>
 
     
 
@@ -37,8 +32,9 @@ if( $titulos ): ?>
         <div class="offset-lg-1 col-lg-6 top-logo">
           <!--img src="<?php echo get_template_directory_uri(); ?>/images/logoo-black.png" class="img-fluid mb-4"-->
           <!--img src="/wp-content/uploads/2022/05/logo-zamine1.png" class="img-fluid mb-4"-->
-			<h3 class="titulo1" style="font-size: 40px">
-              <span class="font-weight-bold"><?php esc_html( $titulos['titulo_seccion_1'] ); ?></span><br>
+			<h3 class="subtitle-orange">
+
+              <span class="font-weight-bold"><?php echo esc_html( $titulos['titulo_seccion_1'] ); ?></span><br>
             </h3>
           <div class="bar bar--orange my-4"></div>
           <div class="pr-md-4 text-justify">
@@ -57,7 +53,7 @@ if( $titulos ): ?>
       <div class="row">
         <div class="offset-lg-1 col-lg-11">
           <div class="bar bar--orange my-4"></div>
-          <h2 class="subtitle-orange">ZAMINE EN EL TIEMPO</h2>
+          <h2 class="subtitle-orange"><?php echo esc_html( $titulos['titulo_seccion_2'] ); ?></h2>
         </div>
       </div>
 
@@ -80,16 +76,18 @@ if( $titulos ): ?>
           foreach ($timeline as $key => $value) {
             $desde = $value['desde'];
             $hasta = $value['hasta'];
+            $desdeGrande = $value['desde_grande'];
+            $hastaGrande = $value['hasta_grande'];
             $imagen = $value['imagen'];
             $detalle = $value['detalle'];
             echo '
             <div class="card-timeline">
               <div class="card-timeline__dates">
                 <div class="card-timeline__dates__data">
-                  '.$desde.'
+                  '.$desdeGrande.'
                 </div>
                 <div class="card-timeline__dates__data">
-                  '.$hasta.'
+                  '.$hastaGrande.'
                 </div>
               </div>
               <!-- <div class="card-timeline__detail">  -->
@@ -156,7 +154,7 @@ $itemsGeneral = query_posts([
   <div class="wrapper py-5">
     <div class="container">
       <div class="bar bar--orange my-4"></div>
-      <h2 class="subtitle-orange mb-5">Valores</h2>
+      <h2 class="subtitle-orange mb-5"><?php echo esc_html( $titulos['titulo_seccion_3'] ); ?></h2>
       <div class="d-flex w100 flex-wrap justify-content-center">
         <?php foreach ($itemsGeneral as $item) : ?>
           <div class="app-value">

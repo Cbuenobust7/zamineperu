@@ -1,7 +1,29 @@
 <?php
+
+add_filter( 'posts_where' , 'posts_where' );
+
+function posts_where( $where ) {
+
+	if( is_admin() ) {
+		global $wpdb;
+
+		if ( isset( $_GET['author_restrict_posts'] ) && !empty( $_GET['author_restrict_posts'] ) && intval( $_GET['author_restrict_posts'] ) != 0 ) {
+			$author = intval( $_GET['author_restrict_posts'] );
+
+			$where .= " AND ID IN (SELECT object_id FROM {$wpdb->term_relationships} WHERE term_taxonomy_id=$author )";
+		}
+	}
+	return $where;
+}
+
+
 /* Template Name: Services  */?>
 
-<?php get_header(); ?>
+<?php get_header();
+
+?>
+
+
 
     <div class="container">
         <div class="row">
@@ -52,25 +74,7 @@
 											<?php endif; ?>
 
 
-
-											<?php
-              $featured = query_posts([
-                'post_type' => 'news',
-                'posts_per_page' => 4,
-                'meta_key' => 'featured',
-                'meta_value' => 1,
-                'orderby'   => 'date',
-                'order'     => 'DESC',
-              ]);
-              ?>
-              <?php foreach ($featured as $f) : ?>
-                  <a class="news--item px-" href="<?php echo get_the_permalink($f) ?>">
-                   
-                          <div class="mb-2 title default-max-width"><?php echo $f->post_title ?></div>
-                          <div class="news--item--blurb"><?php echo $f->post_excerpt ?></div>
-                        
-                  </a>
-              <?php endforeach; ?>
+         
 											<div class="clearfix"></div>
 										</section>
 									</div>

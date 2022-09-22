@@ -34,7 +34,7 @@ $menuServicios = getMenuArray('Servicios');
   <link rel="profile" href="http://gmpg.org/xfn/11">
 
    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/libs/css/bootstrap.min.css" media="screen"> 
-  <!--<link rel="stylesheet" href="https://www.ciem-demo5.com/wp-content/themes/zamine/libs/css/bootstrap.min.css"> -->
+  <!--<link rel="stylesheet" href="https://www.zamineperu.com/wp-content/themes/zamine/libs/css/bootstrap.min.css"> -->
    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp&display=swap" rel="stylesheet" media="screen">
 
   <!--<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" media="screen">-->
@@ -64,14 +64,14 @@ $menuServicios = getMenuArray('Servicios');
               </div>
             </div>
             <div class="col">
-                <a class="navbar-brand" href="https://ciem-demo5.com/">
+                <a class="navbar-brand" href="https://zamineperu.com/">
                 <img class="navbar-brand nuevo-logo-movil" src="<?php echo get_template_directory_uri(); ?>/images/logo.webp" alt="zamine" height="58">
               </a>
             </div>
           </div>
 
     <!-- la clase sticky desaparecer al iniciar el logo y aparece al hacer scroll para abajo -->
-        <a class="navbar-brand" href="https://ciem-demo5.com/">
+        <a class="navbar-brand" href="https://zamineperu.com/">
             <img class="navbar-brand nuevo-logo" src="<?php echo get_template_directory_uri(); ?>/images/logo-nuevo-black.webp" alt="zamine" height="58">
           </a>
         
@@ -134,7 +134,7 @@ $menuServicios = getMenuArray('Servicios');
           <ul class="header__list-languages"><?php pll_the_languages(); ?></ul>
         </div>
         <div id="header-responsive" class="buscador-responsive menu-item ciem-responsive__buscador float--right--palm">
-            <form class="ciem-responsive__buscador__form js-responsive__buscador-form js-buscador-form" role="search" method="get" id="searchform" class="searchform" action="https://ciem-demo5.com/">
+            <form class="ciem-responsive__buscador__form js-responsive__buscador-form js-buscador-form" role="search" method="get" id="searchform" class="searchform" action="https://zamineperu.com/">
                 <div class="buscador-container">
                   <label class="screen-reader-text" for="s">Buscar por:</label>
                   <input class="ciem-responsive__buscador__form__input buscador__input js-buscador-form" type="text" value="" name="s" id="s">
@@ -208,7 +208,7 @@ $menuServicios = getMenuArray('Servicios');
            </li>
            </ul>
            <div id="header-responsive" class="menu-item ciem-responsive__buscador float--right--palm">
-            <form class="ciem-responsive__buscador__form js-responsive__buscador-form js-buscador-form" role="search" method="get" id="searchform" class="searchform" action="https://ciem-demo5.com/">
+            <form class="ciem-responsive__buscador__form js-responsive__buscador-form js-buscador-form" role="search" method="get" id="searchform" class="searchform" action="https://zamineperu.com/">
                 <div class="buscador-container">
                   <label class="screen-reader-text" for="s">Buscar por:</label>
                   <input class="ciem-responsive__buscador__form__input buscador__input js-buscador-form" type="text" value="" name="s" id="s">

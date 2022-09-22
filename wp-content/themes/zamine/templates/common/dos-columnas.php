@@ -53,11 +53,11 @@
                                 if(isset($pdf) && !empty($pdf)){
 
                                     echo '
-						<a href="'.get_field('pdf').'" target="_blank" class="btn btn-orange" style="font-size: 14px!important;">Descargar</a>';
+						<a href="'.get_field('pdf').'" target="_blank" class="btn btn-orange" style="font-size: 14px!important;">Descargar Brochure</a>';
                                 }
                                 $textoCotizar=get_field('texto_del_boton_cotizar', get_the_ID());
                                 echo '
-						<a href="#exampleModalCenter" data-toggle="modal" class="btn btn-orange ml-4" style="font-size: 14px!important;">'.$textoCotizar.'</a>';
+						<a href="#exampleModalCenter" data-toggle="modal" class="btn btn-orange" style="font-size: 14px!important;">'.$textoCotizar.'</a>';
                             ?> </div>
       </div>
     </div>

@@ -62,7 +62,7 @@ $informacion = get_field("informacion");
     </div>
     <div id="section0" class="collapse show" aria-labelledby="page0" data-parent="#accordionServices" data-info="info0" data-header="page0">
       <div class="card-body">
-        <ul><li> <a href="http://ciem-demo5.com/servicios/camiones-autonomos/">Camiones autónomos</a> </li></ul>
+        <ul><li> <a href="http://zamineperu.com/servicios/camiones-autonomos/">Camiones autónomos</a> </li></ul>
       </div>
     </div>
   </div>  <div class="card">
@@ -75,7 +75,7 @@ $informacion = get_field("informacion");
     </div>
     <div id="section1" class="collapse" aria-labelledby="page1" data-parent="#accordionServices" data-info="info1" data-header="page1">
       <div class="card-body">
-        <ul><li> <a href="http://ciem-demo5.com/servicios/test/">Palas y escavadoras</a> </li><li> <a href="http://ciem-demo5.com/servicios/camiones-para-gran-altitud/">Camiones para gran altitud</a> </li></ul>
+        <ul><li> <a href="http://zamineperu.com/servicios/test/">Palas y escavadoras</a> </li><li> <a href="http://zamineperu.com/servicios/camiones-para-gran-altitud/">Camiones para gran altitud</a> </li></ul>
       </div>
     </div>
   </div>  <div class="card">
@@ -89,7 +89,7 @@ $informacion = get_field("informacion");
     </div>
     <div id="section2" class="collapse" aria-labelledby="page2" data-parent="#accordionServices" data-info="info2" data-header="page2">
       <div class="card-body">
-        <ul><li> <a href="http://ciem-demo5.com/servicios/691/">test</a> </li></ul>
+        <ul><li> <a href="http://zamineperu.com/servicios/691/">test</a> </li></ul>
       </div>
     </div>
   </div>

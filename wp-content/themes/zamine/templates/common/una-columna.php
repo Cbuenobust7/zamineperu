@@ -42,7 +42,7 @@ $img_url = $img_arr[0];
                                 $pdf = get_field('pdf', get_the_ID());
                                 if(isset($pdf) && !empty($pdf)){
 
-                                    echo '<a href="'.get_field('pdf').'" target="_blank" class="btn btn-orange" style="font-size: 14px!important;">Descargar</a>';
+                                    echo '<a href="'.get_field('pdf').'" target="_blank" class="btn btn-orange" style="font-size: 14px!important;">Descargar Brochure</a>';
                                 }
 
                                 $textoCotizar = get_field('texto_del_boton_cotizar', get_the_ID());

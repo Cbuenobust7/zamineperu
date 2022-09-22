@@ -35,7 +35,7 @@
               </div>
               <div class="col-md-6 col-lg-12">
                 <div class="follow-menu">
-                  <a><span class="title">SIGUENOS EN:</span></a>
+                  <a><span class="title"></a>
                 <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/zamineperu/" target="_blank" role="button">
                   <i class="fab fa-facebook-f"></i></a>
                 <!-- Linkedin -->
@@ -46,23 +46,29 @@
             </div>
           </div>
           <div class="col-md-6 col-lg-3">
-            <div class="title mb-3">SEDES:</div>
+            <div class="title mb-3">SEDES</div>
             <div class="bold text-uppercase pl-md-2">COMERCIAL Y ADMINISTRATIVA</div>
             <div class="text pl-md-2">
-              <strong>Dirección: </strong>Av. La Encalada N° 1420 – Edifico Polo Hunt II <br>
-				Oficina 801, Surco, Lima 15023<br>
-              <strong>E-mail: </strong>mineria@zamineperu.com<br>
-             ventas@zamineperu.com<br>
-              <strong>Horario: </strong>Lun – Vie: 8:00 am – 06:00 pm
+              <strong>Dirección </strong> <br>
+				Av. La Encalada N° 1420. Edifico Polo<br>
+				Hunt II Of. 801. Surco. Lima 15023<br>
+              <strong>E-mail </strong><br>
+				mineria@zamineperu.com<br>
+				ventas@zamineperu.com<br>
+              <strong>Horario </strong><br>
+				Lun – Vie: 8:00 am – 06:00 pm
             </div>
           </div>
           <div class="col-md-6 col-lg-3">
             <div class="bold text-uppercase mt-5">Centro de operaciones</div>
             <div class="text">
-              <strong>Dirección: </strong>Ca. Martir Olaya Mz. G Lte. 11 Urb. Huertos de <br>
-			  Santa Genoveva, Lurín, Lima <br>
-                          <strong>E-mail: </strong>operaciones@zamineperu.com<br>
-              <strong>Horario: </strong>Lun – Jue: 7:00 am – 05:00 pm <br>
+              <strong>Dirección </strong><br>
+				Av. Martir Olaya Mz. G Lte. 11 Urb. Huertos<br>
+				de Santa Genoveva. Lurín. Lima <br>
+                          <strong>E-mail </strong><br>
+				operaciones@zamineperu.com<br>
+              <strong>Horario </strong><br>
+				Lun – Jue: 7:00 am – 05:00 pm <br>
 				Vie: 7:00 am – 03:00 pm
             </div>
           </div>

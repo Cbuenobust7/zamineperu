@@ -17,7 +17,7 @@
         <div class="col-lg-5">
           <div class="bar bar--orange my-4"></div>
           <h2 class="subtitle-orange">Escríbenos</h2>
-          <p>Déjenos sus consultas y nos pondrémos en<br>contacto contigo</p>
+          <p>Déjanos tus consultas y nos pondrémos en<br>contacto contigo</p>
           <form class="pr-md-5 contact-form" autocomplete="off">
             <div class="form-group">
               <div class="form-icon">
