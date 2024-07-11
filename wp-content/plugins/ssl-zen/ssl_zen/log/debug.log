@@ -5,10 +5,10 @@ No account found, attempting to create account.
 LEClient finished constructing
 
 [16-09-2022 04:19:23] function LEOrder __construct:
-No order found for 'zamineperu.com'. Creating new order.
+No order found for 'ciem-demo6.com'. Creating new order.
 
 [16-09-2022 04:19:25] function createOrder (function LEOrder __construct):
-Created order for 'zamineperu.com'.
+Created order for 'ciem-demo6.com'.
 
 [16-09-2022 04:19:27] function LEClient __construct:
 LEClient finished constructing
@@ -53,14 +53,14 @@ LEClient finished constructing
 LEClient finished constructing
 
 [16-09-2022 04:21:16] function finalizeOrder:
-Order for 'zamineperu.com' finalized.
+Order for 'ciem-demo6.com' finalized.
 
 [16-09-2022 04:21:18] function LEClient __construct:
 LEClient finished constructing
 
 [16-09-2022 04:21:19] function getCertificate:
-Certificate for 'zamineperu.com' saved
+Certificate for 'ciem-demo6.com' saved
 
 [16-09-2022 04:21:19] function getCertificate:
-Certificate for 'zamineperu.com' saved
+Certificate for 'ciem-demo6.com' saved
 

@@ -1,6 +1,45 @@
 <?php
-  $img_arr = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), 'medium_large'); 
+$colores = get_field('color_botones_para_volquetes_y_otr');
+if( $colores ): ?>
+
+    <style type="text/css">
+        .btn-orange {
+            background: <?php echo esc_attr( $colores['color_principal'] ); ?>;
+            color: <?php echo esc_attr( $colores['color_de_texto_principal'] ); ?>;
+            border: 2px solid <?php echo esc_attr( $colores['color_de_borde_principal'] ); ?>;
+            margin-left: 5px;
+            margin-right: 5px;
+            }
+        .btn-orange:hover{
+            background: <?php echo esc_attr( $colores['color_de_boton_alterno'] ); ?>;
+            color: <?php echo esc_attr( $colores['color_de_texto_alterno'] ); ?>;
+            border: 2px solid <?php echo esc_attr( $colores['color_de_borde_alterno'] ); ?>;
+            margin-left: 5px;
+            margin-right: 5px;
+            }
+        .color-h-ficha{
+            background-color:<?php echo esc_attr( $colores['color_principal'] ); ?>;
+            padding: 0;"
+            }
+        .btn-orange-alt {
+            background: <?php echo esc_attr( $colores['color_principal'] ); ?>;
+            color: <?php echo esc_attr( $colores['color_de_texto_principal'] ); ?>;
+            border: 2px solid <?php echo esc_attr( $colores['color_principal'] ); ?>;
+            }
+            @media all and (max-width:599px) {
+                .bbb_deals_item {
+                  width: 42% !important;
+                }
+            }
+    </style>
+
+<?php endif; ?>
+
+<?php
+$img_arr = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), 'medium_large'); 
 $img_url = $img_arr[0];
+$lang = get_bloginfo("language"); 
+
 ?>
 
             <!-- bbb_deals -->
@@ -40,10 +79,17 @@ $img_url = $img_arr[0];
                             <div class="bbb_deals_info_line d-flex flex-row justify-content-start">
                             <?php 
                                 $pdf = get_field('pdf', get_the_ID());
-                                if(isset($pdf) && !empty($pdf)){
+                                if(isset($pdf) && !empty($pdf) && $lang == 'en-US'){
+
+                                    echo '<a href="'.get_field('pdf').'" target="_blank" class="btn btn-orange" style="font-size: 14px!important;">Download Brochure</a>';
+                                }
+                                if(isset($pdf) && !empty($pdf) && $lang == 'es-PE'){
 
                                     echo '<a href="'.get_field('pdf').'" target="_blank" class="btn btn-orange" style="font-size: 14px!important;">Descargar Brochure</a>';
                                 }
+                                
+                                  //print_r ($mainCategory);
+                            
 
                                 $textoCotizar = get_field('texto_del_boton_cotizar', get_the_ID());
                                 if(isset($textoCotizar) && !empty($textoCotizar)){

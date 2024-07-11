@@ -1,27 +1,36 @@
 <?php
 /* Template Name: Home  */
 get_header();
+$lang = get_bloginfo("language");
 ?>
-
+<style>
+.transparenciaHome {
+  background: #d1cfcbc7;
+}
+</style>
 <?php
 global $cards;
-$banners = query_posts([
-  'post_type' => 'banner',
+$banners_query = new WP_Query([
+  'post_type'      => 'banner',
   'posts_per_page' => -1,
-  'order' => 'ASC'
-]); ?>
+  'order'          => 'ASC',
+]);
+
+if ($banners_query->have_posts()) :
+  while ($banners_query->have_posts()) : $banners_query->the_post();
+    // Tu código para mostrar cada banner aquí
+  endwhile;
+  wp_reset_postdata();
+endif;
+?>
 
 <?php get_template_part('components/banner-logo');?>
+
 <div class="page-home">
   <?php the_content(); ?>
 
-  <!--<nav class="navbar navbar-expand-lg navbar-dark separator">
-    
-  </nav>  -->
- 
-
-  <div class="news--others" style="background-image: url('<?php echo get_template_directory_uri(); ?>/images/about-us-bg.webp');">
-    <div class="about-us--overlay py-1">
+    <div class="news--others" style="background-image: url('<?php echo get_template_directory_uri(); ?>/images/about-us-bg.webp');">
+    <div class="transparenciaHome py-1">
       <div class="">
         <div class="container">
             <?php $isos = get_field("imagen_isos");?>
@@ -31,14 +40,10 @@ $banners = query_posts([
         </div>
     </div>
 </div>
-  <!--div class="wrapper px-lg-5 mb-5"-->
   <?php
-  
-  $cards = get_field("tarjetas-informativas");
+  $cards = get_field("tarjetas-informativas-3");
   include get_template_directory() . '/components/cards-home.php';
-  //include locate_template(get_template_directory().'/components/cards.php', false, false); 
   ?>
-
 
   <?php
   $ID = get_the_ID();
@@ -47,12 +52,19 @@ $banners = query_posts([
   $ntext = get_post_meta($ID, 'contenido_nosotros', true);
   $nimg_id = get_post_meta($ID, 'image_nosotros', true);
   $nimg_url = wp_get_attachment_url($nimg_id);
-
   ?>
+
+  <?php
+  $cards = get_field("tarjetas-informativas");
+  include get_template_directory() . '/components/cards-home.php';
+  ?>
+
   <?php
   $cards = get_field("tarjetas");
   include get_template_directory() . '/components/cards-home.php';
   ?>
+
+
   <?php
   $news = query_posts([
     'post_type' => 'news',
@@ -66,12 +78,20 @@ $banners = query_posts([
     <div class="news--others--overlay py-5">
       <div class="wrapper">
         <div class="bar bar--white my-4 mx-auto"></div>
-        <h2 class="subtitle-white text-center pb-5">ÚLTIMAS NOVEDADES</h2>
+        <?php if ($lang == 'es-PE'){
+        echo '<h2 class="subtitle-white text-center pb-5">ÚLTIMAS NOVEDADES</h2>';
+        }?>
+        <?php if ($lang == 'en-US') { 
+        echo '<h2 class="subtitle-white text-center pb-5">NEWS</h2>';
+        }?>
         <div class="container">
           <div class="row">
             <?php foreach ($news as $new) : ?>
               <div class="col-md-6 col-lg-3">
-                <a class="news--others--bg" style="background-image: url(<?php echo get_the_post_thumbnail_url($new) ?>)" href="<?php echo get_the_permalink($new) ?>">
+               <?php $thumbnail_url = get_the_post_thumbnail_url($new);
+                    if ($thumbnail_url) : ?>
+                      <a class="news--others--bg" style="background-image: url(<?php echo esc_url($thumbnail_url); ?>)" href="<?php echo esc_url(get_the_permalink($new)); ?>">
+                    <?php endif; ?>
                   <div class="news--others--date">
                     <div class="news--others--day"><?php echo get_the_date('d', $new); ?></div>
                     <div class="news--others--month text-uppercase"><?php echo get_the_date('M y', $new); ?></div>
@@ -94,7 +114,10 @@ $banners = query_posts([
             <?php endforeach; ?>
           </div>
           <div class="news--others-more my-4">
-            <a href="<?php echo home_url('/novedades'); ?>" class="btn btn-plomo px-4">ver más novedades</a>
+            
+            <a href="<?php echo home_url('/novedades'); ?>" class="btn btn-plomo px-4">
+            <?php if ($lang == 'es-PE'){ echo ('ver más novedades'); }
+                  else { echo ('see more news'); }?> </a>
           </div>
         </div>
       </div>
@@ -104,9 +127,12 @@ $banners = query_posts([
 
 <?php $isosWhite = get_field("imagen_secundaria_isos");?>
 <script>
+var isosWhiteUrl = <?php echo wp_json_encode($isosWhite['url']); ?>;
 function Cambiar(imagen){
-	document.getElementById(imagen).src = '<?php echo ($isosWhite[url])?>';
+  document.getElementById(imagen).src = isosWhiteUrl;
 }
+
 </script>
+
 
 <?php get_footer(); ?>

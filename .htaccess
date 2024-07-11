@@ -1,4 +1,15 @@
 
+
+#Begin Really Simple Security
+<IfModule mod_rewrite.c>
+RewriteEngine on
+RewriteCond %{HTTP:CF-Visitor} '"scheme":"http"'
+RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+</IfModule>
+
+Options -Indexes
+#End Really Simple Security
 # BEGIN WordPress
 # Las directivas (líneas) entre «BEGIN WordPress» y «END WordPress» son
 # generadas dinámicamente y solo deberían ser modificadas mediante filtros de WordPress.
@@ -15,26 +26,64 @@ RewriteRule . /index.php [L]
 
 # END WordPress
 
-# Security Header By Proficient Man - 1.0.1
-  <IfModule mod_headers.c>
-  Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
-  Header always set X-XSS-Protection "1; mode=block"
-  Header always set X-Content-Type-Options "nosniff"
-  Header always set Referrer-Policy "no-referrer-when-downgrade"
-  Header always set Expect-CT "max-age=7776000, enforce"
-  Header set Access-Control-Allow-Origin "null"
-  Header set Access-Control-Allow-Methods "GET,PUT,POST,DELETE"
-  Header set Access-Control-Allow-Headers "Content-Type, Authorization"
-  Header set X-Content-Security-Policy "img-src *; media-src * data:;"
-  Header always set Content-Security-Policy "report-uri https://zamineperu.com"
-  Header set Cross-Origin-Embedder-Policy-Report-Only 'unsafe-none; report-to="default"'
-  Header set Cross-Origin-Embedder-Policy 'unsafe-none; report-to="default"'
-  Header set Cross-Origin-Opener-Policy-Report-Only 'same-origin; report-to="default"'
-  Header set Cross-Origin-Opener-Policy 'same-origin; report-to="default"'
-  Header set Cross-Origin-Resource-Policy 'cross-origin'
-  Header set strict-dynamic "https: 'self'; default-src 'self'"
-  Header always set X-Frame-Options "SAMEORIGIN"
-  Header set X-Powered-By "ProficientMan.Com"
-  Header always set Permissions-Policy "geolocation=(), microphone=(), accelerometer=(), gyroscope=(), magnetometer=(), interest-cohort=()"
-  </IfModule>
-  # END Security Header By Proficient Man
+<IfModule mod_headers.c>
+    # Cabecera Strict-Transport-Security (HSTS)
+    Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
+
+    # Cabecera X-XSS-Protection
+    Header always set X-XSS-Protection "1; mode=block"
+
+    # Cabecera X-Content-Type-Options
+    Header always set X-Content-Type-Options "nosniff"
+
+    # Cabecera Referrer-Policy
+    Header always set Referrer-Policy "no-referrer-when-downgrade"
+
+    # Cabecera Expect-CT
+    Header always set Expect-CT "max-age=7776000, enforce"
+
+    # Cabecera Access-Control-Allow-Origin
+    Header always set Access-Control-Allow-Origin "null"
+
+    # Cabecera Access-Control-Allow-Methods
+    Header always set Access-Control-Allow-Methods "GET, PUT, POST, DELETE"
+
+    # Cabecera Access-Control-Allow-Headers
+    Header always set Access-Control-Allow-Headers "Content-Type, Authorization"
+
+    # Cabecera X-Content-Security-Policy
+    Header always set X-Content-Security-Policy "img-src *; media-src * data:;"
+
+    # Cabecera Content-Security-Policy
+    Header always set Content-Security-Policy "autoplay 'self';"
+    
+    # Cabecera Cross-Origin-Embedder-Policy-Report-Only
+    Header always set Cross-Origin-Embedder-Policy-Report-Only "unsafe-none; report-to=default"
+
+    # Cabecera Cross-Origin-Embedder-Policy
+    Header always set Cross-Origin-Embedder-Policy "unsafe-none; report-to=default"
+
+    # Cabecera Cross-Origin-Opener-Policy-Report-Only
+    Header always set Cross-Origin-Opener-Policy-Report-Only "same-origin; report-to=default"
+
+    # Cabecera Cross-Origin-Opener-Policy
+    Header always set Cross-Origin-Opener-Policy "same-origin; report-to=default"
+
+    # Cabecera Cross-Origin-Resource-Policy
+    Header always set Cross-Origin-Resource-Policy "cross-origin"
+
+    # Cabecera strict-dynamic
+    Header always set strict-dynamic "https: 'self'; default-src 'self'"
+
+    # Cabecera X-Frame-Options
+    Header always set X-Frame-Options "SAMEORIGIN"
+
+    # Cabecera X-Powered-By
+    Header always set X-Powered-By "ciem.pe"
+
+    # Cabecera Permissions-Policy
+    Header always set Permissions-Policy "geolocation=(), microphone=(), accelerometer=(), gyroscope=(), magnetometer=(), interest-cohort=()"
+</IfModule>
+<IfModule mod_mime.c>
+    AddType text/css .css
+</IfModule>

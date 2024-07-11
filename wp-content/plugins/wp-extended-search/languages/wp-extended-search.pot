@@ -1,21 +1,34 @@
-# Copyright (C) 2022 5um17
+# Copyright (C) 2023 5um17
 # This file is distributed under the same license as the WP Extended Search package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WP Extended Search 2.1.1\n"
+"Project-Id-Version: WP Extended Search 2.1.2\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/wp-extended-search\n"
-"POT-Creation-Date: 2022-03-18 20:54:40+00:00\n"
+"POT-Creation-Date: 2023-01-05 08:02:17+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2022-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2023-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "X-Generator: grunt-wp-i18n 1.0.3\n"
 
+#: includes/admin/class-wpes-admin.php:53
+#: includes/admin/class-wpes-admin.php:54
+msgid "WP Extended Search Settings"
+msgstr ""
+
+#: includes/admin/class-wpes-admin.php:53
+msgid "Extended Search"
+msgstr ""
+
+#: includes/admin/class-wpes-admin.php:54
+msgid "Search Settings"
+msgstr ""
+
 #: includes/admin/class-wpes-admin.php:72
-#: includes/admin/class-wpes-admin.php:682
+#: includes/admin/class-wpes-admin.php:691
 msgid "Settings"
 msgstr ""
 
@@ -123,31 +136,31 @@ msgstr ""
 msgid "copied"
 msgstr ""
 
-#: includes/admin/class-wpes-admin.php:236
+#: includes/admin/class-wpes-admin.php:237
 msgid "WPES for global search has been disabled."
 msgstr ""
 
-#: includes/admin/class-wpes-admin.php:242
+#: includes/admin/class-wpes-admin.php:243
 msgid "WPES for global search has been enabled."
 msgstr ""
 
-#: includes/admin/class-wpes-admin.php:247
+#: includes/admin/class-wpes-admin.php:248
 msgid "Settings has been changed to WordPress default search setting."
 msgstr ""
 
-#: includes/admin/class-wpes-admin.php:252
+#: includes/admin/class-wpes-admin.php:253
 msgid "Select atleast one post type!"
 msgstr ""
 
-#: includes/admin/class-wpes-admin.php:257
+#: includes/admin/class-wpes-admin.php:258
 msgid "Select atleast one setting to search!"
 msgstr ""
 
-#: includes/admin/class-wpes-admin.php:262
+#: includes/admin/class-wpes-admin.php:263
 msgid "Date seems to be in invalid format!"
 msgstr ""
 
-#: includes/admin/class-wpes-admin.php:276
+#: includes/admin/class-wpes-admin.php:277
 msgid ""
 "Every field have OR relation with each other. e.g. if someone search for "
 "\"5um17\" then search results will show those items which have \"5um17\" as "
@@ -155,72 +168,78 @@ msgid ""
 "selected."
 msgstr ""
 
-#: includes/admin/class-wpes-admin.php:310
+#: includes/admin/class-wpes-admin.php:311
 #: includes/class-wpes-search-widget.php:167
 msgid "Global (default)"
 msgstr ""
 
-#: includes/admin/class-wpes-admin.php:318
+#: includes/admin/class-wpes-admin.php:319
 msgid "Create New"
 msgstr ""
 
-#: includes/admin/class-wpes-admin.php:323
+#: includes/admin/class-wpes-admin.php:324
 msgid "Edit Name"
 msgstr ""
 
-#: includes/admin/class-wpes-admin.php:336
+#: includes/admin/class-wpes-admin.php:337
 msgid "Optimize for Products Search"
 msgstr ""
 
-#: includes/admin/class-wpes-admin.php:349
+#: includes/admin/class-wpes-admin.php:350
 msgid "Search in Title"
 msgstr ""
 
-#: includes/admin/class-wpes-admin.php:353
+#: includes/admin/class-wpes-admin.php:354
 msgid "Search in Content"
 msgstr ""
 
-#: includes/admin/class-wpes-admin.php:357
+#: includes/admin/class-wpes-admin.php:358
 msgid "Search in Excerpt"
 msgstr ""
 
-#: includes/admin/class-wpes-admin.php:382
+#: includes/admin/class-wpes-admin.php:383
 msgid "No meta key found!"
 msgstr ""
 
-#: includes/admin/class-wpes-admin.php:431
+#: includes/admin/class-wpes-admin.php:432
 msgid "No public taxonomy found!"
 msgstr ""
 
-#: includes/admin/class-wpes-admin.php:445
+#: includes/admin/class-wpes-admin.php:446
 msgid "Search in Author display name"
 msgstr ""
 
-#: includes/admin/class-wpes-admin.php:446
+#: includes/admin/class-wpes-admin.php:447
 msgid ""
 "If checked then it will display those results whose Author \"Display name\" "
 "match the search terms."
 msgstr ""
 
-#: includes/admin/class-wpes-admin.php:492
+#: includes/admin/class-wpes-admin.php:496
+msgid ""
+"Only select \"Variation\" if you want to display each variation as a "
+"separate item on the search result page."
+msgstr ""
+
+#: includes/admin/class-wpes-admin.php:498
 msgid ""
 "If you are selecting Media post type then save the settings once to enable "
 "more media settings."
 msgstr ""
 
-#: includes/admin/class-wpes-admin.php:496
+#: includes/admin/class-wpes-admin.php:505
 msgid "No public post type found!"
 msgstr ""
 
-#: includes/admin/class-wpes-admin.php:509
+#: includes/admin/class-wpes-admin.php:518
 msgid "AND"
 msgstr ""
 
-#: includes/admin/class-wpes-admin.php:510
+#: includes/admin/class-wpes-admin.php:519
 msgid "OR"
 msgstr ""
 
-#: includes/admin/class-wpes-admin.php:515
+#: includes/admin/class-wpes-admin.php:524
 msgid ""
 "This option is disabled because you have selected \"Match the search term "
 "exactly\".  When using the exact match option, the sentence is not broken "
@@ -228,87 +247,87 @@ msgid ""
 "meaning."
 msgstr ""
 
-#: includes/admin/class-wpes-admin.php:517
+#: includes/admin/class-wpes-admin.php:526
 msgid ""
 "Type of query relation between search terms. e.g. someone searches for \"my "
 "query\" then define the relation between \"my\" and \"query\". The default "
 "value is AND."
 msgstr ""
 
-#: includes/admin/class-wpes-admin.php:532
+#: includes/admin/class-wpes-admin.php:541
 msgid ""
 "Contents will not appear in search results older than this date OR leave "
 "blank to disable this feature."
 msgstr ""
 
-#: includes/admin/class-wpes-admin.php:544
+#: includes/admin/class-wpes-admin.php:553
 msgid ""
 "Number of posts to display on search result page OR leave blank for default "
 "value."
 msgstr ""
 
-#: includes/admin/class-wpes-admin.php:556
+#: includes/admin/class-wpes-admin.php:565
 msgid "Relevance"
 msgstr ""
 
-#: includes/admin/class-wpes-admin.php:557
+#: includes/admin/class-wpes-admin.php:566
 msgid "Date"
 msgstr ""
 
-#: includes/admin/class-wpes-admin.php:558
+#: includes/admin/class-wpes-admin.php:567
 msgid "Last Modified Date"
 msgstr ""
 
-#: includes/admin/class-wpes-admin.php:559
+#: includes/admin/class-wpes-admin.php:568
 msgid "Post Title"
 msgstr ""
 
-#: includes/admin/class-wpes-admin.php:560
+#: includes/admin/class-wpes-admin.php:569
 msgid "Post Slug"
 msgstr ""
 
-#: includes/admin/class-wpes-admin.php:561
+#: includes/admin/class-wpes-admin.php:570
 msgid "Post Type"
 msgstr ""
 
-#: includes/admin/class-wpes-admin.php:562
+#: includes/admin/class-wpes-admin.php:571
 msgid "Number of Comments"
 msgstr ""
 
-#: includes/admin/class-wpes-admin.php:563
+#: includes/admin/class-wpes-admin.php:572
 msgid "Random"
 msgstr ""
 
-#: includes/admin/class-wpes-admin.php:568
+#: includes/admin/class-wpes-admin.php:577
 #. translators: %1$s: anchor tag opening, %2$s: anchor tag closed.
 msgid ""
 "Sort search results based on metadata of items. The default value is "
 "%1$sRelevance%2$s."
 msgstr ""
 
-#: includes/admin/class-wpes-admin.php:572
+#: includes/admin/class-wpes-admin.php:581
 msgid "Descending"
 msgstr ""
 
-#: includes/admin/class-wpes-admin.php:573
+#: includes/admin/class-wpes-admin.php:582
 msgid "Ascending"
 msgstr ""
 
-#: includes/admin/class-wpes-admin.php:574
+#: includes/admin/class-wpes-admin.php:583
 msgid ""
 "Order the sorted search items in Descending or Ascending. Default is "
 "Descending."
 msgstr ""
 
-#: includes/admin/class-wpes-admin.php:585
+#: includes/admin/class-wpes-admin.php:594
 msgid "Yes"
 msgstr ""
 
-#: includes/admin/class-wpes-admin.php:586
+#: includes/admin/class-wpes-admin.php:595
 msgid "No"
 msgstr ""
 
-#: includes/admin/class-wpes-admin.php:587
+#: includes/admin/class-wpes-admin.php:596
 msgid ""
 "Whether to match search term exactly or partially e.g. If someone search "
 "\"Word\" it will display items matching \"WordPress\" or \"Word\" but if "
@@ -316,21 +335,21 @@ msgid ""
 "default value is No."
 msgstr ""
 
-#: includes/admin/class-wpes-admin.php:609
+#: includes/admin/class-wpes-admin.php:618
 msgid ""
 "Select the media types to limit the results by type. Leave blank to search "
 "all media types."
 msgstr ""
 
-#: includes/admin/class-wpes-admin.php:663
+#: includes/admin/class-wpes-admin.php:672
 msgid "Docs"
 msgstr ""
 
-#: includes/admin/class-wpes-admin.php:666
+#: includes/admin/class-wpes-admin.php:675
 msgid "More Plugins"
 msgstr ""
 
-#: includes/admin/class-wpes-admin.php:715
+#: includes/admin/class-wpes-admin.php:724
 #. translators: %1$s: Plugin name, %2$s: recommended plugin anchor tag.
 msgid "%1$s recommends installing %2$s plugin to manage widgets."
 msgstr ""
@@ -595,7 +614,7 @@ msgctxt "placeholder"
 msgid "Search &hellip;"
 msgstr ""
 
-#: includes/class-wpes-search-form.php:142
+#: includes/class-wpes-search-form.php:145
 msgctxt "label"
 msgid "Search for:"
 msgstr ""

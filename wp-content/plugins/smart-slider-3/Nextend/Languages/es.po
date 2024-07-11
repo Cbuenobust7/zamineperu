@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2022-07-21 09:26+0200\n"
-"PO-Revision-Date: 2022-07-27 16:52-0300\n"
+"POT-Creation-Date: 2023-06-09 14:38+0200\n"
+"PO-Revision-Date: 2023-08-12 15:51-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es\n"
@@ -10,13 +10,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.1\n"
+"X-Generator: Poedit 3.3\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: ;n2_;n2_e;n2_n:1,2;n2_en:1,2;n2_x:1,2c;n2_ex:1,2c\n"
 "X-Poedit-Flags-xgettext: --no-location\n"
-
-msgid "Debug error"
-msgstr "Error de depuración"
 
 msgid "CURL disabled in your php.ini configuration. Please enable it!"
 msgstr ""
@@ -65,6 +62,12 @@ msgid "Security token mismatch. Please refresh the page!"
 msgstr ""
 "El token de seguridad no es válido. ¡Por favor carga nuevamente la página!"
 
+msgid "Unexpected database error."
+msgstr "Error inesperado de la base de datos."
+
+msgid "Try to repair database"
+msgstr "Intenta reparar la base de datos"
+
 #, php-format
 msgid ""
 "If you see this message after the repair database process, please "
@@ -75,12 +78,6 @@ msgstr ""
 
 msgid "Contact your server host and ask them to fix this for you!"
 msgstr "¡Contacta tu proveedor de hosting y pide que corrijan esto para ti!"
-
-msgid "Unexpected database error."
-msgstr "Error inesperado de la base de datos."
-
-msgid "Try to repair database"
-msgstr "Intenta reparar la base de datos"
 
 msgid "Font manager"
 msgstr "Administrador de fuentes"
@@ -607,7 +604,7 @@ msgid "Duplicate"
 msgstr "Duplicar"
 
 msgid "Copy"
-msgstr "Copiar"
+msgstr "Copia"
 
 msgid "Paste"
 msgstr "Pegar"
@@ -1026,12 +1023,13 @@ msgstr "Resultado"
 msgid "Change slider type"
 msgstr "Cambiar el tipo de slider"
 
+#, javascript-format
 msgid ""
 "Changing your slider type is irreversible. After changing your slider type, "
-"<b>you will lose all slider type related settings</b>."
+"%syou will lose all slider type related settings%s."
 msgstr ""
 "Cambiar el tipo de slider es irreversible. Tras hacer este cambio, "
-"<b>perderás todas las opciones relacionadas al tipo de slider</b>."
+"%sperderás todas las opciones relacionadas al tipo de slider%s."
 
 msgid "Slider type"
 msgstr "Tipo de slider"
@@ -1346,6 +1344,13 @@ msgstr "Loop infinito"
 
 msgid "Finish autoplay"
 msgstr "Finalizar la reproducción automática"
+
+msgid ""
+"The Carousel option is disabled, so the Autoplay will stop after the last "
+"slide appeared."
+msgstr ""
+"La opción Carrusel está desactivada, por lo que Reproducción Automática se "
+"detendrá después de que el último slide aparezca."
 
 msgid "Stop on click"
 msgstr "Detener con un click"
@@ -1740,9 +1745,6 @@ msgstr "Tamaño de archivo máximo"
 msgid "Other"
 msgstr "Otro"
 
-msgid "JetPack Photon image optimizer"
-msgstr "Optimizador de imagen JetPack Photon"
-
 msgid "Background video on mobile"
 msgstr "Fondo de video en móvil"
 
@@ -1990,6 +1992,9 @@ msgstr "Posibles conflictos"
 
 msgid "Test connection"
 msgstr "Probar conexión"
+
+msgid "Analyze & repair possible database issues"
+msgstr "Analiza y repara posibles errores en la base de datos"
 
 msgid "No conflicts detected."
 msgstr "No se detectaron conflictos."
@@ -2411,18 +2416,18 @@ msgstr "Título de la imagen"
 
 msgctxt "Layer animation"
 msgid "In"
-msgstr "Dentro"
+msgstr "Entrada"
 
 msgctxt "Layer animation"
 msgid "Out"
-msgstr "Fuera"
+msgstr "Salida"
 
 msgctxt "Layer animation"
 msgid "Events"
 msgstr "Eventos"
 
 msgid "Plays in when"
-msgstr "Reproducir \"dentro\" cuando"
+msgstr "Reproducir \"Entrada\" cuando"
 
 msgid "Plays out when"
 msgstr "Reproducir \"fuera\" cuando"
@@ -2588,6 +2593,13 @@ msgstr "El bloque debe contener solo un slide. ¿Necesitas más?"
 
 msgid "Convert to slider"
 msgstr "Convertir a slider"
+
+msgid "Single slides are duplicated while autoplay is used."
+msgstr ""
+"Se duplican los slides únicos cuando la reproducción automática es activada."
+
+msgid "autoplay settings"
+msgstr "opciones de reproducción automática"
 
 msgid "Slide one"
 msgstr "Slide uno"
@@ -2877,8 +2889,8 @@ msgstr ""
 msgid "WordPress settings"
 msgstr "Opciones de Wordpress"
 
-msgid "Show editor icon"
-msgstr "Mostrar ícono del editor"
+msgid "Show button in TinyMCE editor"
+msgstr "Mostrar el botón en el editor TinyMCE"
 
 msgid "Show in admin bar"
 msgstr "Mostrar en la barra de administración"
@@ -3055,8 +3067,11 @@ msgstr ""
 "tienes un archivo de exportación mayor utiliza el método de importación de "
 "archivos local."
 
-msgid "You have to unzip your "
-msgstr "Tienes que descomprimir tu "
+#, php-format
+msgid "You have to unzip your %1$s file to find the importable *.ss3 files!"
+msgstr ""
+"¡Debes descomprimir primero tu archivo zip %1$s para encontrar los archivos "
+"*.ss3 que debes importar!"
 
 msgid "Only *.ss3 files can be uploaded!"
 msgstr "¡Solo se pueden cargar archivos con extensión .ss3!"
@@ -3227,6 +3242,19 @@ msgstr "Usted no puede importar sliders de Smart Slider 2."
 msgid "Export file corrupted! Slider data is missing."
 msgstr "¡Archivo de exportación corrupto! Falta información del slider."
 
+#, php-format
+msgid ""
+"The importing failed as the slider export contained an invalid class name: "
+"%1$s"
+msgstr ""
+"La importación falló debido a que el slider exportado contenía un nombre de "
+"clase inválido: %1$s"
+
+#, php-format
+msgid "The importing failed as we are not able to unserialize the type: \"%s\""
+msgstr ""
+"La importación falló debido a que no revertir la seriación del tipo: \"%s\""
+
 msgid "Learn more"
 msgstr "Aprender más"
 
@@ -3300,6 +3328,13 @@ msgstr ""
 "dinámicos cuando %1$s se establece en %2$s. Además ten en cuenta que no ha "
 "recibido ninguna actualización desde WordPress 3.9."
 
+msgid ""
+"Optimization plugins often create issues, so if you see anything wrong, "
+"follow our documentation:"
+msgstr ""
+"Los plugins de optimización suelen crear conflicto, si tienes problemas "
+"consulta nuestra documentación:"
+
 msgid "Add column"
 msgstr "Agregar columna"
 
@@ -3320,6 +3355,14 @@ msgstr "Minuto"
 
 msgid "Stack"
 msgstr "Amontonar"
+
+msgid "Deprecation"
+msgstr "Descontinuado"
+
+msgid ""
+"This generator will get deprecated soon, so you shouldn't use it anymore!"
+msgstr ""
+"Se descontinuará pronto este generador, ¡por lo que no podrás utilizarlo más!"
 
 msgid "No description."
 msgstr "Sin descripción."
@@ -3357,20 +3400,67 @@ msgstr ""
 msgid "Tags"
 msgstr "Etiquetas"
 
+msgid "Access level"
+msgstr "Nivel de acceso"
+
 msgid "Featured"
 msgstr "Destacado"
 
 msgid "User ID"
 msgstr "ID del usuario"
 
+msgid "Created by"
+msgstr "Creado por"
+
+msgid "The ID number of the article's author. Only one number is accepted."
+msgstr "El número ID del autor del artículo. Solo se acepta un número."
+
+msgid "Included article IDs"
+msgstr "IDs de artículos incluidos"
+
+msgid ""
+"Write down article ID numbers separated by commas, to include them in the "
+"result. For example: 1,12,25"
+msgstr ""
+"Escribe los números de ID de los artículos separados por comas, para "
+"incluirlos en los resultados. Por ejemplo: 1,12,25"
+
+msgid "Excluded article IDs"
+msgstr "IDs de artículos excluidos"
+
+msgid ""
+"Write down article ID numbers separated by commas, to exclude them from the "
+"result. For example: 2,14,27"
+msgstr ""
+"Escribe los números de ID de los artículos separados por comas, para "
+"excluirlos de los resultados. Por ejemplo: 2,14,27"
+
 msgid "Language"
 msgstr "Idioma"
+
+msgid ""
+"The language code of your articles. Multiple language codes should be "
+"separated by commas, for example: en-GB,hu-HU,es-ES"
+msgstr ""
+"El código de lenguaje de tus artículos. Si incluyes más de un código, debes "
+"separarlos por una coma, por ejemplo: en-GB,hu-HU,es-ES"
+
+msgid "Fields"
+msgstr "Campos"
 
 msgid "Extra variables"
 msgstr "Variables extra"
 
 msgid "Turn on these options to generate more variables for the slides."
 msgstr "Activa esta opción para generar más variables de los slides."
+
+msgid "Remove shortcodes"
+msgstr "Remover shortcodes"
+
+msgid "Remove shortcodes from article description with the following patterns."
+msgstr ""
+"Remover shortcodes de la descripción de los artículos con el siguiente "
+"criterio."
 
 msgid "Date format"
 msgstr "Formato de fecha"
@@ -3482,17 +3572,23 @@ msgstr "Método de comparación"
 msgid "Field value"
 msgstr "Valor del campo"
 
+msgid "Field type"
+msgstr "Tipo de campo"
+
 msgid "Meta comparison"
 msgstr "Comparación Meta"
 
+#, php-format
 msgid ""
-"Same as the previous option, just you can write down more comparisons. Read "
-"the \"Field name\" and \"Compare method\" out from the previous option. "
-"Example:"
+"You can create other comparisons based on the previous \"Post Meta "
+"Comparison\" options. Use the following format: name||compare||value||"
+"type%1$s%1$s Example:%1$spublished||=||yes||CHAR%1$s%1$sWrite one comparison "
+"per line."
 msgstr ""
-"Al igual que la opción anterior, puedes escribir más comparaciones. Lee el "
-"\"Nombre de campo\" y \"Método de comparación\" de la anterior opción. Por "
-"ejemplo:"
+"Puedes crear otra comparación basada en las opciones previas \"Comparación "
+"meta de artículo\". Utiliza el siguiente formato: nombre||comparar||valor||"
+"tipo%1$s%1$s Por ejemplo:%1$spublished||=||yes||CHAR%1$s%1$s Escribe una "
+"comparación por línea."
 
 msgid "Post date"
 msgstr "Fecha de entrada"
@@ -3526,16 +3622,6 @@ msgid ""
 msgstr ""
 "Los ID's de artículos seleccionados no aparecerán en el generador, incluso "
 "si coinciden con los filtros seleccionados. %1$s Escribe un ID por línea."
-
-#, php-format
-msgid ""
-"You can create other comparison based on the previous \"Field name\" and "
-"\"Compare method\" options. %1$s Use the following format: published||=||yes "
-"%1$s Write one comparison per line."
-msgstr ""
-"Puedes crear otra comparación basada en las opciones previas \"Nombre de "
-"campo\" y \"Método de comparación\". %1$s Utiliza el siguiente formato "
-"published||=||yes %1$s Escribe una comparación por línea."
 
 msgid "Post option"
 msgstr "Opción de artículo"
@@ -3638,9 +3724,6 @@ msgstr "Crea slides de tus artículos en las categorías seleccionadas."
 
 msgid "Categories"
 msgstr "Categorías"
-
-msgid "Remove shortcodes"
-msgstr "Remover shortcodes"
 
 msgid ""
 "You can remove shortcodes from variables to avoid 3rd party content "
@@ -4925,11 +5008,32 @@ msgstr "Olas enmascaradas"
 msgid "Ribbon"
 msgstr "Listón"
 
+msgid "Creates slides by your custom settings."
+msgstr "Crea slides para tus opciones personalizadas."
+
+#, php-format
+msgid ""
+"You don't have custom generators yet. %1$s Check the documentation %2$s to "
+"learn how to create your own generator."
+msgstr ""
+"No tienes ningún generador personalizado todavía. %1$s Consulta la "
+"documentación %2$s para aprender como crear tu propio generador."
+
+msgid "No options given"
+msgstr "No se ingresaron opciones"
+
 msgid "The secret is empty. Please insert that value too!"
 msgstr "¡El texto secreto está vacío. Por favor ingresa ese valor!"
 
 msgid "The App ID is empty. Please insert that value too!"
 msgstr "¡El ID de la app está vacío. Por favor ingresa ese valor!"
+
+msgid ""
+"The Facebook generator will get deprecated soon, so you shouldn't use it "
+"anymore!"
+msgstr ""
+"El generador de Facebook será descontinuado muy pronto, ¡y no podrás "
+"utilizarlo más!"
 
 #, php-format
 msgid ""
@@ -5259,6 +5363,9 @@ msgstr "Lista de reproducción"
 msgid "optional"
 msgstr "opcional"
 
+msgid "Privacy status"
+msgstr "Estado de privacidad"
+
 #, php-format
 msgid "Creates slides from %1$s content."
 msgstr "Crea slides del contenido de %1$s."
@@ -5573,20 +5680,6 @@ msgstr "Galería"
 
 msgid "View gallery"
 msgstr "Ver galería"
-
-msgid "Creates slides by your custom settings."
-msgstr "Crea slides para tus opciones personalizadas."
-
-#, php-format
-msgid ""
-"You don't have custom generators yet. %1$s Check the documentation %2$s to "
-"learn how to create your own generator."
-msgstr ""
-"No tienes ningún generador personalizado todavía. %1$s Consulta la "
-"documentación %2$s para aprender como crear tu propio generador."
-
-msgid "No options given"
-msgstr "No se ingresaron opciones"
 
 #, php-format
 msgid "Creates slides from %1$s events."
@@ -6109,7 +6202,7 @@ msgid "Inner before"
 msgstr "Dentro antes"
 
 msgid "Inner after"
-msgstr "Dentro despúes"
+msgstr "Dentro después"
 
 msgid "Pre"
 msgstr "Antes de"
@@ -6254,6 +6347,9 @@ msgstr ""
 "capa si eres un/a desarrollador/a. %3$sTambién asegúrate que el código HTML "
 "sea válido. Los códigos HTML no válidos pueden romper todo el slide y la "
 "única forma de resolverlo sería eliminarlo."
+
+msgid "Repair HTML errors"
+msgstr "Reparar errores en el HTML"
 
 msgid "Item"
 msgstr "Item"
@@ -6485,7 +6581,7 @@ msgstr ""
 "Por favor ten en cuenta que %1$sno damos soporte%2$s sobre la capa de "
 "módulos de Joomla.%3$sEl código que carga el modulo con frecuencia necesita "
 "código personalizado que debes escribir, ¡Te sugerimos que utilices esta "
-"capa solo sí eres un desarrollador/a!"
+"capa solo sí eres un/a desarrollador/a!"
 
 msgid "Position name or module ID"
 msgstr "Nombre de la posición o ID del módulo"
@@ -6748,6 +6844,27 @@ msgstr "Color de la pista"
 
 msgid "Bar color"
 msgstr "Color de la barra"
+
+#~ msgid "JetPack Photon image optimizer"
+#~ msgstr "Optimizador de imagen JetPack Photon"
+
+#~ msgid "Show editor icon"
+#~ msgstr "Mostrar ícono del editor"
+
+#~ msgid "Debug error"
+#~ msgstr "Error de depuración"
+
+#~ msgid ""
+#~ "Same as the previous option, just you can write down more comparisons. "
+#~ "Read the \"Field name\" and \"Compare method\" out from the previous "
+#~ "option. Example:"
+#~ msgstr ""
+#~ "Al igual que la opción anterior, puedes escribir más comparaciones. Lee "
+#~ "el \"Nombre de campo\" y \"Método de comparación\" de la anterior opción. "
+#~ "Por ejemplo:"
+
+#~ msgid "You have to unzip your "
+#~ msgstr "Tienes que descomprimir tu "
 
 #~ msgid "Muted"
 #~ msgstr "Mudo"

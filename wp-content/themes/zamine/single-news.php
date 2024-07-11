@@ -1,4 +1,8 @@
+
 <?php get_header();
+
+echo '<div style="display: none;">' . do_shortcode('[smartslider3 slider="41"]') . '</div>';
+
 $news_type = get_field('news_type');
 if ($news_type == "news") {
   $title = "Noticia";
@@ -8,6 +12,7 @@ if ($news_type == "news") {
   $icon = "article";
 }
 ?>
+
 <div class="page-news-single">
   <div class="info py-5">
     <div class="wrapper px-5">

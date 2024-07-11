@@ -8,14 +8,14 @@
 
 2022-08-11 03:30:33 [info] Congrats! New account registered successfully.
 
-2022-08-11 03:30:33 [info] Generating SSL for zamineperu.com
+2022-08-11 03:30:33 [info] Generating SSL for ciem-demo6.com
 
 2022-08-11 03:30:33 [info] Domains array given below: 
 
 2022-08-11 03:30:33 [info] <pre>Array
 (
-    [0] =&gt; zamineperu.com
-    [1] =&gt; www.zamineperu.com
+    [0] =&gt; ciem-demo6.com
+    [1] =&gt; www.ciem-demo6.com
 )
 </pre>
 
@@ -29,13 +29,13 @@
 
 2022-08-11 03:30:39 [info] 'http-01' challenge found.
 
-2022-08-11 03:30:39 [info] Got challenge token for zamineperu.com
+2022-08-11 03:30:39 [info] Got challenge token for ciem-demo6.com
 
 2022-08-11 03:30:39 [info] Domain 2
 
 2022-08-11 03:30:40 [info] 'http-01' challenge found.
 
-2022-08-11 03:30:40 [info] Got challenge token for www.zamineperu.com
+2022-08-11 03:30:40 [info] Got challenge token for www.ciem-demo6.com
 
 2022-08-11 03:30:51 [info] Account already registered. Continuing...
 
@@ -51,5 +51,5 @@
 
 2022-08-11 03:30:53 [info] 2nd Internal Validation: Payload content does not match with content of the challenge URI.
 
-2022-08-11 03:30:53 [info] authorizations: 2  number_of_validated_domains: 0 Sorry, SSL certificate can't be issued to zamineperu.com. 2 domains was not validated.
+2022-08-11 03:30:53 [info] authorizations: 2  number_of_validated_domains: 0 Sorry, SSL certificate can't be issued to ciem-demo6.com. 2 domains was not validated.
 

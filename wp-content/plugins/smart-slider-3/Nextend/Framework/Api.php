@@ -5,15 +5,13 @@ namespace Nextend\Framework;
 
 
 use Exception;
-use JHttp;
+use Joomla\CMS\Http\Http;
 use Nextend\Framework\Misc\Base64;
 use Nextend\Framework\Misc\HttpClient;
 use Nextend\Framework\Notification\Notification;
 use Nextend\Framework\Platform\Platform;
 use Nextend\Framework\Request\Request;
 use Nextend\Framework\Url\Url;
-use Nextend\Framework\View\Html;
-use Nextend\SmartSlider3\Application\ApplicationSmartSlider3;
 
 class Api {
 

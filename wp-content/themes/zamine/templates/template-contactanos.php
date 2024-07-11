@@ -1,4 +1,3 @@
-
 <?php 
 /* Template Name: Contactanos  */
 get_header(); ?>
@@ -22,7 +21,8 @@ get_header(); ?>
     
 </style>
 <div class="page-contact">
-<?php get_template_part('components/banner-logo');?>
+<?php 
+$lang = get_bloginfo("language"); ?>
 
 <div class="banner banner-2">
    <!-- <div class="container">
@@ -33,7 +33,10 @@ get_header(); ?>
   <img src="<?php echo get_the_post_thumbnail_url() ?>">
   <div class="overlay">
       <?php
-          echo do_shortcode('[smartslider3 slider="18"]');
+          if ($lang == 'en-US') { 
+            echo do_shortcode('[smartslider3 slider="22"]'); }
+          if ($lang == 'es-PE') { 
+            echo do_shortcode('[smartslider3 slider="18"]'); }
       ?>    
     </div>
 </div>
@@ -43,12 +46,36 @@ get_header(); ?>
       <div class="row col-md-10 mx-auto">
         <div class="col-lg-5">
           <div class="bar bar--orange my-4"></div>
-          <p>Déjenos sus consultas y nos pondrémos en<br>contacto contigo</p>
-          <div>
+          
+            <?php 
+        
+           if ($lang == 'es-PE') {  ?>
+            
+           <!-- ACÁ SE CAMBIA ESTE TEXTO EN ESPAÑOL -->
+          <p>Envíenos sus consultas </p>
+                    <div>
 
           <?php
      echo do_shortcode('[wpforms id="1607"]' ); 
 ?>          </div>
+           
+          <?php } ?>
+          
+                  <?php 
+        
+           if ($lang == 'en-US') {  ?>
+            
+     <!-- ACÁ SE CAMBIA ESTE TEXTO EN INGLÉS -->
+
+          <p>Send us your inquiries </p>
+                    <div>
+
+          <?php
+     echo do_shortcode('[wpforms id="1850"]' ); 
+?>          </div>
+           
+          <?php } ?>
+
         </div>
         <div class="col-lg-7 pt-5 pr-lg-0">
           <img src="<?php echo get_field('imagen'); ?>" class="img-fluid">
@@ -73,7 +100,7 @@ get_header(); ?>
             <h6 class="color-orange">Teléfono:</h6>
             <div class="contact-details">+51 (01) 4365442 – Anexo 105</div>
             <h6 class="color-orange">E-mail:</h6>
-            <div class="contact-details">ventas@zamineperu.com<br>cotizaciones@zamineperu.com</div>
+            <div class="contact-details">ventas@ciem-demo6.com<br>cotizaciones@ciem-demo6.com</div>
             <h6 class="color-orange">Horario:</h6>
             <div class="contact-details">Lun – Vie: 8:00 – 18:00</div>
           </div>
@@ -86,6 +113,6 @@ get_header(); ?>
   </div>
 </div>
 
-<?php get_footer(); ?>
 
+<?php get_footer(); ?>
 

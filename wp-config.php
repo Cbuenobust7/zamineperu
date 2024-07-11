@@ -1,4 +1,10 @@
 <?php
+
+//Begin Really Simple SSL session cookie settings
+@ini_set('session.cookie_httponly', true);
+@ini_set('session.cookie_secure', true);
+@ini_set('session.use_only_cookies', true);
+//END Really Simple SSL cookie settings
 define( 'WP_CACHE', false ); // Added by WP Rocket
 
 
@@ -24,11 +30,11 @@ define( 'WP_CACHE', false ); // Added by WP Rocket
  */
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define( 'DB_NAME', 'ciem_zamine8' );
+define( 'DB_NAME', 'zamineperu.com' );
 /** MySQL database username */
-define( 'DB_USER', 'root' );
+define( 'DB_USER', 'Carlos' );
 /** MySQL database password */
-define( 'DB_PASSWORD', '6IIqQsn@9ZegIm)*' );
+define( 'DB_PASSWORD', 'BzF1w-Kr=%yz' );
 /** MySQL hostname */
 define( 'DB_HOST', 'localhost' );
 /** Database Charset to use in creating database tables. */
@@ -62,6 +68,7 @@ define( 'NONCE_SALT',       'GrpEF9^hlc}@&%i-j,v`C!czA~ ]r)#>ep 4iN2jB|}@OvOUQ|<
  * a unique prefix. Only numbers, letters, and underscores please!
  */
 $table_prefix = 'wp_';
+define('WP_MEMORY_LIMIT','2048M');
 /**
  * For developers: WordPress debugging mode.
  *

@@ -1,13 +1,47 @@
+<style>
+@font-face {
+	font-family: openSans-zamine;
+	font-style: normal;
+	font-display: swap;
+	src: url(https://www.zamineperu.com/open-sans-v27-latin-300.woff2) format('woff2');
+	unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F
+}
+
+@font-face {
+	font-family: 'open sans';
+	font-style: normal;
+	font-weight: 200;
+	font-display: swap;
+	src: url(https://www.zamineperu.com/open-sans-v27-latin-300.woff2) format('woff2');
+	unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F
+}
+
+@font-face {
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 200;
+	font-display: swap;
+	src: url(https://www.zamineperu.com/open-sans-v27-latin-300.woff2) format('woff2');
+	unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F
+}
+</style>
+
 <?php
 
 /* Template Name: Noticias  */
-get_header(); ?>
+get_header(); 
+$lang = get_bloginfo("language"); 
+?>
 <div class="page-news">
   <div class="banner banner-2">
     <img src="<?php echo get_the_post_thumbnail_url() ?>">
     <div class="overlay">
       <?php
-        echo do_shortcode('[smartslider3 slider="13"]');
+
+        if ($lang == 'en-US') { 
+          echo do_shortcode('[smartslider3 slider="23"]'); }
+        if ($lang == 'es-PE') { 
+          echo do_shortcode('[smartslider3 slider="13"]'); }
       ?>
     </div>
   </div>
@@ -24,7 +58,7 @@ get_header(); ?>
               <?php
               $featured = query_posts([
                 'post_type' => 'news',
-                'posts_per_page' => 4,
+                'posts_per_page' => 5,
                 'meta_key' => 'featured',
                 'meta_value' => 1,
                 'orderby'   => 'date',

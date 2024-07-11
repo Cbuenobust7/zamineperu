@@ -58,10 +58,25 @@ if (!isset($collapseable)) {
 								'value' => wfConfig::get('scan_force_ipv4_start') ? 1 : 0,
 								'title' => __('Use only IPv4 to start scans', 'wordfence'),
 								'subtitle' =>  __('This option requires cURL. (This may have no effect on some old PHP or cURL versions.)', 'wordfence'),
-								'helpLink' => null,
+								'helpLink' => wfSupportController::supportURL(wfSupportController::ITEM_SCAN_OPTION_USE_ONLY_IPV4),
 								'premium' => false,
 								'disabled' => !wfUtils::isCurlSupported()
 							))->render();
+						?>
+					</li>
+					<li>
+						<?php
+						$options = array();
+						foreach (range(0, wfScanMonitor::MAX_RESUME_ATTEMPTS) as $number) {
+							$options[] = array('value' => $number, 'label' => $number > 0 ? $number : '0 (Disabled)');
+						}
+						echo wfView::create('options/option-select', array(
+							'selectOptionName' => 'scan_max_resume_attempts',
+							'selectOptions' => $options,
+							'selectValue' => wfConfig::get('scan_max_resume_attempts', wfScanMonitor::DEFAULT_RESUME_ATTEMPTS),
+							'title' => __('Maximum number of attempts to resume each scan stage', 'wordfence'),
+							'helpLink' => wfSupportController::supportURL(wfSupportController::ITEM_SCAN_OPTION_MAX_RESUME_ATTEMPTS),
+						))->render();
 						?>
 					</li>
 				</ul>

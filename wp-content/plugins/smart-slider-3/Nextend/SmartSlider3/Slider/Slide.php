@@ -4,7 +4,7 @@
 namespace Nextend\SmartSlider3\Slider;
 
 
-use JRoute;
+use Joomla\CMS\Router\Route;
 use Nextend\Framework\Cast;
 use Nextend\Framework\Data\Data;
 use Nextend\Framework\FastImageSize\FastImageSize;
@@ -274,29 +274,25 @@ class Slide extends AbstractRenderableOwner {
 
             $url = ResourceTranslator::toUrl($url);
 
-            $this->linkAttributes['onclick'] = '';
-            if (strpos($url, 'javascript:') === 0) {
-                $this->linkAttributes['onclick'] = $url;
-            } else {
 
-                $url = Link::parse($url, $this->linkAttributes);
-                $this->linkAttributes['data-href'] = $url;
-            
-                $this->linkAttributes['tabindex'] = 0;
-                $this->linkAttributes['role']     = 'button';
+            $url = Link::parse($url, $this->linkAttributes);
+            $this->linkAttributes['data-href'] = $url;
+        
+            $this->linkAttributes['tabindex'] = 0;
+            $this->linkAttributes['role']     = 'button';
 
-                $ariaLabel = $this->parameters->get('aria-label');
-                if (!empty($ariaLabel)) {
-                    $this->linkAttributes['aria-label'] = $ariaLabel;
-                }
-
-                if (empty($this->linkAttributes['onclick']) && !isset($this->linkAttributes['data-n2-lightbox'])) {
-                    if (!empty($target) && $target != '_self') {
-                        $this->linkAttributes['data-target'] = $target;
-                    }
-                    $this->linkAttributes['data-n2click'] = "url";
-                }
+            $ariaLabel = $this->parameters->get('aria-label');
+            if (!empty($ariaLabel)) {
+                $this->linkAttributes['aria-label'] = $this->fill($ariaLabel);
             }
+
+            if (!isset($this->linkAttributes['onclick']) && !isset($this->linkAttributes['data-n2-lightbox'])) {
+                if (!empty($target) && $target != '_self') {
+                    $this->linkAttributes['data-target'] = $target;
+                }
+                $this->linkAttributes['data-n2click'] = "url";
+            }
+
             if (!isset($this->linkAttributes['style'])) {
                 $this->linkAttributes['style'] = '';
             }
@@ -591,12 +587,16 @@ class Slide extends AbstractRenderableOwner {
 
     private function _splitbywords($s, $start, $length) {
 
-        $len      = Str::strlen($s);
-        $posStart = max(0, $start == 0 ? 0 : Str::strpos($s, ' ', $start));
-        $posEnd   = max(0, $length > $len ? $len : Str::strpos($s, ' ', $length));
-        if ($posEnd == 0 && $length <= $len) $posEnd = $len;
+        $len = intval(Str::strlen($s));
+        if ($len > $start) {
+            $posStart = max(0, $start == 0 ? 0 : Str::strpos($s, ' ', $start));
+            $posEnd   = max(0, $length > $len ? $len : Str::strpos($s, ' ', $length));
+            if ($posEnd == 0 && $length <= $len) $posEnd = $len;
 
-        return Str::substr($s, $posStart, $posEnd);
+            return Str::substr($s, $posStart, $posEnd);
+        } else {
+            return '';
+        }
     }
 
     private function _findimage($s, $index) {

@@ -1,7 +1,9 @@
 <?php 
 /* Template Name: Políticas  */
 
-get_header(); ?>
+get_header();
+$lang = get_bloginfo("language"); ?>
+
 <div class="page-politics">
 
   <div class="banner banner-2">
@@ -23,11 +25,35 @@ get_header(); ?>
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-10 mx-auto">
+            
+<!-- DESDE AQUÍ  PARA ABAJO  PUEDES EDITAR LA VERSIÓN EN ESPAÑOL´-->
+
+    <?php if ($lang == 'es-PE') { ?>        
           <h2 class="subtitle-orange text-center pb-5">POLÍTICAS DE PRIVACIDAD</h2>
 			<div class="info container">
     <div class="wrapper text-center">
       
-<p class="has-text-align-center">Zamine Service Peru S.A.C. (en adelante, ZAP), asegura la reserva y protección de los datos personales proporcionados voluntariamente al momento de establecer un vínculo con la empresa, a través del respeto a la privacidad y protección de la confidencialidad de los datos personales.</p>
+<p class="has-text-align-center">Zamine Service Peru S.A.C. (en adelante, ZAP), asegura la reserva y protección de los datos personales proporcionados voluntariamente al momento de establecer un vínculo con la empresa, a través del respeto a la privacidad y protección de la confidencialidad de los datos personales.
+</p>
+
+  <?php } ?>
+
+
+<!--  DESDE AQUÍ  PARA ABAJO  PUEDES EDITAR LA VERSIÓN EN INGLÉS -->
+
+<?php if ($lang == 'en-US') { ?>
+    <h2 class="subtitle-orange text-center pb-5">POLÍTICAS DE PRIVACIDAD</h2>
+			<div class="info container">
+    <div class="wrapper text-center">
+      
+<p class="has-text-align-center">Zamine Service Peru S.A.C. (en adelante, ZAP), asegura la reserva y protección de los datos personales proporcionados voluntariamente al momento de establecer un vínculo con la empresa, a través del respeto a la privacidad y protección de la confidencialidad de los datos personales.
+</p>
+
+  <?php } ?>
+
+
+
+
     </div>
   </div>
           <div class="row mb-4">

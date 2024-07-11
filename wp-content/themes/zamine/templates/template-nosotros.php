@@ -1,6 +1,7 @@
 <?php
 /* Template Name: Nosotros  */
 get_header();
+$lang = get_bloginfo("language"); 
 global $cards;
 $cards = get_field("tarjetas-informativas");
 ?>
@@ -21,7 +22,10 @@ if( $titulos ): ?>
   <img src="<?php echo get_the_post_thumbnail_url(get_the_ID())?>">
     <div class="overlay">
       <?php
-          echo do_shortcode('[smartslider3 slider="16"]');
+          if ($lang == 'en-US') { 
+            echo do_shortcode('[smartslider3 slider="20"]'); }
+          if ($lang == 'es-PE') { 
+            echo do_shortcode('[smartslider3 slider="16"]'); }
       ?>    
     </div>
   </div>
@@ -32,7 +36,7 @@ if( $titulos ): ?>
         <div class="offset-lg-1 col-lg-6 top-logo">
           <!--img src="<?php echo get_template_directory_uri(); ?>/images/logoo-black.png" class="img-fluid mb-4"-->
           <!--img src="/wp-content/uploads/2022/05/logo-zamine1.png" class="img-fluid mb-4"-->
-			<h3 class="subtitle-orange">
+          <h3 class="subtitle-orange"  style="color: <?php echo esc_html( $titulos['color_titulo_1'] ); ?>;">
 
               <span class="font-weight-bold"><?php echo esc_html( $titulos['titulo_seccion_1'] ); ?></span><br>
             </h3>
@@ -53,7 +57,8 @@ if( $titulos ): ?>
       <div class="row">
         <div class="offset-lg-1 col-lg-11">
           <div class="bar bar--orange my-4"></div>
-          <h2 class="subtitle-orange"><?php echo esc_html( $titulos['titulo_seccion_2'] ); ?></h2>
+          <h2 class="subtitle-orange"  style="color: <?php echo esc_html( $titulos['color_titulo_2'] ); ?>;">
+            <?php echo esc_html( $titulos['titulo_seccion_2'] ); ?></h2>
         </div>
       </div>
 
@@ -80,10 +85,19 @@ if( $titulos ): ?>
             $hastaGrande = $value['hasta_grande'];
             $imagen = $value['imagen'];
             $detalle = $value['detalle'];
+            $hastaClase = $value['hasta-clase'];
+
+            if($hastaClase == true ) {  
+                $class1 = "15px";
+              } else {
+                $class1 = "80px";
+              }
+
             echo '
             <div class="card-timeline">
               <div class="card-timeline__dates">
-                <div class="card-timeline__dates__data">
+                <div class="card-timeline__dates__data" style="
+    padding-bottom: '.$class1.'">
                   '.$desdeGrande.'
                 </div>
                 <div class="card-timeline__dates__data">
@@ -154,7 +168,8 @@ $itemsGeneral = query_posts([
   <div class="wrapper py-5">
     <div class="container">
       <div class="bar bar--orange my-4"></div>
-      <h2 class="subtitle-orange mb-5"><?php echo esc_html( $titulos['titulo_seccion_3'] ); ?></h2>
+      <h2 class="subtitle-orange mb-5" style="color: <?php echo esc_html( $titulos['color_titulo_3'] ); ?>;">
+      <?php echo esc_html( $titulos['titulo_seccion_3'] ); ?></h2>
       <div class="d-flex w100 flex-wrap justify-content-center">
         <?php foreach ($itemsGeneral as $item) : ?>
           <div class="app-value">

@@ -11,7 +11,12 @@ get_header(); ?>
   <img src="<?php echo get_the_post_thumbnail_url() ?>">
   <div class="overlay">
   <?php
-        echo do_shortcode('[smartslider3 slider="19"]');
+   $lang = get_bloginfo("language"); 
+
+    if ($lang == 'en-US') { 
+      echo do_shortcode('[smartslider3 slider="20"]'); }
+    if ($lang == 'es-PE') { 
+      echo do_shortcode('[smartslider3 slider="19"]');}
         ?> 
   </div>
 </div>  <div class="container my-5">

@@ -1,13 +1,13 @@
 2022-09-15 23:01:33 [info] Account already registered. Continuing...
 
-2022-09-15 23:01:33 [info] Generating SSL for zamineperu.com
+2022-09-15 23:01:33 [info] Generating SSL for ciem-demo6.com
 
 2022-09-15 23:01:33 [info] Domains array given below: 
 
 2022-09-15 23:01:33 [info] <pre>Array
 (
-    [0] =&gt; zamineperu.com
-    [1] =&gt; www.zamineperu.com
+    [0] =&gt; ciem-demo6.com
+    [1] =&gt; www.ciem-demo6.com
 )
 </pre>
 
@@ -21,19 +21,19 @@
 
 2022-09-15 23:01:35 [info] 'http-01' challenge found.
 
-2022-09-15 23:01:35 [info] Got challenge token for zamineperu.com
+2022-09-15 23:01:35 [info] Got challenge token for ciem-demo6.com
 
 2022-09-15 23:01:35 [info] Domain 2
 
 2022-09-15 23:01:36 [info] 'http-01' challenge found.
 
-2022-09-15 23:01:36 [info] Got challenge token for www.zamineperu.com
+2022-09-15 23:01:36 [info] Got challenge token for www.ciem-demo6.com
 
 2022-09-15 23:03:08 [info] Account already registered. Continuing...
 
-2022-09-15 23:03:08 [info] Final Internal Validation: the Payload content (2g4unTWCtaIWqWtdbTJIdYFrcd1hm86baKiNoXNekpk.jDzgfQwkKPhqpI2W3s_6Mi_32tUi7pX6RUUIPX2Ej9k) successfully matched with the content of http://zamineperu.com/.well-known/acme-challenge/2g4unTWCtaIWqWtdbTJIdYFrcd1hm86baKiNoXNekpk.
+2022-09-15 23:03:08 [info] Final Internal Validation: the Payload content (2g4unTWCtaIWqWtdbTJIdYFrcd1hm86baKiNoXNekpk.jDzgfQwkKPhqpI2W3s_6Mi_32tUi7pX6RUUIPX2Ej9k) successfully matched with the content of http://ciem-demo6.com/.well-known/acme-challenge/2g4unTWCtaIWqWtdbTJIdYFrcd1hm86baKiNoXNekpk.
 
-2022-09-15 23:03:08 [info] Final Internal Validation: the Payload content (_JMM8FzAUtd1Ke2_u0O6i6jqkGpoyEqay4UdyU8-jfA.jDzgfQwkKPhqpI2W3s_6Mi_32tUi7pX6RUUIPX2Ej9k) successfully matched with the content of http://www.zamineperu.com/.well-known/acme-challenge/_JMM8FzAUtd1Ke2_u0O6i6jqkGpoyEqay4UdyU8-jfA.
+2022-09-15 23:03:08 [info] Final Internal Validation: the Payload content (_JMM8FzAUtd1Ke2_u0O6i6jqkGpoyEqay4UdyU8-jfA.jDzgfQwkKPhqpI2W3s_6Mi_32tUi7pX6RUUIPX2Ej9k) successfully matched with the content of http://www.ciem-demo6.com/.well-known/acme-challenge/_JMM8FzAUtd1Ke2_u0O6i6jqkGpoyEqay4UdyU8-jfA.
 
 2022-09-15 23:03:08 [info] Sending request to challenge
 
@@ -43,7 +43,7 @@
 
 2022-09-15 23:03:10 [info] Sending signed request to https://acme-v02.api.letsencrypt.org/acme/chall-v3/153892917591/ups2tA
 
-2022-09-15 23:03:11 [info] Verification ended with status: valid for the domain zamineperu.com
+2022-09-15 23:03:11 [info] Verification ended with status: valid for the domain ciem-demo6.com
 
 2022-09-15 23:03:11 [info] Sending request to challenge
 
@@ -53,7 +53,7 @@
 
 2022-09-15 23:03:12 [info] Sending signed request to https://acme-v02.api.letsencrypt.org/acme/chall-v3/153892917601/NBU37Q
 
-2022-09-15 23:03:13 [info] Verification ended with status: valid for the domain www.zamineperu.com
+2022-09-15 23:03:13 [info] Verification ended with status: valid for the domain www.ciem-demo6.com
 
 2022-09-15 23:03:13 [info] Sending signed request to https://acme-v02.api.letsencrypt.org/acme/finalize/671731657/125911766701
 

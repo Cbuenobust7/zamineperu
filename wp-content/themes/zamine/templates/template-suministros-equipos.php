@@ -1,6 +1,8 @@
 <?php
 /* Template Name: Suministros para equipos  */
-get_header(); ?>
+get_header(); 
+$lang = get_bloginfo("language"); 
+?>
 
 <?php
     $categories = get_terms(
@@ -12,8 +14,13 @@ get_header(); ?>
                 )
               );
               //var_dump($categories);
-              $mainCategory = $categories[4];
               //print_r ($hitachiMining);
+              if ($lang == 'en-US') { 
+                $mainCategory = $categories[3]; 
+              }
+              if ($lang == 'es-PE') { 
+                $mainCategory = $categories[2];
+              }
   ?>
 
   
@@ -24,9 +31,13 @@ get_header(); ?>
           
     <img src="<?php echo get_the_post_thumbnail_url(get_the_ID()) ?>">
     <div class="overlay">
-      <?php
-      echo do_shortcode('[smartslider3 slider="8"]');
-      ?>
+
+    <?php
+        if ($lang == 'en-US') { 
+          echo do_shortcode('[smartslider3 slider="28"]'); }
+        if ($lang == 'es-PE') { 
+          echo do_shortcode('[smartslider3 slider="8"]'); }
+        ?>          
     </div>
   </div>
 
@@ -35,16 +46,42 @@ get_header(); ?>
   </div>
 
 
-  <div class="products py-2">
-    <div class="container-fluid">
-      <div id="principal" class="wrapper d-flex mb-1">
+  <div class="products">
+    <div>
+
+<?php
+    if ($lang == 'en-US') { 
+          echo '<div id="principal" class="wrapper d-flex mb-1">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Supply for equipment</li>
+      </ol>
+      </div>'; }
+        if ($lang == 'es-PE') { 
+          echo   '<div id="principal" class="wrapper d-flex mb-1">
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="/">Inicio</a></li>
         <li class="breadcrumb-item active" aria-current="page">Suministros para equipos</li>
       </ol>
-      </div>
+      </div>'; }
+      ?>
       <div class="products--list container-fluid">
         <div class="row" style="background: #fff;">
+        <table>
+            <tbody><tr>
+                  
+              <th>
+              <img src="<?php echo get_template_directory_uri(); ?>/images/separador-l.png" alt="zamine" height="">
+
+              </th>
+              
+              <th>
+              <img src="<?php echo get_template_directory_uri(); ?>/images/separador-r.png" alt="zamine" height="">
+
+                </th>
+            </tr>
+            <tr style="background: #fff;">
+               <td style ="background-color: #303030; vertical-align: baseline;">
           <div class="accordion-menu" style="overflow: hidden;">
             <h6 class="my-nav2 mb-0 font-weight-bold" style="background: #303030;">
             <div style="list-style:none">
@@ -55,7 +92,7 @@ get_header(); ?>
                   array(
                     'taxonomy'   => "soluci_perf_categ",
                     'parent'     => $mainCategory->term_id, // <-- No Parent
-                    'orderby'    => 'term_id',
+                    'orderby'    => 'description',
                     'hide_empty' => false // <!-- change to false to also display empty ones
                   )
                 );
@@ -94,97 +131,27 @@ get_header(); ?>
                 </li>
               <?php endif; ?>
             </h6>
-          </div>
-          <div class="col-md-8 pt-4" style="background: #fff; border-bottom: 1px solid #fff;">
-            <div id="listaItems" class="row d-flex justify-content-center"></div>
-      </div>
-    </div>
-  </div>
-  
-  </div>
-  </div>
-</div>
-<script>
-  jQuery(document).ready(function() {
-    jQuery('.my-nav2').mgaccordion({
-      theme: 'tree',
-      leaveOpen: false
-    });
+        
+            <div id="videos-list-container" class="d-none">
+              
+              <li class="btn-secondary dropdown-toggle text-white videos-productos" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:#000";>                
+              <i class="fas fa-play-circle"></i> <a> &nbsp;&nbsp;Videos </a>              </li>
+                  <div id="irarriba" class="dropdown-menu videos-show" style="background-color: #303030; border: none;">
+                  <ul class="video-list p-0"></ul>
+              
+              </div>
+              </div>
+                      
 
 
-  });
+</td>
+                      <td>
+                      <?php get_template_part('components/sidebar');?>
 
-  function setActive(e, ev) {
-    var elms = document.querySelectorAll('.my-nav2 li a');
-    // reset all you menu items
-    for (var i = 0, len = elms.length; i < len; i++) {
-      elms[i].classList.remove('active');
-    }
-    //console.log(ev.target);
-    if (ev.target.localName == "a")
-      ev.target.classList.add("active");
 
-    var categoy_slug = ev.target.getAttribute('data-slug');
-    var category_id = ev.target.getAttribute('data-catid');
-
-    $.ajax({
-      type: 'POST',
-      url: '/wp-admin/admin-ajax.php',
-      dataType: 'html',
-      data: {
-        action: 'filter_projects',
-        category: categoy_slug,
-        category_id: category_id,
-        post_type: 'soluciones-perfo',
-        taxonomy: 'soluci_perf_categ',
-      },
-      success: function(res) {
-        $('#listaItems').html(res);
-      }
-    })
-  }
-
-  function loadData(e, ev) {
-    console.log(ev.target);
-    var categoy_slug = ev.target.getAttribute('data-slug');
-    var category_id = ev.target.getAttribute('data-catid');
-
-    $.ajax({
-      type: 'POST',
-      url: '/wp-admin/admin-ajax.php',
-      dataType: 'html',
-      data: {
-        action: 'filter_projects',
-        category: categoy_slug,
-        category_id: category_id,
-        post_type: 'soluciones-perfo',
-        taxonomy: 'soluci_perf_categ',
-      },
-      success: function(res) {
-        $('#listaItems').html(res);
-        jQuery('.flexslider').flexslider({
-          animation: "slide"
-        });
-      }
-    })
-  }
-  $('.products--list li a').on('click', function() {
-    var $this = $(this),
-      $bc = $('<li class="breadcrumb-item active"></li>');
-    if ($('.breadcrumb li').length < 3) {
-      var title_page = $('.breadcrumb .active').text();
-      $('.breadcrumb .active').html(`<a href='#'>${title_page}</a>`);
-      $('.breadcrumb .active').removeClass("active");
-    }
-    $('.breadcrumb .active').remove();
-
-    $this.parents('li').each(function(n, li) {
-        var $a = $(li).children('a').clone();
-        $bc.prepend($a.text());
-    });
-    $('.breadcrumb').append( $bc );
-  })
-
-  $(".products--list li a").first().click()
-</script>
+</td>
+               
+               </tr>
+     
+           </tbody></table>
 <?php get_footer(); ?>

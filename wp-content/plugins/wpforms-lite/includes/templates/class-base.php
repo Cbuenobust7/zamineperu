@@ -80,6 +80,15 @@ abstract class WPForms_Template {
 	public $url = '';
 
 	/**
+	 * Form template thumbnail url.
+	 *
+	 * @since 1.8.2
+	 *
+	 * @var string
+	 */
+	public $thumbnail = '';
+
+	/**
 	 * Array of data that is assigned to the post_content on form creation.
 	 *
 	 * @since 1.0.0
@@ -161,6 +170,7 @@ abstract class WPForms_Template {
 			'icon'        => $this->icon,
 			'url'         => ! empty( $this->url ) ? $this->url : '',
 			'plugin_dir'  => $this->get_plugin_dir(),
+			'thumbnail'   => ! empty( $this->thumbnail ) ? $this->thumbnail : '',
 		];
 
 		return $templates;
@@ -206,6 +216,11 @@ abstract class WPForms_Template {
 					? $this->data['settings']['notification_enable']
 					: 1;
 
+				// Set the form slugs.
+				// Core templates misses these settings.
+				$this->data['settings']['form_pages_page_slug']           = sanitize_title( $this->name );
+				$this->data['settings']['conversational_forms_page_slug'] = sanitize_title( $this->name );
+
 				$args['post_content'] = wpforms_encode( $this->data );
 			}
 		}
@@ -242,12 +257,31 @@ abstract class WPForms_Template {
 		}
 
 		// Compile the new form data preserving needed data from the existing form.
-		$new                     = $this->data;
-		$new['id']               = isset( $form_data['id'] ) ? $form_data['id'] : 0;
-		$new['settings']         = isset( $form_data['settings'] ) ? $form_data['settings'] : [];
-		$new['payments']         = isset( $form_data['payments'] ) ? $form_data['payments'] : [];
-		$new['meta']             = isset( $form_data['meta'] ) ? $form_data['meta'] : [];
-		$new['meta']['template'] = isset( $this->data['meta']['template'] ) ? $this->data['meta']['template'] : '';
+		$new             = $this->data;
+		$new['id']       = $form_data['id'] ?? 0;
+		$new['settings'] = $form_data['settings'] ?? [];
+		$new['payments'] = $form_data['payments'] ?? [];
+		$new['meta']     = $form_data['meta'] ?? [];
+
+		$template_id = $this->data['meta']['template'] ?? '';
+
+		// Preserve template ID `wpforms-user-template-{$form_id}` when overwriting it with core template.
+		if ( wpforms_is_form_template( $form['ID'] ) ) {
+			$template_id = $form_data['meta']['template'] ?? '';
+		}
+
+		$new['meta']['template'] = $template_id;
+
+		/**
+		 * Allow modifying form data when a template is replaced.
+		 *
+		 * @since 1.7.9
+		 *
+		 * @param array $new       Updated form data.
+		 * @param array $form_data Current form data.
+		 * @param array $template  Template data.
+		 */
+		$new = (array) apply_filters( 'wpforms_templates_class_base_template_replace_modify_data', $new, $form_data, $this );
 
 		// Update the form with new data.
 		$form['post_content'] = wpforms_encode( $new );

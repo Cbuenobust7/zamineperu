@@ -1,9 +1,9 @@
 <?php
-
 add_theme_support('post-thumbnails');
 
 add_action('wp_enqueue_scripts', 'zamine_styles');
 add_action('wp_enqueue_scripts', 'zamine_scripts');
+
 
 function zamine_styles()
 {
@@ -148,7 +148,13 @@ function filter_projects() {
             $imagen_fin = $imglink[0];
             $subCateg = $cat->slug;
 
-            
+			$lang = get_bloginfo("language"); 
+
+			if ($lang == 'en-US') { 
+			  $more = "See more"; }
+			if ($lang == 'es-PE') { 
+			  $more = "Ver más"; }
+		 
 
         if($subCateg == 'camiones-electricos-rigidos') {
             $response .= '<div class="col-md-6 col-lg-4">
@@ -160,7 +166,7 @@ function filter_projects() {
                     </div>
                     <div class="card-service__info__icon" data-slug="'.$cat->slug.'" data-catid="'.$cat->term_id.'">
                         <span data-slug="'.$cat->slug.'" data-catid="'.$cat->term_id.'">
-                        Ver más
+                        '.$more.'
                         </span>
                     </div>
                 </div>
@@ -179,7 +185,7 @@ function filter_projects() {
                         </div>
                         <div class="card-service__info__icon" data-slug="'.$cat->slug.'" data-catid="'.$cat->term_id.'">
                             <span data-slug="'.$cat->slug.'" data-catid="'.$cat->term_id.'">
-                            Ver más
+							'.$more.'
                             </span>
                         </div>
                     </div>
@@ -262,3 +268,46 @@ include 'core/helpers.php';
 		return $where;
 	}
 	add_filter( 'posts_distinct', 'cf_search_distinct' );
+
+function cptui_register_my_cpts_news() {
+
+	/**
+	 * Post Type: Novedades.
+	 */
+
+	$labels = [
+		"name" => esc_html__( "Novedades", "zamine" ),
+		"singular_name" => esc_html__( "Novedad", "zamine" ),
+	];
+
+	$args = [
+		"label" => esc_html__( "Novedades", "zamine" ),
+		"labels" => $labels,
+		"description" => "",
+		"public" => true,
+		"publicly_queryable" => true,
+		"show_ui" => true,
+		"show_in_rest" => true,
+		"rest_base" => "",
+		"rest_controller_class" => "WP_REST_Posts_Controller",
+		"rest_namespace" => "wp/v2",
+		"has_archive" => false,
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"delete_with_user" => false,
+		"exclude_from_search" => false,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"can_export" => false,
+		"rewrite" => [ "slug" => "news", "with_front" => true ],
+		"query_var" => true,
+		"supports" => [ "title", "editor", "thumbnail", "excerpt" ],
+		"taxonomies" => [ "category" ],
+		"show_in_graphql" => false,
+	];
+
+	register_post_type( "news", $args );
+}
+
+add_action( 'init', 'cptui_register_my_cpts_news' );

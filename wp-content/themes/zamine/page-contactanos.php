@@ -17,7 +17,7 @@
         <div class="col-lg-5">
           <div class="bar bar--orange my-4"></div>
           <h2 class="subtitle-orange">Escríbenos</h2>
-          <p>Déjanos tus consultas y nos pondrémos en<br>contacto contigo</p>
+          <p>Envíenos sus consultas y nos pondremos en<br>contacto contigo</p>
           <form class="pr-md-5 contact-form" autocomplete="off">
             <div class="form-group">
               <div class="form-icon">
@@ -82,7 +82,7 @@
             <h6 class="color-orange">Teléfono:</h6>
             <div class="contact-details">+51 (01) 4365442 – Anexo 105</div>
             <h6 class="color-orange">E-mail:</h6>
-            <div class="contact-details">ventas@zamineperu.com<br>cotizaciones@zamineperu.com</div>
+            <div class="contact-details">ventas@ciem-demo6.com<br>cotizaciones@ciem-demo6.com</div>
             <h6 class="color-orange">Horario:</h6>
             <div class="contact-details">Lun – Vie: 8:00 – 18:00</div>
           </div>

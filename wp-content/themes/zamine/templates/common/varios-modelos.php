@@ -1,7 +1,52 @@
 
+<?php
+$colores = get_field('color_botones_para_volquetes_y_otr');
+if( $colores ): ?>
+
+    <style type="text/css">
+        .btn-orange {
+            background: <?php echo esc_attr( $colores['color_principal'] ); ?>;
+            color: <?php echo esc_attr( $colores['color_de_texto_principal'] ); ?>;
+            border: 2px solid <?php echo esc_attr( $colores['color_de_borde_principal'] ); ?>;
+            margin-left: 5px;
+            margin-right: 5px;
+            }
+        .btn-orange:hover{
+            background: <?php echo esc_attr( $colores['color_de_boton_alterno'] ); ?>;
+            color: <?php echo esc_attr( $colores['color_de_texto_alterno'] ); ?>;
+            border: 2px solid <?php echo esc_attr( $colores['color_de_borde_alterno'] ); ?>;
+            margin-left: 5px;
+            margin-right: 5px;
+            }
+        .color-h-ficha{
+            background-color:<?php echo esc_attr( $colores['color_principal'] ); ?>;
+            padding: 0;"
+            }
+        .btn-orange-alt {
+            background: <?php echo esc_attr( $colores['color_principal'] ); ?>;
+            color: <?php echo esc_attr( $colores['color_de_texto_principal'] ); ?>;
+            border: 2px solid <?php echo esc_attr( $colores['color_principal'] ); ?>;
+            }
+        .card-header {
+            padding: 0.75rem 1.25rem;
+            margin-bottom: 0;
+            background-color: <?php echo esc_attr( $colores['color_principal'] ); ?>;
+            border-bottom: 2px solid <?php echo esc_attr( $colores['color_principal'] ); ?>;
+            }
+    </style>
+
+<?php endif; ?>
+
 <div class="d-flex justify-content-center">
   <div class="bbb_deals-ancho">
   <?php 
+    $lang = get_bloginfo("language"); 
+    if ($lang == 'es-PE') {
+      $textoBrochure = "Descargar Brochure";}
+    else{
+      $textoBrochure = "Download Brochure";
+      }
+   
     $titulo = the_title('<h4>', '</h4>');
     $ocultar_titulo  = get_field('ocultar_titulo', get_the_ID());
                                 if($ocultar_titulo == false) {
@@ -18,7 +63,9 @@
                                 if(isset($marcaImagen) && !empty($marcaImagen)){
                                     echo '<img src="'.$marcaImagen.'">';
                                 }
-                            ?>               
+                            ?>  
+    <div class=" bbb_deals_item">
+
     <div class="row mb-3">
       <div class="col-xl-6 col-md-5 col-sm-4"> <?php 
                                 $imagen = get_field('imagen_componentes');?> <div class="bbb_deals_image">
@@ -52,7 +99,7 @@
           ?>
     </div>
   </div>
-  
+  </div> 
 </div>
 </div>
 
@@ -67,7 +114,7 @@
 
                                     echo '
                                         <div class="card">
-                                            <div class="card-header" style="background-color:#f47b20;padding: 0;" id="headingOne">
+                                            <div class="card-header color-h-ficha" style="padding: 0;" id="headingOne">
                                             <h5 class="mb-0">
     
                                                 <button class="my-nav2 btn-orange-alt btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -83,12 +130,11 @@
   
                                         
                                         </div>
-                                        <a href="'.$brochure1.'" target="_blank" class="btn btn-orange" style="font-size: 14px!important;">Descargar Brochure</a>
+                                        <a href="'.$brochure1.'" target="_blank" class="btn btn-orange" style="font-size: 14px!important;">'.$textoBrochure.'</a>
 
                                                                                     </div>
                                             </div>';
-                                         
-                               
+      
 						
                                 } 
                                 ?>
@@ -102,7 +148,7 @@
 
           echo '
               <div class="card">
-                  <div class="card-header" style="background-color:#f47b20;padding: 0;" id="heading2">
+                  <div class="card-header color-h-ficha" style="padding: 0;" id="heading2">
                   <h5 class="mb-0">
 
                       <button class="my-nav2 btn-orange-alt btn-link" data-toggle="collapse" data-target="#collapse2" aria-expanded="true" aria-controls="collapse2">
@@ -117,7 +163,7 @@
                   <img src="'.$ficha2.'"> </div>
 
               </div>                         
-              <a href="'.$brochure2.'" target="_blank" class="btn btn-orange" style="font-size: 14px!important;">Descargar Brochure</a>
+              <a href="'.$brochure2.'" target="_blank" class="btn btn-orange" style="font-size: 14px!important;">'.$textoBrochure.'</a>
 
                                                           </div>
                   </div>';
@@ -137,7 +183,7 @@
 
                                     echo '
                                         <div class="card">
-                                            <div class="card-header" style="background-color:#f47b20;padding: 0;" id="heading3">
+                                            <div class="card-header color-h-ficha" style="padding: 0;" id="heading3">
                                             <h5 class="mb-0">
     
                                                 <button class="my-nav2 btn-orange-alt btn-link" data-toggle="collapse" data-target="#collapse3" aria-expanded="true" aria-controls="collapse3">
@@ -152,7 +198,7 @@
                                                <img src="'.$ficha3.'"> </div>  
                                         
                                         </div>
-                                        <a href="'.$brochure3.'" target="_blank" class="btn btn-orange" style="font-size: 14px!important;">Descargar Brochure</a>
+                                        <a href="'.$brochure3.'" target="_blank" class="btn btn-orange" style="font-size: 14px!important;">'.$textoBrochure.'</a>
                                         </div>
                                             </div>';
                                          
@@ -172,7 +218,7 @@
 
                                     echo '
                                         <div class="card">
-                                            <div class="card-header" style="background-color:#f47b20;padding: 0;" id="heading4">
+                                            <div class="card-header color-h-ficha" style="padding: 0;" id="heading4">
                                             <h5 class="mb-0">
     
                                                 <button class="my-nav2 btn-orange-alt btn-link" data-toggle="collapse" data-target="#collapse4" aria-expanded="true" aria-controls="collapse4">
@@ -190,7 +236,7 @@
                                           
                                         
                                         </div>
-                                        <a href="'.$brochure4.'" target="_blank" class="btn btn-orange" style="font-size: 14px!important;">Descargar Brochure</a>
+                                        <a href="'.$brochure4.'" target="_blank" class="btn btn-orange" style="font-size: 14px!important;">'.$textoBrochure.'</a>
                                         </div>
                                             </div>';
                                          
@@ -207,7 +253,7 @@
 
                                     echo '
                                         <div class="card">
-                                            <div class="card-header" style="background-color:#f47b20;padding: 0;" id="heading5">
+                                            <div class="card-header color-h-ficha" style="padding: 0;" id="heading5">
                                             <h5 class="mb-0">
     
                                                 <button class="my-nav2 btn-orange-alt btn-link" data-toggle="collapse" data-target="#collapse5" aria-expanded="true" aria-controls="collapse5">
@@ -221,7 +267,7 @@
                                               <div class="bbb_deals_image">
                                                 <img src="'.$ficha5.'"> </div>
                                         </div>                                        
-                                        <a href="'.$brochure5.'" target="_blank" class="btn btn-orange" style="font-size: 14px!important;">Descargar Brochure</a>
+                                        <a href="'.$brochure5.'" target="_blank" class="btn btn-orange" style="font-size: 14px!important;">'.$textoBrochure.'</a>
 
                                                                                     </div>
                                             </div>';
@@ -239,7 +285,7 @@
 
                                     echo '
                                         <div class="card">
-                                            <div class="card-header" style="background-color:#f47b20;padding: 0;" id="heading6">
+                                            <div class="card-header color-h-ficha" style="padding: 0;" id="heading6">
                                             <h5 class="mb-0">
     
                                                 <button class="my-nav2 btn-orange-alt btn-link" data-toggle="collapse" data-target="#collapse6" aria-expanded="true" aria-controls="collapse6">
@@ -254,7 +300,7 @@
                                                <img src="'.$ficha6.'"> </div>
   
                                         </div>
-                                        <a href="'.$brochure6.'" target="_blank" class="btn btn-orange" style="font-size: 14px!important;">Descargar Brochure</a>
+                                        <a href="'.$brochure6.'" target="_blank" class="btn btn-orange" style="font-size: 14px!important;">'.$textoBrochure.'</a>
 
                                                                                     </div>
                                             </div>';
@@ -274,7 +320,7 @@
 
                                     echo '
                                         <div class="card">
-                                            <div class="card-header" style="background-color:#f47b20;padding: 0;" id="heading2">
+                                            <div class="card-header color-h-ficha" style="padding: 0;" id="heading2">
                                             <h5 class="mb-0">
     
                                                 <button class="my-nav2 btn-orange-alt btn-link" data-toggle="collapse" data-target="#collapse2" aria-expanded="true" aria-controls="collapse2">
@@ -290,7 +336,7 @@
   
                                             
                                         </div>
-                                        <a href="'.$brochure7.'" target="_blank" class="btn btn-orange" style="font-size: 14px!important;">Descargar Brochure</a>
+                                        <a href="'.$brochure7.'" target="_blank" class="btn btn-orange" style="font-size: 14px!important;">'.$textoBrochure.'</a>
 
                                                                                     </div>
                                             </div>';
@@ -308,7 +354,7 @@
 
         echo '
             <div class="card">
-                <div class="card-header" style="background-color:#f47b20;padding: 0;" id="heading2">
+                <div class="card-header color-h-ficha" style="padding: 0;" id="heading2">
                 <h5 class="mb-0">
 
                     <button class="my-nav2 btn-orange-alt btn-link" data-toggle="collapse" data-target="#collapse8" aria-expanded="true" aria-controls="collapse8">
@@ -326,7 +372,7 @@
 
             
             </div> 
-             <a href="'.$brochure8.'" target="_blank" class="btn btn-orange" style="font-size: 14px!important;">Descargar Brochure</a>
+             <a href="'.$brochure8.'" target="_blank" class="btn btn-orange" style="font-size: 14px!important;">'.$textoBrochure.'</a>
 
 
                                                         </div>
@@ -345,7 +391,7 @@
 
        echo '
            <div class="card">
-               <div class="card-header" style="background-color:#f47b20;padding: 0;" id="heading2">
+               <div class="card-header color-h-ficha" style="padding: 0;" id="heading2">
                <h5 class="mb-0">
 
                    <button class="my-nav2 btn-orange-alt btn-link" data-toggle="collapse" data-target="#collapse9" aria-expanded="true" aria-controls="collapse9">
@@ -363,7 +409,7 @@
 
            
            </div>
-           <a href="'.$brochure9.'" target="_blank" class="btn btn-orange" style="font-size: 14px!important;">Descargar Brochure</a>
+           <a href="'.$brochure9.'" target="_blank" class="btn btn-orange" style="font-size: 14px!important;">'.$textoBrochure.'</a>
 
                                                        </div>
                </div>';

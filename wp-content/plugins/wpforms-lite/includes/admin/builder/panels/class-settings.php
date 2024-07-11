@@ -1,7 +1,15 @@
 <?php
 
+// phpcs:disable Generic.Commenting.DocComment.MissingShort
+/** @noinspection PhpIllegalPsrClassPathInspection */
+/** @noinspection AutoloadingIssuesInspection */
+// phpcs:enable Generic.Commenting.DocComment.MissingShort
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 use WPForms\Admin\Forms\Tags;
-use WPForms\Forms\Akismet;
 
 /**
  * Settings management panel.
@@ -39,10 +47,23 @@ class WPForms_Builder_Panel_Settings extends WPForms_Builder_Panel {
 
 		$sections = [
 			'general'       => esc_html__( 'General', 'wpforms-lite' ),
+			'anti_spam'     => esc_html__( 'Spam Protection and Security', 'wpforms-lite' ),
+			'themes'        => esc_html__( 'Themes', 'wpforms-lite' ),
 			'notifications' => esc_html__( 'Notifications', 'wpforms-lite' ),
 			'confirmation'  => esc_html__( 'Confirmations', 'wpforms-lite' ),
 		];
-		$sections = apply_filters( 'wpforms_builder_settings_sections', $sections, $this->form_data );
+
+		/**
+		 * Filters builder settings sections.
+		 *
+		 * @since 1.1.9
+		 *
+		 * @param array $sections  Sections.
+		 * @param array $form_data Form data.
+		 *
+		 * @return array
+		 */
+		$sections = (array) apply_filters( 'wpforms_builder_settings_sections', $sections, $this->form_data ); // phpcs:ignore WPForms.PHP.ValidateHooks.InvalidHookName
 
 		foreach ( $sections as $slug => $section ) {
 			$this->panel_sidebar_section( $section, $slug );
@@ -60,7 +81,7 @@ class WPForms_Builder_Panel_Settings extends WPForms_Builder_Panel {
 
 		wp_enqueue_script(
 			'wpforms-builder-settings',
-			WPFORMS_PLUGIN_URL . "assets/js/components/admin/builder/settings{$min}.js",
+			WPFORMS_PLUGIN_URL . "assets/js/admin/builder/settings{$min}.js",
 			[ 'wpforms-builder' ],
 			WPFORMS_VERSION,
 			true
@@ -83,7 +104,7 @@ class WPForms_Builder_Panel_Settings extends WPForms_Builder_Panel {
 	 *
 	 * @return array
 	 */
-	private function get_choicesjs_config() {
+	private function get_choicesjs_config(): array {
 
 		$config = Tags::get_choicesjs_config();
 
@@ -140,8 +161,24 @@ class WPForms_Builder_Panel_Settings extends WPForms_Builder_Panel {
 				'settings',
 				'form_desc',
 				$this->form_data,
-				esc_html__( 'Form Description', 'wpforms-lite' )
+				esc_html__( 'Form Description', 'wpforms-lite' ),
+				[
+					'tooltip' => esc_html__( 'Enter descriptive text or instructions to help your users understand the requirements of your form.', 'wpforms-lite' ),
+				]
 			);
+
+			if ( $this->form->post_type === 'wpforms-template' ) {
+				wpforms_panel_field(
+					'textarea',
+					'settings',
+					'template_description',
+					$this->form_data,
+					esc_html__( 'Template Description', 'wpforms-lite' ),
+					[
+						'tooltip' => esc_html__( 'Describe the use case for your template. Only displayed internally.', 'wpforms-lite' ),
+					]
+				);
+			}
 
 			$this->general_setting_tags();
 
@@ -166,28 +203,6 @@ class WPForms_Builder_Panel_Settings extends WPForms_Builder_Panel {
 				]
 			);
 
-			if ( ! empty( $this->form_data['settings']['honeypot'] ) ) {
-				wpforms_panel_field(
-					'toggle',
-					'settings',
-					'honeypot',
-					$this->form_data,
-					esc_html__( 'Enable anti-spam honeypot', 'wpforms-lite' )
-				);
-			}
-
-			wpforms_panel_field(
-				'toggle',
-				'settings',
-				'antispam',
-				$this->form_data,
-				esc_html__( 'Enable anti-spam protection', 'wpforms-lite' )
-			);
-
-			$this->general_setting_akismet();
-
-			$this->general_setting_captcha();
-
 			$this->general_setting_advanced();
 
 		echo '</div>';
@@ -197,7 +212,14 @@ class WPForms_Builder_Panel_Settings extends WPForms_Builder_Panel {
 		 */
 		echo '<div class="wpforms-panel-content-section wpforms-panel-content-section-notifications" data-panel="notifications">';
 
-			do_action( 'wpforms_form_settings_notifications', $this );
+		/**
+		 * Output notifications.
+		 *
+		 * @since 1.6.7.3
+		 *
+		 * @param WPForms_Builder_Panel_Settings $settings Current settings.
+		 */
+		do_action( 'wpforms_form_settings_notifications', $this ); // phpcs:ignore WPForms.PHP.ValidateHooks.InvalidHookName
 
 		echo '</div>';
 
@@ -206,14 +228,25 @@ class WPForms_Builder_Panel_Settings extends WPForms_Builder_Panel {
 		 */
 		echo '<div class="wpforms-panel-content-section wpforms-panel-content-section-confirmation" data-panel="confirmations">';
 
-			do_action( 'wpforms_form_settings_confirmations', $this );
+		/**
+		 * Output confirmations.
+		 *
+		 * @since 1.6.7.3
+		 *
+		 * @param WPForms_Builder_Panel_Settings $settings Current settings.
+		 */
+		do_action( 'wpforms_form_settings_confirmations', $this ); // phpcs:ignore WPForms.PHP.ValidateHooks.InvalidHookName
 
 		echo '</div>';
 
-		/*
-		 * Custom panels can be added below.
+		/**
+		 * Output custom panels.
+		 *
+		 * @since 1.6.7.3
+		 *
+		 * @param WPForms_Builder_Panel_Settings $settings Current settings.
 		 */
-		do_action( 'wpforms_form_settings_panel_content', $this );
+		do_action( 'wpforms_form_settings_panel_content', $this ); // phpcs:ignore WPForms.PHP.ValidateHooks.InvalidHookName
 	}
 
 	/**
@@ -258,54 +291,8 @@ class WPForms_Builder_Panel_Settings extends WPForms_Builder_Panel {
 	 * Output the *CAPTCHA settings.
 	 *
 	 * @since 1.6.8
-	 */
-	private function general_setting_captcha() {
-
-		$captcha_settings = wpforms_get_captcha_settings();
-
-		if (
-			! empty( $captcha_settings['provider'] ) &&
-			$captcha_settings['provider'] !== 'none' &&
-			! empty( $captcha_settings['site_key'] ) &&
-			! empty( $captcha_settings['secret_key'] )
-		) {
-			$lbl = '';
-
-			switch ( $captcha_settings['recaptcha_type'] ) {
-				case 'v2':
-					$lbl = esc_html__( 'Enable Google Checkbox v2 reCAPTCHA', 'wpforms-lite' );
-					break;
-
-				case 'invisible':
-					$lbl = esc_html__( 'Enable Google Invisible v2 reCAPTCHA', 'wpforms-lite' );
-					break;
-
-				case 'v3':
-					$lbl = esc_html__( 'Enable Google v3 reCAPTCHA', 'wpforms-lite' );
-					break;
-			}
-
-			$lbl = $captcha_settings['provider'] === 'hcaptcha' ? esc_html__( 'Enable hCaptcha', 'wpforms-lite' ) : $lbl;
-
-			wpforms_panel_field(
-				'toggle',
-				'settings',
-				'recaptcha',
-				$this->form_data,
-				$lbl,
-				[
-					'data' => [
-						'provider' => $captcha_settings['provider'],
-					],
-				]
-			);
-		}
-	}
-
-	/**
-	 * Output the *CAPTCHA settings.
 	 *
-	 * @since 1.6.8
+	 * @noinspection HtmlUnknownTarget
 	 */
 	private function general_setting_advanced() {
 
@@ -359,56 +346,24 @@ class WPForms_Builder_Panel_Settings extends WPForms_Builder_Panel {
 			]
 		);
 
-		do_action( 'wpforms_form_settings_general', $this );
+		/**
+		 * Fires after general settings.
+		 *
+		 * @since 1.0.2
+		 *
+		 * @param WPForms_Builder_Panel_Settings $settings Current settings.
+		 */
+		do_action( 'wpforms_form_settings_general', $this ); // phpcs:ignore WPForms.PHP.ValidateHooks.InvalidHookName
 
 		// Wrap advanced settings to the unfoldable group.
 		wpforms_panel_fields_group(
 			ob_get_clean(),
 			[
+				'borders'    => [ 'top' ],
 				'unfoldable' => true,
 				'group'      => 'settings_advanced',
 				'title'      => esc_html__( 'Advanced', 'wpforms-lite' ),
-			],
-			true
-		);
-	}
-
-	/**
-	 * Output the Akismet settings.
-	 *
-	 * @since 1.7.6
-	 *
-	 * @return void
-	 */
-	private function general_setting_akismet() {
-
-		$args = [];
-
-		if ( ! Akismet::is_configured() ) {
-			$args['data']['akismet-status'] = 'akismet_no_api_key';
-		}
-
-		if ( ! Akismet::is_activated() ) {
-			$args['data']['akismet-status'] = 'akismet_not_activated';
-		}
-
-		if ( ! Akismet::is_installed() ) {
-			$args['data']['akismet-status'] = 'akismet_not_installed';
-		}
-
-		// If akismet isn't available, disable the akismet toggle.
-		if ( isset( $args['data'] ) ) {
-			$args['input_class'] = 'wpforms-akismet-disabled';
-			$args['value']       = '0';
-		}
-
-		wpforms_panel_field(
-			'toggle',
-			'settings',
-			'akismet',
-			$this->form_data,
-			esc_html__( 'Enable Akismet anti-spam protection', 'wpforms-lite' ),
-			$args
+			]
 		);
 	}
 }

@@ -60,7 +60,7 @@ class WidgetSmartSlider3 extends WP_Widget {
 
         if ($instance['slider'] === 0) {
 
-            $instance['slider'] = $wpdb->get_var('SELECT id FROM ' . $wpdb->prefix . 'nextend2_smartslider3_sliders WHERE status = \'published\' LIMIT 0,1');
+            $instance['slider'] = $wpdb->get_var('SELECT id FROM ' . $wpdb->prefix . 'nextend2_smartslider3_sliders WHERE slider_status = \'published\' LIMIT 0,1');
         }
 
         $slider = do_shortcode('[smartslider3 slider=' . $instance['slider'] . ']');
@@ -129,16 +129,17 @@ class WidgetSmartSlider3 extends WP_Widget {
             }
             $value = $instance['slider'];
 
-            $_title = '';
+            $_title         = '';
+            $sliderSelectID = esc_attr($this->get_field_id('slider'));
             ?>
-            <select id="<?php echo esc_attr($this->get_field_id('slider')); ?>" name="<?php echo esc_attr($this->get_field_name('slider')); ?>" class="widefat">
+            <select id="<?php echo $sliderSelectID ?>" name="<?php echo esc_attr($this->get_field_name('slider')); ?>" class="widefat">
                 <?php if (empty($choices)): ?>
                     <option value=""><?php n2_e('None'); ?></option>
                 <?php else: ?>
                     <?php
                     if ($instance['slider'] === 0) {
                         global $wpdb;
-                        $value = $wpdb->get_var('SELECT id FROM ' . $wpdb->prefix . 'nextend2_smartslider3_sliders WHERE status = \'published\' LIMIT 0,1');
+                        $value = $wpdb->get_var('SELECT id FROM ' . $wpdb->prefix . 'nextend2_smartslider3_sliders WHERE slider_status = \'published\' LIMIT 0,1');
 
                     }
                     foreach ($choices as $id => $choice) {
@@ -165,9 +166,23 @@ class WidgetSmartSlider3 extends WP_Widget {
                     ?>
                 <?php endif; ?>
             </select>
-            <input id="<?php echo esc_attr($this->get_field_id('temp-title')); ?>"
-                   name="<?php echo esc_attr($this->get_field_name('temp-title')); ?>" type="hidden"
+            <?php
+            $sliderTempTitleID   = esc_attr($this->get_field_id('temp-title'));
+            $sliderTempTitleName = esc_attr($this->get_field_name('temp-title'));
+            ?>
+            <input id="<?php echo $sliderTempTitleID; ?>"
+                   name="<?php echo $sliderTempTitleName; ?>" type="hidden"
                    value="<?php echo esc_attr($_title); ?>">
+
+            <script>
+                const ss3SliderSelectElement = document.getElementById("<?php echo $sliderSelectID ?>");
+                const ss3SliderTempTitleElement = document.getElementById("<?php echo $sliderTempTitleID; ?>");
+                if (ss3SliderSelectElement && ss3SliderTempTitleElement) {
+                    ss3SliderSelectElement.addEventListener('change', (e) => {
+                        ss3SliderTempTitleElement.value = ss3SliderSelectElement.options[ss3SliderSelectElement.selectedIndex].text;
+                    });
+                }
+            </script>
 
         </p>
         <p>
@@ -182,9 +197,10 @@ class WidgetSmartSlider3 extends WP_Widget {
     }
 
     function update($new_instance, $old_instance) {
-        $instance           = $old_instance;
-        $instance['title']  = $new_instance['title'];
-        $instance['slider'] = $new_instance['slider'];
+        $instance               = $old_instance;
+        $instance['title']      = $new_instance['title'];
+        $instance['temp-title'] = $new_instance['temp-title'];
+        $instance['slider']     = $new_instance['slider'];
 
         return $instance;
     }

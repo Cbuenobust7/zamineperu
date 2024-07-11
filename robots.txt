@@ -1,11 +1,50 @@
-User-agent:*
-Allow:/
-Crawl-delay:3
-Sitemap:https://zamine.testaplications.club/sitemap_index_1.xml
-Sitemap:https://zamine.testaplications.club/sitemap_index_2.xml
-Sitemap:https://zamine.testaplications.club/sitemap_index_3.xml
-Sitemap:https://zamine.testaplications.club/sitemap_index_4.xml
-Sitemap:https://zamine.testaplications.club/sitemap_index_5.xml
-Sitemap:https://zamine.testaplications.club/sitemap_index_6.xml
-Sitemap:https://zamine.testaplications.club/sitemap_index_7.xml
-Sitemap:https://zamine.testaplications.club/sitemap_index_8.xml
+# Permite el acceso a las siguientes URL
+User-agent: *
+Allow: /
+Allow: /servicios/
+Allow: /politicas/
+Allow: /servicios-y-productos/
+Allow: /servicios-especializados-y-repuestos/
+Allow: /novedades/
+Allow: /soluciones-de-perforacion/
+Allow: /suministros-para-equipos-moviles-pesados/
+Allow: /suministros-para-plantas-mineras-e-industriales/
+Allow: /componentes-para-gran-mineria/
+Allow: /contactanos/
+Allow: /bolsa-de-trabajo/
+Allow: /en/components-for-large-scale-mining/
+Allow: /en/contact-us/
+Allow: /en/filtration/
+Allow: /en/news/
+Allow: /en/hitachi-specialized-services/
+Allow: /en/drilling-solutions/
+Allow: /en/supply-for-heavy-mobile-equipment/
+Allow: /en/supply-for-mining-and-industrial-plants/
+Allow: /en/work-with-us/
+Allow: /hitachi-mining/
+Allow: /en/privacy-policies/
+Allow: /en/terms-and-conditions/
+Allow: /terminos/
+Allow: /en/hitachi-mining-eng/
+Allow: /en/multi-brand-services/
+Allow: /en/about-us/
+Allow: /servicios-multimarca/
+Allow: /nosotros/
+Allow: /soluciones-de-filtracion/
+Allow: /en/filtration-solutions/
+Allow: /tonly/
+Allow: /en/tonly-eng/
+Allow: /elementos-de-desgaste/
+Allow: /carrileria-e-iluminacion/
+Allow: /en/trucks/
+Allow: /en/carrileria-e-iluminacion-eng/
+Allow: /en/wear-elements/
+Allow: /en/off-the-road-english/
+Allow: /en/otr-tires/
+Allow: /en/home-english/
+Allow: /camiones/
+Allow: /off-the-road-espanol/
+Allow: /lista-de-familias-productos-y-servicios/
+Allow: /filtracion/
+Allow: /otr/
+Allow: /palas-y-excavadoras-hidraulicas/

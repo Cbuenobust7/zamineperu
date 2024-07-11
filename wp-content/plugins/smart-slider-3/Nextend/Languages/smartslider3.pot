@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2022-08-11 14:03+0200\n"
+"POT-Creation-Date: 2024-04-08 14:12+0200\n"
 "PO-Revision-Date: 2020-03-10 19:30+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -11,16 +11,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.3.1\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: ;n2_;n2_e;n2_n:1,2;n2_en:1,2;n2_x:1,2c;n2_ex:1,2c\n"
 "X-Poedit-Flags-xgettext: --no-location\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: Framework/Asset/Builder/cache\n"
-
-msgid "Debug error"
-msgstr ""
 
 msgid "CURL disabled in your php.ini configuration. Please enable it!"
 msgstr ""
@@ -31,7 +28,13 @@ msgstr ""
 msgid "You are not allowed to upload!"
 msgstr ""
 
+msgid "You are not allowed to upload this filetype!"
+msgstr ""
+
 msgid "Folder is missing!"
+msgstr ""
+
+msgid "You are not allowed to upload a file with different extension ("
 msgstr ""
 
 msgid "Menu item"
@@ -65,17 +68,17 @@ msgstr ""
 msgid "Security token mismatch. Please refresh the page!"
 msgstr ""
 
+msgid "Unexpected database error."
+msgstr ""
+
+msgid "Try to repair database"
+msgstr ""
+
 #, php-format
 msgid "If you see this message after the repair database process, please %1$scontact us%2$s with the log:"
 msgstr ""
 
 msgid "Contact your server host and ask them to fix this for you!"
-msgstr ""
-
-msgid "Unexpected database error."
-msgstr ""
-
-msgid "Try to repair database"
 msgstr ""
 
 msgid "Font manager"
@@ -982,7 +985,8 @@ msgstr ""
 msgid "Change slider type"
 msgstr ""
 
-msgid "Changing your slider type is irreversible. After changing your slider type, <b>you will lose all slider type related settings</b>."
+#, javascript-format
+msgid "Changing your slider type is irreversible. After changing your slider type, %syou will lose all slider type related settings%s."
 msgstr ""
 
 msgid "Slider type"
@@ -1265,6 +1269,9 @@ msgid "Infinite loop"
 msgstr ""
 
 msgid "Finish autoplay"
+msgstr ""
+
+msgid "The Carousel option is disabled, so the Autoplay will stop after the last slide appeared."
 msgstr ""
 
 msgid "Stop on click"
@@ -1594,9 +1601,6 @@ msgstr ""
 msgid "Other"
 msgstr ""
 
-msgid "JetPack Photon image optimizer"
-msgstr ""
-
 msgid "Background video on mobile"
 msgstr ""
 
@@ -1791,6 +1795,9 @@ msgid "Possible conflicts"
 msgstr ""
 
 msgid "Test connection"
+msgstr ""
+
+msgid "Analyze & repair possible database issues"
 msgstr ""
 
 msgid "No conflicts detected."
@@ -2577,7 +2584,7 @@ msgstr ""
 msgid "WordPress settings"
 msgstr ""
 
-msgid "Show editor icon"
+msgid "Show button in TinyMCE editor"
 msgstr ""
 
 msgid "Show in admin bar"
@@ -2892,6 +2899,14 @@ msgstr ""
 msgid "Export file corrupted! Slider data is missing."
 msgstr ""
 
+#, php-format
+msgid "The importing failed as the slider export contained an invalid class name: %1$s"
+msgstr ""
+
+#, php-format
+msgid "The importing failed as we are not able to unserialize the type: \"%s\""
+msgstr ""
+
 msgid "Learn more"
 msgstr ""
 
@@ -2959,6 +2974,12 @@ msgstr ""
 msgid "Stack"
 msgstr ""
 
+msgid "Deprecation"
+msgstr ""
+
+msgid "This generator will get deprecated soon, so you shouldn't use it anymore!"
+msgstr ""
+
 msgid "No description."
 msgstr ""
 
@@ -3002,13 +3023,28 @@ msgstr ""
 msgid "User ID"
 msgstr ""
 
+msgid "Created by"
+msgstr ""
+
+msgid "The ID number of the article's author. Only one number is accepted."
+msgstr ""
+
 msgid "Included article IDs"
+msgstr ""
+
+msgid "Write down article ID numbers separated by commas, to include them in the result. For example: 1,12,25"
 msgstr ""
 
 msgid "Excluded article IDs"
 msgstr ""
 
+msgid "Write down article ID numbers separated by commas, to exclude them from the result. For example: 2,14,27"
+msgstr ""
+
 msgid "Language"
+msgstr ""
+
+msgid "The language code of your articles. Multiple language codes should be separated by commas, for example: en-GB,hu-HU,es-ES"
 msgstr ""
 
 msgid "Fields"
@@ -3124,10 +3160,14 @@ msgstr ""
 msgid "Field value"
 msgstr ""
 
+msgid "Field type"
+msgstr ""
+
 msgid "Meta comparison"
 msgstr ""
 
-msgid "Same as the previous option, just you can write down more comparisons. Read the \"Field name\" and \"Compare method\" out from the previous option. Example:"
+#, php-format
+msgid "You can create other comparisons based on the previous \"Post Meta Comparison\" options. Use the following format: name||compare||value||type%1$s%1$s Example:%1$spublished||=||yes||CHAR%1$s%1$sWrite one comparison per line."
 msgstr ""
 
 msgid "Post date"
@@ -3157,10 +3197,6 @@ msgstr ""
 
 #, php-format
 msgid "The selected post IDs won't appear in the generator, even if they they match the set filters. %1$s Write one ID per line."
-msgstr ""
-
-#, php-format
-msgid "You can create other comparison based on the previous \"Field name\" and \"Compare method\" options. %1$s Use the following format: published||=||yes %1$s Write one comparison per line."
 msgstr ""
 
 msgid "Post option"
@@ -3466,6 +3502,9 @@ msgid "Hides the user's byline of the video, but only if video owner allows it."
 msgstr ""
 
 msgid "Hides the profile image of the author, but only if video owner allows it. "
+msgstr ""
+
+msgid "Iframe title"
 msgstr ""
 
 msgid "Play button"
@@ -4413,10 +4452,14 @@ msgstr ""
 msgid "Ribbon"
 msgstr ""
 
-msgid "The secret is empty. Please insert that value too!"
+msgid "Creates slides by your custom settings."
 msgstr ""
 
-msgid "The App ID is empty. Please insert that value too!"
+#, php-format
+msgid "You don't have custom generators yet. %1$s Check the documentation %2$s to learn how to create your own generator."
+msgstr ""
+
+msgid "No options given"
 msgstr ""
 
 #, php-format
@@ -4430,73 +4473,19 @@ msgstr ""
 msgid "%2$s Check the documentation %3$s to learn how to configure your %1$s app."
 msgstr ""
 
-msgctxt "Facebook app permission"
-msgid "pages read engagement"
-msgstr ""
-
-msgid "Pages read engagement permission"
-msgstr ""
-
-msgid "You need \"pages_read_engagement\" permission if you want to access datas of Facebook pages, where you are an administrator. For other pages you still need to turn this option on, but request access to \"Page Public Content Access\" within your App."
-msgstr ""
-
-msgctxt "Facebook app permission"
-msgid "user photos"
-msgstr ""
-
-msgid "User photos permission"
-msgstr ""
-
-msgid "You need \"user_photos\" permission to access photos of users, except your own user."
-msgstr ""
-
 msgid "Token"
 msgstr ""
 
 msgid "Callback url"
 msgstr ""
 
-msgid "The token expired. Please request new token! "
+msgid "The key and secret is not valid!"
 msgstr ""
 
 msgid "Request token"
 msgstr ""
 
-msgid "Facebook photos or posts on your page"
-msgstr ""
-
-msgid "Photos by album"
-msgstr ""
-
-msgid "Posts by page"
-msgstr ""
-
-msgid "User or page"
-msgstr ""
-
 msgid "Album"
-msgstr ""
-
-msgctxt "Facebook generator type"
-msgid "Facebook posts"
-msgstr ""
-
-msgid "Page"
-msgstr ""
-
-msgid "Feed"
-msgstr ""
-
-msgid "Remove special characters"
-msgstr ""
-
-msgid "Exclude Types"
-msgstr ""
-
-msgid "Separate the types by a comma. E.g.: share,album"
-msgstr ""
-
-msgid "The key and secret is not valid!"
 msgstr ""
 
 msgid "There are no photos in this album!"
@@ -4578,6 +4567,12 @@ msgstr ""
 msgid "Wrong path. This is the default upload/media folder path, so try to navigate from here:"
 msgstr ""
 
+msgid "The secret is empty. Please insert that value too!"
+msgstr ""
+
+msgid "The App ID is empty. Please insert that value too!"
+msgstr ""
+
 msgid "The App ID and the Secret is empty!"
 msgstr ""
 
@@ -4585,6 +4580,12 @@ msgid "The token will expire at:"
 msgstr ""
 
 msgid "Access token was not returned.Please check the credentials!"
+msgstr ""
+
+msgid "State does not match!"
+msgstr ""
+
+msgid "The token expired. Please request new token! "
 msgstr ""
 
 msgid "The token expired. Please request new token!"
@@ -4597,6 +4598,9 @@ msgid "Refresh Token"
 msgstr ""
 
 msgid "Refresh"
+msgstr ""
+
+msgid "State or code parameter is empty!"
 msgstr ""
 
 msgid "Album loading method"
@@ -4650,9 +4654,6 @@ msgid "CSV from url"
 msgstr ""
 
 msgid "CSV from input"
-msgstr ""
-
-msgid "View tweet"
 msgstr ""
 
 msgid "Comments"
@@ -4968,6 +4969,9 @@ msgstr ""
 msgid "All day event"
 msgstr ""
 
+msgid "default"
+msgstr ""
+
 msgid "Fallback language"
 msgstr ""
 
@@ -4982,16 +4986,6 @@ msgid "Gallery"
 msgstr ""
 
 msgid "View gallery"
-msgstr ""
-
-msgid "Creates slides by your custom settings."
-msgstr ""
-
-#, php-format
-msgid "You don't have custom generators yet. %1$s Check the documentation %2$s to learn how to create your own generator."
-msgstr ""
-
-msgid "No options given"
 msgstr ""
 
 #, php-format
@@ -5621,6 +5615,9 @@ msgstr ""
 msgid "Please note that %1$swe do not support%2$s the HTML layer and the 3rd party codes loaded by it. We only suggest using this layer if you are a developer. %3$sAlso, make sure your HTML code is valid! Invalid HTML codes can mess up the entire slide and the only way resolving this problem is deleting the slide."
 msgstr ""
 
+msgid "Repair HTML errors"
+msgstr ""
+
 msgid "Item"
 msgstr ""
 
@@ -5735,9 +5732,6 @@ msgid "Iframe url"
 msgstr ""
 
 msgid "You can disable the scroll on the iframe content."
-msgstr ""
-
-msgid "Iframe title"
 msgstr ""
 
 msgid "Image area"
