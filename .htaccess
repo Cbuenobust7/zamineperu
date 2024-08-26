@@ -4,7 +4,6 @@
 <IfModule mod_rewrite.c>
 RewriteEngine on
 RewriteCond %{HTTP:CF-Visitor} '"scheme":"http"'
-RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/
 RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
 </IfModule>
 
